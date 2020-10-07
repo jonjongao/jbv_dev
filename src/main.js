@@ -5,11 +5,10 @@ import App from './App'
 import router from './router'
 import 'bootstrap/dist/css/bootstrap.css' // 載入 bootstrap CSS 檔
 import 'bootstrap' // 載入 bootstrap 的 JS 檔
-import jQuery from 'jquery'
 
 Vue.config.productionTip = false
-window.$ = window.jQuery = jQuery
 
+/*
 $(document).ready(function () {
   var v = function () {
     addVue(restoreSpace);
@@ -41,6 +40,8 @@ function restoreSpace() {
     $(this).text(text.replace(/<_>/g, " "));
   });
 }
+*/
+addVue(() => {});
 
 function addVue(callback) {
   console.log("add vue");
@@ -51,18 +52,13 @@ function addVue(callback) {
     components: {
       App
     },
-    mounted(){
-      console.log("mount?");
-    },
     watch: {
-      '$route' (to, from) {
-        console.log("change?");
-        console.log(this.$el);
+      '$route'(to, from) {
+        // Fired when route change
       }
     },
     template: '<App/>'
   })
-
 
   callback();
 }

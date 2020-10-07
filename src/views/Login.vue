@@ -6,11 +6,4 @@
 export default {
     name: "Login"
 };
-console.log(this);
 </script>
-
-<style>
-pre{
-    display: inline;
-}
-</style>

@@ -27,18 +27,6 @@
 export default {
   name: "App",
 };
-document.addEventListener("DOMContentLoaded", fetchJquery);
-window.setTimeout(fetchJquery, 5000);
-
-var init = false;
-function fetchJquery() {
-  if (init == true) {
-    console.log("is already init");
-    return;
-  }
-  init = true;
-  console.log("init");
-}
 </script>
 
 <style>
@@ -51,4 +39,7 @@ function fetchJquery() {
   margin-top: 60px;
 }
 
+pre{
+    display: inline;
+}
 </style>

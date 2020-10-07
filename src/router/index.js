@@ -1,18 +1,19 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
-import Home from "@/views/Home"
 import VueRouter from 'vue-router'
-
+//Test sample template
+import Home from "@/views/Home"
+import About from "@/views/About"
+//BBS template
 import Login from "@/views/Login"
 
 Vue.use(Router)
 
-const routes = [
-  {
+const routes = [{
     path: '/',
     name: 'HelloWorld',
-    component: HelloWorld
+    component: () =>
+      import("@/components/HelloWorld")
   },
   {
     path: '/home',
@@ -22,8 +23,7 @@ const routes = [
   {
     path: '/about',
     name: 'About',
-    component:()=>
-      import("@/views/About")
+    component: About
   },
   {
     path: '/login',
@@ -38,7 +38,9 @@ const router = new VueRouter({
   routes
 });
 
-router.beforeEach((to,from,next)=>{
+router.beforeEach((to, from, next) => {
+  // Fired before load route template
+  // Must execute next() so it'll do rendering
   next();
 })
 
