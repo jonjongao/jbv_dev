@@ -26,6 +26,7 @@ function replaceSpace(callback) {
   //Replace all space in html with <_> incase of trim by Vue
   $('#mainContainer > span > div > span > span > span').each(function () {
     var text = $(this).text();
+    console.log("read "+text);
     $(this).text(text.replace(/\s/g, "<_>"));
   });
 
@@ -50,8 +51,18 @@ function addVue(callback) {
     components: {
       App
     },
+    mounted(){
+      console.log("mount?");
+    },
+    watch: {
+      '$route' (to, from) {
+        console.log("change?");
+        console.log(this.$el);
+      }
+    },
     template: '<App/>'
   })
+
 
   callback();
 }

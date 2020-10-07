@@ -4,6 +4,8 @@ import HelloWorld from '@/components/HelloWorld'
 import Home from "@/views/Home"
 import VueRouter from 'vue-router'
 
+import Login from "@/views/Login"
+
 Vue.use(Router)
 
 const routes = [
@@ -22,6 +24,11 @@ const routes = [
     name: 'About',
     component:()=>
       import("@/views/About")
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login
   }
 ];
 
@@ -30,5 +37,9 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 });
+
+router.beforeEach((to,from,next)=>{
+  next();
+})
 
 export default router;
