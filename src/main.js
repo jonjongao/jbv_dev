@@ -55,6 +55,8 @@ function addVue(callback) {
     watch: {
       '$route'(to, from) {
         // Fired when route change
+        console.log("change");
+        console.log(document.getElementById("mainContainer"));
       }
     },
     template: '<App/>'

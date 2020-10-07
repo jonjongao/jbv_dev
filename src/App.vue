@@ -25,11 +25,15 @@
 
 <script>
 export default {
-  name: "App",
+  name: "App"
 };
 </script>
 
 <style>
+/*
+@import './assets/pttchrome.dfcd8a57e6603f03c793.css';
+*/
+
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
