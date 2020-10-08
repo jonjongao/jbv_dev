@@ -6,6 +6,7 @@ import Home from "@/views/Home"
 import About from "@/views/About"
 //BBS template
 import Login from "@/views/Login"
+import MainMenu from "@/views/MainMenu"
 
 Vue.use(Router)
 
@@ -29,6 +30,14 @@ const routes = [{
     path: '/login',
     name: 'Login',
     component: Login,
+    props:{
+      bbsrow: 2
+    }
+  },
+  {
+    path: '/mainmenu',
+    name: 'MainMenu',
+    component: MainMenu,
     props:{
       bbsrow: 4
     }
