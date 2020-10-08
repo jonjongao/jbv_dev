@@ -49,7 +49,9 @@ const routes = [{
 
 const router = new VueRouter({
   moode: "history",
-  base: process.env.BASE_URL,
+  base: process.env.NODE_ENV === 'production' ?
+    '/jbv_dev/' :
+    process.env.BASE_URL,
   routes
 });
 
