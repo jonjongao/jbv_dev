@@ -28,7 +28,10 @@ const routes = [{
   {
     path: '/login',
     name: 'Login',
-    component: Login
+    component: Login,
+    props:{
+      bbsrow: 4
+    }
   }
 ];
 
@@ -41,6 +44,7 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
   // Fired before load route template
   // Must execute next() so it'll do rendering
+
   next();
 })
 
