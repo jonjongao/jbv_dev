@@ -9,5 +9,7 @@ module.exports = {
         options.compilerOptions.whitespace = 'preserve';
         return options;
       });
-  }
+  },
+  publicPath: process.env.NODE_ENV === 'production' ?
+  '/jbv_dev/' : '/'
 };
