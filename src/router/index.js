@@ -12,9 +12,12 @@ Vue.use(Router)
 
 const routes = [{
     path: '/',
-    name: 'HelloWorld',
+    name: 'Login',
     component: () =>
-      import("@/components/HelloWorld")
+      import("@/views/Login"),
+    props: {
+      bbsrow: 2
+    }
   },
   {
     path: '/home',
@@ -30,7 +33,7 @@ const routes = [{
     path: '/login',
     name: 'Login',
     component: Login,
-    props:{
+    props: {
       bbsrow: 2
     }
   },
@@ -38,7 +41,7 @@ const routes = [{
     path: '/mainmenu',
     name: 'MainMenu',
     component: MainMenu,
-    props:{
+    props: {
       bbsrow: 4
     }
   }

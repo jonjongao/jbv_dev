@@ -54,6 +54,8 @@ function addVue(callback) {
       App
     },
     mounted: function () {
+      var c = document.getElementById('mainContainer');
+      if (c == null) return;
       var i = document.getElementById('mainContainer').getAttribute('bbsrowCount');
       if (i != null) this.bbsrowCount = i;
     },
