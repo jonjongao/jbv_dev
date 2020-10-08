@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import 'bootstrap/dist/css/bootstrap.css' // 載入 bootstrap CSS 檔
 import 'bootstrap' // 載入 bootstrap 的 JS 檔
+import './bus'
 
 Vue.config.productionTip = false
 
