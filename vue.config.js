@@ -11,5 +11,5 @@ module.exports = {
       });
   },
   publicPath: process.env.NODE_ENV === 'production' ?
-  '/jbv_dev/' : '/'
+  process.env.PUBLIC_PATH : '/'
 };

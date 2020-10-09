@@ -48,18 +48,16 @@ const routes = [{
 ];
 
 const router = new VueRouter({
-  moode: "history",
-  base: process.env.NODE_ENV === 'production' ?
-    '/jbv_dev/' :
-    process.env.BASE_URL,
-  routes
+    moode: "history",
+    base: process.env.NODE_ENV === 'production' ?
+        process.env.PUBLIC_PATH : process.env.BASE_URL,
+    routes
 });
 
 router.beforeEach((to, from, next) => {
-  // Fired before load route template
-  // Must execute next() so it'll do rendering
-
-  next();
+    // Fired before load route template
+    // Must execute next() so it'll do rendering
+    next();
 })
 
 export default router;
