@@ -2,7 +2,7 @@
 require('./check-versions')()
 
 process.env.NODE_ENV = 'production'
-process.env.PUBLIC_PATH = '/gwhigh'
+process.env.PUBLIC_PATH = '/jbv_dev/'
 
 const ora = require('ora')
 const rm = require('rimraf')
