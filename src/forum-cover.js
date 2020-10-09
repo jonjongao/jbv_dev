@@ -1,5 +1,5 @@
 export default {
-  name: "MainMenu",
+  name: "ForumCover",
   props: ['bbsrow'],
   data: function () {
     return {

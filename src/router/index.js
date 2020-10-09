@@ -7,44 +7,127 @@ import About from "@/views/About"
 //BBS template
 import Login from "@/views/Login"
 import MainMenu from "@/views/MainMenu"
+import Favorite from "@/views/Favorite"
+import Class from "@/views/Class"
+import Class2 from "@/views/Class2"
+import Class3 from "@/views/Class3"
+import ForumCover from "@/views/ForumCover"
+import Forum from "@/views/Forum"
+import ForumPost from "@/views/ForumPost"
+import Mail1 from "@/views/Mail1"
+import Mail2 from "@/views/Mail2"
+import Mail3 from "@/views/Mail3"
+import Goodbye from "@/views/Goodbye"
 
 Vue.use(Router)
 
 const routes = [{
-    path: '/',
-    name: 'Login',
-    component: () =>
-      import("@/views/Login"),
-    props: {
-      bbsrow: 2
+        path: '/',
+        name: 'Login',
+        component: () =>
+            import ("@/views/Login"),
+        props: {
+            bbsrow: 2
+        }
+    },
+    {
+        path: '/home',
+        name: "Home",
+        component: Home
+    },
+    {
+        path: '/about',
+        name: 'About',
+        component: About
+    },
+    {
+        path: '/mainmenu',
+        name: 'MainMenu',
+        component: MainMenu,
+        props: {
+            bbsrow: 4
+        }
+    },
+    {
+        path: '/favorite',
+        name: 'Favorite',
+        component: Favorite,
+        props: {
+            bbsrow: 4
+        }
+    },
+    {
+        path: '/class',
+        name: 'Class',
+        component: Class,
+        props: {
+            bbsrow: 4
+        }
+    },
+    {
+        path: '/class2',
+        name: 'Class2',
+        component: Class2,
+        props: {
+            bbsrow: 4
+        }
+    },
+    {
+        path: '/class3',
+        name: 'Class3',
+        component: Class3,
+        props: {
+            bbsrow: 4
+        }
+    },
+    {
+        path: '/forum-cover',
+        name: 'ForumCover',
+        component: ForumCover,
+        props: {
+            bbsrow: 4
+        }
+    },
+    {
+        path: '/forum',
+        name: 'Forum',
+        component: Forum,
+        props: {
+            bbsrow: 4
+        }
+    },
+    {
+        path: '/forum-post',
+        name: 'ForumPost',
+        component: ForumPost,
+        props: {
+            bbsrow: 4
+        }
+    },
+    {
+        path: '/mail1',
+        name: 'Mail1',
+        component: Mail1,
+        props: {
+            bbsrow: 4
+        }
+    },
+    {
+        path: '/mail2',
+        name: 'Mail2',
+        component: Mail2,
+        props: {
+            bbsrow: 4
+        }
+    },
+    {
+        path: '/goodbye',
+        name: 'Goodbye',
+        component: Goodbye,
+        props: {
+            bbsrow: 4
+        }
     }
-  },
-  {
-    path: '/home',
-    name: "Home",
-    component: Home
-  },
-  {
-    path: '/about',
-    name: 'About',
-    component: About
-  },
-  {
-    path: '/login',
-    name: 'Login',
-    component: Login,
-    props: {
-      bbsrow: 2
-    }
-  },
-  {
-    path: '/mainmenu',
-    name: 'MainMenu',
-    component: MainMenu,
-    props: {
-      bbsrow: 4
-    }
-  }
 ];
 
 const router = new VueRouter({

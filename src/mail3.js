@@ -1,5 +1,5 @@
 export default {
-  name: "MainMenu",
+  name: "Mail3",
   props: ['bbsrow'],
   data: function () {
     return {

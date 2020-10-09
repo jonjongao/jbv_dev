@@ -1,11 +1,19 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png" />
+    <p>測試連結</p>
     <div id="nav">
       <router-link to="/">Index</router-link>
-      <router-link to="/home">Home</router-link>
-      <router-link to="/about">About</router-link>
-      <router-link to="/login">Login</router-link>
+      <router-link to="/mainmenu">MainMenu</router-link>
+      <router-link to="/favorite">Favorite</router-link>
+      <router-link to="/class">Class1</router-link>
+      <router-link to="/class2">Class2</router-link>
+      <router-link to="/class3">Class3</router-link>
+      <router-link to="/forum-cover">ForumCover</router-link>
+      <router-link to="/forum">Forum</router-link>
+      <router-link to="/forum-post">ForumPost</router-link>
+      <router-link to="/mail1">Mail1</router-link>
+      <router-link to="/mail2">Mail2</router-link>
+      <router-link to="/goodbye">Goodbye</router-link>
     </div>
     <div id="cmenuReact">
       <div class="">
@@ -45,7 +53,7 @@
 
 <script>
 export default {
-  name: "App"
+  name: "App",
 };
 </script>
 
@@ -59,5 +67,10 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+#BBSWindow {
+  z-index: -1;
+  margin-top: 100px;
 }
 </style>

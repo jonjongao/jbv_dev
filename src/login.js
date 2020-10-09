@@ -6,11 +6,20 @@ export default {
       phAccount: '',
       phPassword: '',
       inAccount: '',
-      inPassword: ''
+      inPassword: '',
+      rowIndex: 0
     }
   },
   created() {
+  },
+  mounted() {
     this.onChange();
+    this.$bus.$on('on-keyup', this.onKeyup);
+    console.log("mounted");
+  },
+  beforeDestroy() {
+    this.$bus.$off('on-keyup', this.onKeyup);
+    console.log("destroy");
   },
   watch: {
     // call again the method if the route changes
@@ -24,7 +33,8 @@ export default {
       this.$bus.$emit('try-login', [this.inAccount, this.inPassword]);
     },
     onChange() {
-      this.$bus.$emit('update-bbsrow', this.bbsrow);
+      console.log("reset rowIndex=0");
+      this.rowIndex = 0;
     }
   }
 };

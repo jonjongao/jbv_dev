@@ -1,5 +1,5 @@
 export default {
-  name: "MainMenu",
+  name: "Goodbye",
   props: ['bbsrow'],
   data: function () {
     return {
