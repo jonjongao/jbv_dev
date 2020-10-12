@@ -23,25 +23,6 @@ new Vue({
       //Original 'Charmon' length = 7
       //Rest of space length = 9, so is 16 in total
       var t = this.account == '' ? 'Guest' : this.account;
-
-      var space = 0;
-      var i = 0;
-      var character = '';
-      while (i <= t.length) {
-        character = t.charAt(i);
-        if (!isNaN(character * 1)) {
-          space++;
-        } else {
-          if (character == character.toUpperCase()) {
-            space += 2;
-          }
-          if (character == character.toLowerCase()) {
-            space++;
-          }
-        }
-        i++;
-      }
-      console.log("account space is:" + space);
       t = t.padEnd(16);
       return t;
     },
@@ -90,7 +71,12 @@ new Vue({
         console.log("success!");
         //Direct user to next page
         //window.location.href = '/ptsbbs/layout_page1';
-        this.$router.push({ name: 'MainMenu', params: { account: this.account } })
+        this.$router.push({
+          name: 'MainMenu',
+          params: {
+            account: this.account
+          }
+        })
       } else {
         console.log("failed");
       }

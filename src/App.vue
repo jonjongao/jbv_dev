@@ -10,6 +10,7 @@
       <router-link to="/class3">Class3</router-link>
       <router-link to="/forum-cover">ForumCover</router-link>
       <router-link to="/forum">Forum</router-link>
+      <router-link to="/forum2">Forum2</router-link>
       <router-link to="/forum-post">ForumPost</router-link>
       <router-link to="/mail1">Mail1</router-link>
       <router-link to="/mail2">Mail2</router-link>
@@ -72,5 +73,9 @@ export default {
 #BBSWindow {
   z-index: -1;
   margin-top: 100px;
+}
+
+span {
+  white-space: pre;
 }
 </style>

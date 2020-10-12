@@ -13,6 +13,7 @@ import Class2 from "@/views/Class2"
 import Class3 from "@/views/Class3"
 import ForumCover from "@/views/ForumCover"
 import Forum from "@/views/Forum"
+import Forum2 from "@/views/Forum2"
 import ForumPost from "@/views/ForumPost"
 import Mail1 from "@/views/Mail1"
 import Mail2 from "@/views/Mail2"
@@ -94,6 +95,14 @@ const routes = [{
         component: Forum,
         props: {
             bbsrow: 4
+        }
+    },
+    {
+        path: '/forum2',
+        name: 'Forum2',
+        component: Forum2,
+        props: {
+            bbsrow: 5
         }
     },
     {
