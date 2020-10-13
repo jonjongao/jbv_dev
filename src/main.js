@@ -3,12 +3,15 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import 'bootstrap/dist/css/bootstrap.css' // 載入 bootstrap CSS 檔
-import 'bootstrap' // 載入 bootstrap 的 JS 檔
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import './bus'
 import store from './store'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 Vue.config.productionTip = false
+Vue.use(BootstrapVue)
+Vue.use(IconsPlugin)
 
 /* eslint-disable no-new */
 new Vue({
@@ -43,6 +46,7 @@ new Vue({
   },
   created: function () {
     window.addEventListener('keyup', this.onKeyup); // 監聽鍵盤事件
+    window.addEventListener('resize', this.onResize);
     // 監聽login.js的登入事件
     this.$bus.$on("try-login", (i) => {
       this.checkLogin(i[0], i[1]);
@@ -95,6 +99,11 @@ new Vue({
       // 轉發鍵盤事件
       this.$bus.$emit('on-keyup', e);
       e.preventDefault();
+    },
+    onResize: function (e) {
+      var w = window.innerWidth;
+      var h = window.innerHeight;
+      this.$store.commit('setWindowSize', [w, h]);
     }
   }
 })

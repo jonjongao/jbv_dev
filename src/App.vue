@@ -53,12 +53,24 @@
 </template>
 
 <script>
+import u from "./assets/util";
 export default {
   name: "App",
+  methods: {
+    isMobile() {
+      return u.isMobile();
+    },
+  },
+  computed: {
+    getWidth: function () {
+      return window.innerWidth;
+    },
+  },
 };
 </script>
 
 <style>
+
 @import "./assets/pttchrome.dfcd8a57e6603f03c793.css";
 
 #app {
@@ -71,11 +83,11 @@ export default {
 }
 
 #BBSWindow {
-  z-index: -1;
+  z-index: -1 !important;
   margin-top: 100px;
 }
 
 span {
-  white-space: pre;
+  white-space: pre !important;
 }
 </style>

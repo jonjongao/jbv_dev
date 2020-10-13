@@ -8,7 +8,10 @@ const store = new Vuex.Store({
     state: {
         count: 0,
         accountLabel: '',
-        dateLabel: ''
+        dateLabel: '',
+        width: 0,
+        height: 0,
+        isMobile: false
     },
     mutations: {
         increment(state) {
@@ -19,6 +22,14 @@ const store = new Vuex.Store({
         },
         setDate(state, date) {
             state.dateLabel = date;
+        },
+        setWindowSize(state, size) {
+            state.width = size[0];
+            state.height = size[1];
+            if (state.width < 1024)
+                state.isMobile = true;
+            else
+                state.isMobile = false;
         }
     }
 })
