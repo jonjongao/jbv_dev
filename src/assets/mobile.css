@@ -1,3 +1,37 @@
-#MobileWindow label{
-    color: white !important;
+#MobileWindow h1,
+h2,
+h3,
+p,
+.label,
+.nav-item > a {
+  color: white;
+}
+
+#MobileWindow .field-head {
+  color: #009ff5;
+  text-align: left;
+}
+
+#MobileWindow .btn {
+  border-radius: 1px !important;
+  border-width: 1px;
+  border-color: gray;
+}
+
+#MobileWindow .list-group-item {
+  background-color: transparent;
+}
+
+#MobileWindow img {
+  padding: 0px !important;
+}
+
+/*
+#MobileWindow .nav-item:hover{
+    background-color: greenyellow;
+}
+*/
+
+#MobileWindow .bg-dark{
+    background-color: #424242 !important;
 }

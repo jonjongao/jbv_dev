@@ -1,18 +1,30 @@
 <template>
-  <div id="mobileContainer" v-if="this.$store.state.isMobile">
+  <div id="mobileContainer" class="container" v-if="this.$store.state.isMobile">
+    <div class="col-sm-12">
+    <img src="../assets/mobile/mobile_gwh-logo_x2.png" class="img-fluid" alt="Logo">
+    </div>
     <div class="row h-100">
-      <div class="col-sm-11 my-auto">
-        <label for="exampleInputPassword1">帳號</label>
-        <div class="form-group">
-          <input
+      <div class="col-sm-12 my-auto">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+        <h1>登入翠華BBS</h1>
+          </li>
+        <li class="list-group-item">
+        <div class="col-sm-10 field-head">
+        帳號
+        </div>
+        <div class="col-sm-10">
+          <input class="col-sm-10" 
             type="text"
             v-on:keyup.enter="onAccountField(inAccount)"
             v-model="inAccount"
             :placeholder="phAccount"
           />
         </div>
-        <div class="form-group">
-          <input
+        </li>
+        <li class="list-group-item">
+        <div class="col-sm-10">
+          <input class="col-sm-10" 
             type="password"
             ref="pwfield"
             v-on:keyup.enter="onPasswordField(inPassword)"
@@ -20,9 +32,13 @@
             :placeholder="phPassword"
           />
         </div>
-        <button class="btn btn-primary" v-on:click="onPasswordField">
+        </li>
+        <li class="list-group-item">
+        <button class="btn btn-dark" v-on:click="onPasswordField">
           登入
         </button>
+        </li>
+        </ul>
       </div>
     </div>
   </div>
