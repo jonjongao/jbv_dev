@@ -23,14 +23,18 @@ new Vue({
   },
   computed: {
     getAccountLabel: function () {
-      //Original 'Charmon' length = 7
-      //Rest of space length = 9, so is 16 in total
+      /**
+       * * Original 'Charmon' length = 7
+       * * Rest of space length = 9, so is 16 in total
+       */
       var t = this.account == '' ? 'Guest' : this.account;
       t = t.padEnd(16);
       return t;
     },
     getTimeLabel: function () {
-      //Original is '[9/30 星期三 0:29]' length = 15
+      /**
+       * * Original is '[9/30 星期三 0:29]' length = 15
+       */
       var now = new Date();
       var now_local = now.toLocaleDateString();
       var mon = now_local.split('/')[0];
@@ -45,19 +49,23 @@ new Vue({
     }
   },
   created: function () {
-    window.addEventListener('keyup', this.onKeyup); // 監聽鍵盤事件
-    window.addEventListener('resize', this.onResize);
-    // 監聽login.js的登入事件
+    /**
+     * * Vue初始化時觸發
+     */
+    window.addEventListener('keyup', this.onKeyup); // ! 監聽鍵盤事件
+    window.addEventListener('resize', this.onResize); // ! 監聽視窗縮放事件
+    // ! 監聽login.js的登入事件
     this.$bus.$on("try-login", (i) => {
       this.checkLogin(i[0], i[1]);
     });
   },
   watch: {
     '$route'(to, from) {
-      // Fired when route change
-      // 更新日期與帳號名稱
-      this.$store.commit('setAccount', this.getAccountLabel);
-      this.$store.commit('setDate', this.getTimeLabel);
+      /**
+       * * router view變更時觸發
+       */
+      this.$store.commit('setAccount', this.getAccountLabel); // ! 更新用戶暱稱Label
+      this.$store.commit('setDate', this.getTimeLabel); // ! 更新日期Label
     }
   },
   template: '<App/>',
@@ -73,8 +81,7 @@ new Vue({
       if (id != "" &&
         pw != "") {
         console.log("success!");
-        //Direct user to next page
-        //window.location.href = '/ptsbbs/layout_page1';
+        // ! 跳轉到MainMenu頁面
         this.$router.push({
           name: 'MainMenu',
           params: {
@@ -87,16 +94,16 @@ new Vue({
     },
     onKeyup: function (e) {
       switch (e.which) {
-        case 38: //up
+        case 38: // * 按下up
           break;
-        case 40: //down
+        case 40: // * 按下down
           break;
-        case 13: //enter
+        case 13: // * 按下enter
           break;
         default:
           return;
       }
-      // 轉發鍵盤事件
+      // ! 轉發鍵盤事件
       this.$bus.$emit('on-keyup', e);
       e.preventDefault();
     },

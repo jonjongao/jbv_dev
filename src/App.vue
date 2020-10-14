@@ -29,23 +29,11 @@
         </ul>
       </div>
     </div>
-    <div id="BBSWindow" style="cursor: auto" align="center">
-      <div
-        class="main"
-        style="
-          border: 0px;
-          font-family: MingLiu, SymMingLiu, monospace !important;
-          transform-origin: center center;
-          font-size: 24px;
-          line-height: 24px;
-          overflow: hidden auto;
-          text-align: left;
-          width: 970px;
-          height: 586px;
-          margin-top: 96px;
-          transform: none;
-        "
-      >
+    <div id="MobileWindow" v-if="this.$store.state.isMobile">
+      <router-view></router-view>
+    </div>
+    <div id="BBSWindow" style="cursor: auto" align="center" v-else>
+      <div class="main">
         <router-view></router-view>
       </div>
     </div>
@@ -70,8 +58,8 @@ export default {
 </script>
 
 <style>
-
 @import "./assets/pttchrome.dfcd8a57e6603f03c793.css";
+@import "./assets/mobile.css";
 
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
@@ -83,11 +71,34 @@ export default {
 }
 
 #BBSWindow {
+  border: 0px;
+  font-family: MingLiu, SymMingLiu, monospace !important;
+  transform-origin: center center;
+  font-size: 24px;
+  line-height: 24px;
+  overflow: hidden auto;
+  text-align: left;
+  width: 970px;
+  /* * 原始參數
+  height: 586px;
+  margin-top: 96px;
+  */
+  height: 768px;
+  margin-top: 150px;
+  transform: none;
   z-index: -1 !important;
-  margin-top: 100px;
 }
 
 span {
   white-space: pre !important;
 }
+
+/* * 手機板取消水平卷軸
+html, body {
+  overflow-x: hidden;
+}
+body {
+  position: relative
+}
+*/
 </style>

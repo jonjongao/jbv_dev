@@ -4,7 +4,7 @@ export default {
   data: function () {
     return {
       phAccount: '',
-      phPassword: '',
+      phPassword: '密碼',
       inAccount: '',
       inPassword: '',
       rowIndex: 0
