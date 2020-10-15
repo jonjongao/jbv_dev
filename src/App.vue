@@ -40,10 +40,6 @@ export default {
 @import "./assets/mobile/pttweb.css";
 @import "./assets/mobile.css";
 
-body {
-  background-color: black !important;
-}
-
 /* * 手機板取消水平卷軸
 html, body {
   overflow-x: hidden;

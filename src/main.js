@@ -90,7 +90,9 @@ new Vue({
       //console.log(now+" -> "+length);
       switch (e.which) {
         case 37: // * 按下left
-          router.go(-1);
+          if (this.$route.name != 'MainMenu') {
+            router.go(-1);
+          }
           break;
         case 38: // * 按下up
           now--;
@@ -159,6 +161,13 @@ new Vue({
             })
             break;
         }
+        return;
+      }
+
+      if (from == 'Goodbye') {
+        this.$router.push({
+          name: 'Login',
+        })
         return;
       }
     },

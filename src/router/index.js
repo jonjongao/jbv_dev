@@ -62,7 +62,7 @@ const routes = [{
         name: 'Class',
         component: Class,
         props: {
-            bbsrow: 4
+            bbsrow: 14
         }
     },
     {
@@ -118,7 +118,7 @@ const routes = [{
         name: 'Mail1',
         component: Mail1,
         props: {
-            bbsrow: 4
+            bbsrow: 7
         }
     },
     {
