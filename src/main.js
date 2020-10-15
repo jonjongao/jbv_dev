@@ -22,6 +22,9 @@ new Vue({
     App
   },
   computed: {
+    comClass:function(){
+        return 'bbsbody';
+    },
     getAccountLabel: function () {
       /**
        * * Original 'Charmon' length = 7

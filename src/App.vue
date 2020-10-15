@@ -58,7 +58,8 @@ export default {
 </script>
 
 <style>
-@import "./assets/pttchrome.dfcd8a57e6603f03c793.css";
+@import "./assets/pttchrome.css";
+@import "./assets/mobile/pttweb.css";
 @import "./assets/mobile.css";
 
 #app {
@@ -79,12 +80,12 @@ export default {
   overflow: hidden auto;
   text-align: left;
   width: 970px;
-  /* * 原始參數
+  /* ! 原始參數
   height: 586px;
   margin-top: 96px;
   */
   height: 768px;
-  margin-top: 150px;
+  margin-top: 130px;
   transform: none;
   z-index: -1 !important;
 }
