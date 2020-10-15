@@ -16,19 +16,6 @@
       <router-link to="/mail2">Mail2</router-link>
       <router-link to="/goodbye">Goodbye</router-link>
     </div>
-    <div id="cmenuReact">
-      <div class="">
-        <ul
-          class="dropdown-menu DropdownMenu--reset"
-          style="top: 0px; left: 0px"
-        >
-          <li role="separator" class="divider"></li>
-          <li role="presentation" class="">
-            <a role="menuitem" tabindex="-1" href="#">設定</a>
-          </li>
-        </ul>
-      </div>
-    </div>
     <div id="MobileWindow" v-if="this.$store.state.isMobile">
       <router-view></router-view>
     </div>
@@ -44,54 +31,17 @@
 import u from "./assets/util";
 export default {
   name: "App",
-  methods: {
-    isMobile() {
-      return u.isMobile();
-    },
-  },
-  computed: {
-    getWidth: function () {
-      return window.innerWidth;
-    },
-  },
 };
 </script>
 
 <style>
 @import "./assets/pttchrome.css";
-/*@import "./assets/mobile/pttweb.css";*/
+@import "./assets/pttchrome_override.css";
+@import "./assets/mobile/pttweb.css";
 @import "./assets/mobile.css";
 
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-
-#BBSWindow {
-  border: 0px;
-  font-family: MingLiu, SymMingLiu, monospace !important;
-  transform-origin: center center;
-  font-size: 24px;
-  line-height: 24px;
-  overflow: hidden auto;
-  text-align: left;
-  width: 970px;
-  /* ! 原始參數
-  height: 586px;
-  margin-top: 96px;
-  */
-  height: 768px;
-  margin-top: 130px;
-  transform: none;
-  z-index: -1 !important;
-}
-
-span {
-  white-space: pre !important;
+body {
+  background-color: black;
 }
 
 /* * 手機板取消水平卷軸

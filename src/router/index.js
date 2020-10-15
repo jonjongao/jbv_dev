@@ -4,7 +4,7 @@ import VueRouter from 'vue-router'
 //Test sample template
 import Home from "@/views/Home"
 import About from "@/views/About"
-//BBS template
+// ! BBS template
 import Login from "@/views/Login"
 import MainMenu from "@/views/MainMenu"
 import Favorite from "@/views/Favorite"

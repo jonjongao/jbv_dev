@@ -6,6 +6,7 @@ import router from './router'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import './bus'
 import store from './store'
+//import './assets/mobile/pttweb.css'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
@@ -22,9 +23,6 @@ new Vue({
     App
   },
   computed: {
-    comClass:function(){
-        return 'bbsbody';
-    },
     getAccountLabel: function () {
       /**
        * * Original 'Charmon' length = 7
