@@ -41,7 +41,7 @@ export default {
 @import "./assets/mobile.css";
 
 body {
-  background-color: black;
+  background-color: black !important;
 }
 
 /* * 手機板取消水平卷軸
