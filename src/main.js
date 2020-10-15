@@ -3,7 +3,10 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import {
+  BootstrapVue,
+  IconsPlugin
+} from 'bootstrap-vue'
 import './bus'
 import store from './store'
 //import './assets/mobile/pttweb.css'
@@ -78,35 +81,86 @@ new Vue({
     checkLogin: function (id, pw) {
       this.account = id;
       this.password = pw;
-
-      if (id != "" &&
-        pw != "") {
-        console.log("success!");
-        // ! 跳轉到MainMenu頁面
-        this.$router.push({
-          name: 'MainMenu',
-          params: {
-            account: this.account
-          }
-        })
-      } else {
-        console.log("failed");
-      }
     },
     onKeyup: function (e) {
+      //if (this.$route.name == 'Login') return;
+
+      var now = this.$store.state.rowIndex;
+      var length = this.$store.state.rowCount;
+      //console.log(now+" -> "+length);
       switch (e.which) {
+        case 37: // * 按下left
+          router.go(-1);
+          break;
         case 38: // * 按下up
+          now--;
+          if (now < 0) now = length - 1;
+          break;
+        case 39: // * 按下right
+          if (this.$route.name != 'Login') {
+            this.enterPage(now);
+          }
           break;
         case 40: // * 按下down
+          now++;
+          if (now > length - 1) now = 0;
           break;
         case 13: // * 按下enter
+          this.enterPage(now);
           break;
         default:
           return;
       }
+      this.$store.commit('setRowIndex', now);
       // ! 轉發鍵盤事件
       this.$bus.$emit('on-keyup', e);
       e.preventDefault();
+    },
+    enterPage: function (i) {
+      console.log("enter index:" + i);
+      var from = this.$route.name;
+      var to = '';
+      console.log("from:" + from + " to:" + to);
+
+      if (from == 'Login') {
+        if (this.account != "" &&
+          this.password != "") {
+          console.log("success!");
+          // ! 跳轉到MainMenu頁面
+          this.$router.push({
+            name: 'MainMenu',
+          })
+        } else {
+          console.log("failed");
+        }
+        return;
+      }
+
+      if (from == 'MainMenu') {
+        switch (i) {
+          case 0:
+            this.$router.push({
+              name: 'Favorite',
+            })
+            break;
+          case 1:
+            this.$router.push({
+              name: 'Class',
+            })
+            break;
+          case 2:
+            this.$router.push({
+              name: 'Mail1',
+            })
+            break;
+          case 3:
+            this.$router.push({
+              name: 'Goodbye',
+            })
+            break;
+        }
+        return;
+      }
     },
     onResize: function (e) {
       var w = window.innerWidth;

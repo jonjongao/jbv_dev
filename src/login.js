@@ -6,19 +6,17 @@ export default {
       phAccount: '',
       phPassword: '密碼',
       inAccount: '',
-      inPassword: '',
-      rowIndex: 0
+      inPassword: ''
     }
   },
   created() {
+    console.log("create");
   },
   mounted() {
     this.onChange();
-    this.$bus.$on('on-keyup', this.onKeyup);
     console.log("mounted");
   },
   beforeDestroy() {
-    this.$bus.$off('on-keyup', this.onKeyup);
     console.log("destroy");
   },
   watch: {
@@ -33,8 +31,9 @@ export default {
       this.$bus.$emit('try-login', [this.inAccount, this.inPassword]);
     },
     onChange() {
-      console.log("reset rowIndex=0");
-      this.rowIndex = 0;
+      this.$refs.acfield.focus();
+      this.$store.commit('setRowIndex', 0);
+      this.$store.commit('setRowCount', this.bbsrow);
     }
   }
 };
