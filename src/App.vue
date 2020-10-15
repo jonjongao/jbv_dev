@@ -59,7 +59,7 @@ export default {
 
 <style>
 @import "./assets/pttchrome.css";
-@import "./assets/mobile/pttweb.css";
+/*@import "./assets/mobile/pttweb.css";*/
 @import "./assets/mobile.css";
 
 #app {
