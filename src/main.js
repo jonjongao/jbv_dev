@@ -111,6 +111,7 @@ new Vue({
           this.enterPage(now);
           break;
         default:
+          console.log(e.which);
           return;
       }
       this.$store.commit('setRowIndex', now);
