@@ -1,7 +1,10 @@
 <template>
-  <div id="app" class="container h-100">
-    <div class="row min-vh-100 justify-content-center align-items-center">
-      <div class="col-12">
+  <div id="app" class="container h-100 min-vw-100 p-0 m-0">
+    <div class="row min-vh-100 m-0 justify-content-center align-items-center">
+      <div
+        class="col-12"
+        v-bind:style="this.$store.state.isMobile ? ';' : 'max-width:970px;'"
+      >
         <div
           id="nav"
           v-bind:style="nav_tab ? 'display:block;' : 'display:none;'"
@@ -57,20 +60,25 @@ export default {
     }
   }
 };
+
+// <style scoped src="../assets/pttchrome.css"></style>
+// <style scoped src="../assets/pttchrome_override.css"></style>
+
+// <style scoped lang="scss">
+// body /deep/ {
+//   @import "../assets/pttchrome.css";
+// }
+// </style>
 </script>
 
 <style>
 @import "./assets/pttchrome.css";
 @import "./assets/pttchrome_override.css";
-@import "./assets/mobile/pttweb.css";
-@import "./assets/mobile.css";
+/* @import "./assets/mobile/pttweb.css"; */
+/* @import "./assets/mobile.css"; */
 
-/* * 手機板取消水平卷軸
-html, body {
-  overflow-x: hidden;
-}
+/* ! 最高層級覆蓋風格 */
 body {
-  position: relative
+  background-color: black !important;
 }
-*/
 </style>

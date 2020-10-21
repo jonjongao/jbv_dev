@@ -8,22 +8,26 @@
 }
 
 #BBSWindow {
-  /* border: 0px;
+  min-width: 970px;
+}
+
+#BBSWindow .main {
+  border: 0px;
   font-family: MingLiu, SymMingLiu, monospace !important;
   transform-origin: center center;
   font-size: 24px;
   line-height: 24px;
   overflow: hidden auto;
   text-align: left;
-  width: 1024px; */
-  /* ! 原始參數
-  height: 586px;
-  margin-top: 96px;
-  */
-  height: 656px;
-  /* margin-top: 130px; */
-  /* transform: none; */
-  z-index: -1 !important;
+  /* !原始 */
+  /* width: 970px; */
+  /* !原始 */
+  /* height: 586px; */
+  min-height: 586px;
+  /* !原始 */
+  /* margin-top: 96px; */
+  transform: none;
+  /* z-index: -1 !important; */
 }
 
 span {

@@ -50,7 +50,7 @@ import js from '../login';
 export default js;
 </script>
 
-<style>
+<style scoped>
 span input {
   height: 30px;
 }

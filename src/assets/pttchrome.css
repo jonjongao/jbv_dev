@@ -79,7 +79,7 @@
 
 #BBSWindow #easyReadingLastRow,
 #BBSWindow #easyReadingReplyRow,
-.main {
+#BBSWindow .main {
   font-family: MingLiu, monospace;
   font-size: 26px;
   line-height: 100%;

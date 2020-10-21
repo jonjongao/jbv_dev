@@ -30,11 +30,6 @@ p,
   background-color: #424242 !important;
 }
 
-/* ! 最高層級覆蓋風格 */
-body {
-  background-color: black !important;
-}
-
 input.pw {
   text-security: disc !important;
   -webkit-text-security: disc !important;
