@@ -30,12 +30,6 @@ p,
   background-color: #424242 !important;
 }
 
-input.pw {
-  text-security: disc !important;
-  -webkit-text-security: disc !important;
-  -moz-text-security: disc !important;
-}
-
 /* TODO 仿製pttweb風格 */
 /* TODO 因為直接複製了pttweb.css，暫停更新 */
 /*

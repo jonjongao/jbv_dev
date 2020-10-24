@@ -38,12 +38,16 @@
 
 <script>
 import u from "./assets/util";
+import fav_db from "./assets/favorite.json";
 export default {
   name: "App",
+  db1: fav_db,
   data: function() {
     return { nav_tab: true };
   },
   created: function() {
+    this.$store.commit("setDB1", this.$options.db1);
+
     window.addEventListener("keyup", this.onKeyup); // ! 監聽鍵盤事件
   },
   mounted() {},
@@ -74,11 +78,7 @@ export default {
 <style>
 @import "./assets/pttchrome.css";
 @import "./assets/pttchrome_override.css";
+@import "./assets/cross_override.css";
 /* @import "./assets/mobile/pttweb.css"; */
 /* @import "./assets/mobile.css"; */
-
-/* ! 最高層級覆蓋風格 */
-body {
-  background-color: black !important;
-}
 </style>

@@ -30,6 +30,66 @@
   /* z-index: -1 !important; */
 }
 
+#BBSWindow pre{
+  border: 0px;
+  font-family: MingLiu, SymMingLiu, monospace !important;
+  height: 24px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  overflow: hidden auto;
+  font-size: 24px;
+  line-height: 24px;
+  text-align: left;
+}
+
 span {
   white-space: pre !important;
+}
+
+#mainContainer pre {
+  height: 24px;
+  display: inline-flex;
+}
+
+#mainContainer pre .pointer{
+  display: inline-block;
+  width: 60px;
+  text-align: left;
+}
+
+#mainContainer pre .index{
+  display: inline-block;
+  width: 24px;
+}
+
+#mainContainer pre .trend{
+  display: inline-block;
+  width: 36px;
+}
+
+#mainContainer pre .name{
+  display: inline-block;
+  width: 156px;
+}
+
+#mainContainer pre .class{
+  display: inline-block;
+  width: 60px;
+}
+
+#mainContainer pre .caption{
+  display: inline-block;
+  width: 420px;
+}
+
+#mainContainer pre .pop{
+  display: inline-block;
+  width: 36px;
+  text-align: right;
+}
+
+#mainContainer pre .manager{
+  display: inline-block;
+  width: 144px;
+  margin-left: 12px;
 }

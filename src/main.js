@@ -31,8 +31,8 @@ new Vue({
        * * Original 'Charmon' length = 7
        * * Rest of space length = 9, so is 16 in total
        */
-      var t = this.account == '' ? 'Guest' : this.account;
-      t = t.padEnd(16);
+      var t = this.account == '' || this.account == null ? 'Guest' : this.account;
+      t = t.padEnd(14);
       return t;
     },
     getTimeLabel: function () {
@@ -111,7 +111,7 @@ new Vue({
           this.enterPage(now);
           break;
         default:
-          console.log(e.which);
+          // console.log(e.which);
           return;
       }
       this.$store.commit('setRowIndex', now);

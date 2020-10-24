@@ -13,9 +13,13 @@ const store = new Vuex.Store({
     dateLabel: '',
     width: 0,
     height: 0,
-    isMobile: false
+    isMobile: false,
+    db1: {}
   },
   mutations: {
+    setDB1(state,db){
+      state.db1=db;
+    },
     setRowIndex(state, index) {
       state.rowIndex = index;
       console.log("set row index=" + index);

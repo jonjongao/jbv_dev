@@ -54,7 +54,7 @@ const routes = [{
         name: 'Favorite',
         component: Favorite,
         props: {
-            bbsrow: 4
+            bbsrow: 20
         }
     },
     {
