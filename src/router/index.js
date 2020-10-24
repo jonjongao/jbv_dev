@@ -46,7 +46,7 @@ const routes = [{
         name: 'MainMenu',
         component: MainMenu,
         props: {
-            bbsrow: 4
+            bbsrow: 10
         }
     },
     {

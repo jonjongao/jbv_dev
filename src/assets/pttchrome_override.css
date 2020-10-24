@@ -48,7 +48,7 @@ span {
 
 #mainContainer pre {
   height: 24px;
-  display: inline-flex;
+  display: table;
 }
 
 #mainContainer pre .pointer{
@@ -60,11 +60,13 @@ span {
 #mainContainer pre .index{
   display: inline-block;
   width: 24px;
+  text-align: right;
 }
 
 #mainContainer pre .trend{
   display: inline-block;
   width: 36px;
+  text-align: right;
 }
 
 #mainContainer pre .name{
@@ -90,6 +92,12 @@ span {
 
 #mainContainer pre .manager{
   display: inline-block;
-  width: 144px;
+  /* width: 144px; */
+  width: 168px;
   margin-left: 12px;
+}
+
+#mainContainer pre .empty{
+  display: inline-block;
+  width: 970px;
 }
