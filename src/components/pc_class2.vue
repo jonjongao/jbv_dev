@@ -7,6 +7,12 @@ export default {
     name: "PCClass2",
     computed:{
     },
+    mounted(){
+        this.$bus.$on('on-keyup', this.onKeyup);
+    },
+    beforeDestroy(){
+        this.$bus.$off('on-keyup', this.onKeyup);
+    },
     data:function(){
         return{
             select: '●   ',
@@ -23,6 +29,26 @@ export default {
                 else return ' '+this.deselect;
             }
         },
+        onKeyup(e){
+            switch(e.which){
+                case 37: // ! left
+                    this.$router.push({ name: "Class" });
+                    break;
+                case 38: // ! up
+                    break;
+                case 40: // ! down
+                    break;
+                case 13: // ! enter
+                case 39: // ! right
+                    switch(this.$store.state.rowIndex)
+                    {
+                        case 10: // ! G_Online
+                            this.$router.push({ name: "Class3" });
+                            break;
+                    }
+                    break;
+            }
+        }
     }
 }
 </script>

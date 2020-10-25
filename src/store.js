@@ -18,7 +18,8 @@ const store = new Vuex.Store({
     isMobile: false,
     listFavorite: {},
     guestMails: {},
-    ziqiMails: {}
+    ziqiMails: {},
+    forumPosts: {}
   },
   mutations: {
     setUser(state, data){
@@ -30,6 +31,7 @@ const store = new Vuex.Store({
       state.listFavorite=dbs[0];
       state.guestMails=dbs[1];
       state.ziqiMails=dbs[2];
+      state.forumPosts=dbs[3];
     },
     setRowIndex(state, index) {
       state.rowIndex = index;

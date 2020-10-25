@@ -110,10 +110,23 @@ span {
   text-align: right;
 }
 
+#mainContainer pre .id2 {
+  display: inline-block;
+  width: 72px;
+  text-align: right;
+}
+
 #mainContainer pre .reply {
   display: inline-block;
   width: 36px;
   margin-left: 12px;
+}
+
+#mainContainer pre .reply2 {
+  display: inline-block;
+  width: 36px;
+  margin-left: 6px;
+  margin-right: 6px;
 }
 
 #mainContainer pre .date {
@@ -124,6 +137,11 @@ span {
 #mainContainer pre .author {
   display: inline-block;
   width: 180px;
+}
+
+#mainContainer pre .author2 {
+  display: inline-block;
+  width: 156px;
 }
 
 #mainContainer > pre > span.p_field  {

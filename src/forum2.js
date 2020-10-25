@@ -1,4 +1,4 @@
-import f from "./assets/forum-posts";
+import f from "./assets/forum-posts.json";
 import u from "./assets/util";
 
 export default {

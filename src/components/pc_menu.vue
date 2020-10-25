@@ -7,6 +7,12 @@ export default {
     name: "PCMenu",
     computed:{
     },
+    mounted(){
+        this.$bus.$on('on-keyup', this.onKeyup);
+    },
+    beforeDestroy(){
+        this.$bus.$off('on-keyup', this.onKeyup);
+    },
     data:function(){
         return{
             select: '                    ●(',
@@ -19,6 +25,32 @@ export default {
                 return this.select;
             else
                 return this.deselect;
+        },
+        onKeyup(e){
+            switch(e.which){
+                case 38: // ! up
+                    break;
+                case 40: // ! down
+                    break;
+                case 13: // ! enter
+                case 39: // ! right
+                    switch(this.$store.state.rowIndex)
+                    {
+                        case 1: // ! 我的最愛
+                            this.$router.push({ name: "Favorite" });
+                            break;
+                        case 2: // ! 分組討論
+                            this.$router.push({ name: "Class" });
+                            break;
+                        case 3: // ! 私人信件區
+                            this.$router.push({ name: "Mail1" });
+                            break;
+                        case 9: // ! 離開
+                            this.$router.push({ name: "Goodbye" });
+                            break;
+                    }
+                    break;
+            }
         }
     }
 }

@@ -16,8 +16,12 @@
 import u from "../assets/util";
 export default {
   name: "PCFavorite",
-  mounted: function(){
-      this.$store.commit('setRowCount', this.getMETA.length);
+  mounted: function () {
+    this.$store.commit("setRowCount", this.getMETA.length);
+    this.$bus.$on("on-keyup", this.onKeyup);
+  },
+  beforeDestroy() {
+    this.$bus.$off("on-keyup", this.onKeyup);
   },
   computed: {
     getMETA: function () {
@@ -27,8 +31,8 @@ export default {
   },
   data: function () {
     return {
-    //   select: "●   ",
-    //   deselect: "     ",
+      //   select: "●   ",
+      //   deselect: "     ",
     };
   },
   methods: {
@@ -41,11 +45,9 @@ export default {
     //     else return this.deselect.padEnd(5);
     //   }
     // },
-    isSelect: function(index){
-        if(index == this.$store.state.rowIndex)
-            return '●';
-        else
-            return '';
+    isSelect: function (index) {
+      if (index == this.$store.state.rowIndex) return "●";
+      else return "";
     },
     getColor: function () {
       var max = 16;
@@ -87,6 +89,21 @@ export default {
       //   a = u.getSpaceCount(manager);
       //   var text3 = manager.padEnd(s + (13 - a));
       return text1;
+    },
+    onKeyup(e) {
+      switch (e.which) {
+        case 37: // ! left
+          this.$router.push({ name: "MainMenu" });
+          break;
+        case 38: // ! up
+          break;
+        case 40: // ! down
+          break;
+        case 13: // ! enter
+        case 39: // ! right
+          
+          break;
+      }
     },
   },
 };

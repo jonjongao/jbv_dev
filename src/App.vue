@@ -21,11 +21,7 @@
           ><span style="color: white"> |</span>
           <router-link to="/class3">Class3</router-link
           ><span style="color: white"> |</span>
-          <router-link to="/forum">Forum</router-link
-          ><span style="color: white"> |</span>
           <router-link to="/forum2">Forum2</router-link
-          ><span style="color: white"> |</span>
-          <router-link to="/forum-post">ForumPost</router-link
           ><span style="color: white"> |</span>
           <router-link to="/mail1">Mail1</router-link
           ><span style="color: white"> |</span>
@@ -53,11 +49,13 @@ import u from "./assets/util";
 import list_favorite from "./assets/favorite.json";
 import guest_mails from "./assets/guest_mails.json";
 import ziqi_mails from "./assets/ziqi_mails.json";
+import forum_posts from "./assets/forum-posts.json";
 export default {
   name: "App",
   db1: list_favorite,
   db2: guest_mails,
   db3: ziqi_mails,
+  db4: forum_posts,
   data: function () {
     return { nav_tab: true };
   },
@@ -66,6 +64,7 @@ export default {
       this.$options.db1,
       this.$options.db2,
       this.$options.db3,
+      this.$options.db4
     ]);
 
     window.addEventListener("keyup", this.onKeyup); // ! 監聽鍵盤事件

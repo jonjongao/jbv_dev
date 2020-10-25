@@ -20,7 +20,10 @@ export default {
   name: "PCMail3",
   props: ["id"],
   mounted: function () {
-    // this.$store.commit('setRowCount', this.getMETA.length);
+    this.$bus.$on("on-keyup", this.onKeyup);
+  },
+  beforeDestroy() {
+    this.$bus.$off("on-keyup", this.onKeyup);
   },
   computed: {
     getMETA: function () {
@@ -74,6 +77,20 @@ export default {
     isSelect: function (index) {
       if (index == this.$store.state.rowIndex) return "●";
       else return "";
+    },
+    onKeyup(e) {
+      switch (e.which) {
+        case 37: // ! left
+          this.$router.push({ name: "Mail2" });
+          break;
+        case 38: // ! up
+          break;
+        case 40: // ! down
+          break;
+        case 13: // ! enter
+        case 39: // ! right
+          break;
+      }
     },
   },
 };

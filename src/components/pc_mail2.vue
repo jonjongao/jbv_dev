@@ -17,13 +17,17 @@ export default {
   props: ["login"],
   mounted: function () {
     this.$store.commit("setRowCount", this.getMETA.length);
+    this.$bus.$on("on-keyup", this.onKeyup);
+  },
+  beforeDestroy() {
+    this.$bus.$off("on-keyup", this.onKeyup);
   },
   computed: {
     getCapacity: function () {
       return ("(容量:" + this.getGuestMETA.length + "/1500篇) ").padStart(15);
     },
     getMETA: function () {
-      if (this.$store.state.accountLabel == "Chi") return this.getZiqiMETA;
+      if (this.$store.state.account == "Chi") return this.getZiqiMETA;
       else return this.getGuestMETA;
     },
     getGuestMETA: function () {
@@ -53,6 +57,21 @@ export default {
       } else {
         if (index > 8) return this.deselect;
         else return " " + this.deselect;
+      }
+    },
+    onKeyup(e) {
+      switch (e.which) {
+        case 37: // ! left
+          this.$router.push({ name: "Mail1" });
+          break;
+        case 38: // ! up
+          break;
+        case 40: // ! down
+          break;
+        case 13: // ! enter
+        case 39: // ! right
+            this.$router.push({ name: "Mail3",params: { id: this.$store.state.rowIndex+1 } });
+          break;
       }
     },
   },

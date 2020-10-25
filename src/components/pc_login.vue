@@ -6,12 +6,9 @@
 export default {
     name: "PCLogin",
     props:['phAccount','phPassword'],
-    computed:{
-    },
+    computed:{},
     created:function(){
-        this.$store.commit('setUser', ['', '']);
-        this.$store.commit('setRowIndex', 0);
-        this.$store.commit('setRowCount', this.bbsrow);
+        this.$store.commit('setUser', ['', '']); // ! 重設帳密
     },
     mounted() {
         this.$refs.acfield.focus();
@@ -46,9 +43,7 @@ export default {
                 });
             }
         },
-        onChange() {
-            
-        },
+        onChange() {},
         onKeyup(e){
             switch(e.which){
                 case 38: // ! up

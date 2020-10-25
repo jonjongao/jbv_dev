@@ -43,11 +43,30 @@ export default {
       this.$store.commit("setRowCount", this.bbsrow);
     },
     onKeyup: function (e) {
-    //   if (e.which != 38 || e.which != 40) return;
+      if (this.$store.state.isMobile) return;
+      //   if (e.which != 38 || e.which != 40) return;
       var i = this.$store.state.rowIndex;
       if (i >= 0 && i < 20) this.page = 0;
       else if (i >= 20 && i < 40) this.page = 1;
       else this.page = 2;
+
+      switch (e.which) {
+        case 37: // ! left
+          this.$router.push({ name: "Class2" });
+          break;
+        case 38: // ! up
+          break;
+        case 40: // ! down
+          break;
+        case 13: // ! enter
+        case 39: // ! right
+          switch (this.$store.state.rowIndex) {
+            case 54: // ! Truth
+              this.$router.push({ name: "Forum2" });
+              break;
+          }
+          break;
+      }
     },
   },
 };
