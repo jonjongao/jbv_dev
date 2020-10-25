@@ -56,7 +56,7 @@ new Vue({
     /**
      * * Vue初始化時觸發
      */
-    window.addEventListener('keyup', this.onKeyup); // ! 監聽鍵盤事件
+    window.addEventListener('keydown', this.onKeyup); // ! 監聽鍵盤事件
     window.addEventListener('resize', this.onResize); // ! 監聽視窗縮放事件
     // ! 監聽login.js的登入事件
     this.$bus.$on("try-login", (i) => {
@@ -141,22 +141,22 @@ new Vue({
 
       if (from == 'MainMenu') {
         switch (i) {
-          case 0:
+          case 1:
             this.$router.push({
               name: 'Favorite',
             })
             break;
-          case 1:
+          case 2:
             this.$router.push({
               name: 'Class',
             })
             break;
-          case 2:
+          case 3:
             this.$router.push({
               name: 'Mail1',
             })
             break;
-          case 3:
+          case 9:
             this.$router.push({
               name: 'Goodbye',
             })

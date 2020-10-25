@@ -1,8 +1,47 @@
 <template>
-<div id="mainContainer"><span type="bbsrow" srow="0"><div><span class="" data-type="bbsline" data-row="0"><span><span class="q15 b4">【郵件選單】                     </span><span class="q11 b4">批踢踢實業坊</span><span class="q15 b4">                                  </span><span class="q7 b0"> </span></span></span><div></div></div></span><span type="bbsrow" srow="1"><div><span class="" data-type="bbsline" data-row="1"><span><span class="q7 b0">[←]離開[↑↓]選擇[→]閱讀信件 [O]站外信:開 [h]求助 [~]資源回收筒               </span></span></span><div></div></div></span><span type="bbsrow" srow="2"><div><span class="" data-type="bbsline" data-row="2"><span><span class="q0 b7">  編號   日 期 作 者          信  件  標  題                 </span><span class="q2 b7">(容量:595/1500篇) </span><span class="q7 b0"> </span></span></span><div></div></div></span><span type="bbsrow" srow="3"><div><span class="" data-type="bbsline" data-row="3"><span><span class="q7 b0">   576 r  2/10 chulin         R: [贈送] 閃靈2人組+獵人 二手漫畫(缺集數)         </span></span></span><div></div></div></span><span type="bbsrow" srow="4"><div><span class="" data-type="bbsline" data-row="4"><span><span class="q7 b0">   577    2/10 [備.忘.錄]     ◇ (chulin) Re: [贈送] 閃靈2人組+獵人 二手漫畫(缺 </span></span></span><div></div></div></span><span type="bbsrow" srow="5"><div><span class="" data-type="bbsline" data-row="5"><span><span class="q7 b0">   578 r  2/10 hn114906668    R: [贈送] 閃靈2人組+獵人 二手漫畫(缺集數)         </span></span></span><div></div></div></span><span type="bbsrow" srow="6"><div><span class="" data-type="bbsline" data-row="6"><span><span class="q7 b0">   579    2/10 hn114906668    R: [贈送] 閃靈2人組+獵人 二手漫畫(缺集數)         </span></span></span><div></div></div></span><span type="bbsrow" srow="7"><div><span class="" data-type="bbsline" data-row="7"><span><span class="q7 b0">   580    2/11 likat          R: [贈送] 16個夏天DVD(已送出)                     </span></span></span><div></div></div></span><span type="bbsrow" srow="8"><div><span class="" data-type="bbsline" data-row="8"><span><span class="q7 b0">   581 r  2/11 hn114906668    R: [贈送] 閃靈2人組+獵人 二手漫畫(缺集數)         </span></span></span><div></div></div></span><span type="bbsrow" srow="9"><div><span class="" data-type="bbsline" data-row="9"><span><span class="q7 b0">   582 r  2/12 hn114906668    R: [贈送] 閃靈2人組+獵人 二手漫畫(缺集數)         </span></span></span><div></div></div></span><span type="bbsrow" srow="10"><div><span class="" data-type="bbsline" data-row="10"><span><span class="q7 b0">   583 r  2/17 hn114906668    R: [贈送] 閃靈2人組+獵人 二手漫畫(缺集數)         </span></span></span><div></div></div></span><span type="bbsrow" srow="11"><div><span class="" data-type="bbsline" data-row="11"><span><span class="q7 b0">   584    2/22 hn114906668    R: [贈送] 閃靈2人組+獵人 二手漫畫(缺集數)         </span></span></span><div></div></div></span><span type="bbsrow" srow="12"><div><span class="" data-type="bbsline" data-row="12"><span><span class="q7 b0">   585    3/10 epitaph        ◇ 詢問日音板問卷發放事宜                         </span></span></span><div></div></div></span><span type="bbsrow" srow="13"><div><span class="" data-type="bbsline" data-row="13"><span><span class="q7 b0">   586    4/13 shanyaochung   ◇ 板主您好                                       </span></span></span><div></div></div></span><span type="bbsrow" srow="14"><div><span class="" data-type="bbsline" data-row="14"><span><span class="q7 b0">   587    5/21 EDGE           ◇ 版主您好，我想辦LUNA SEA樂團fans小聚活動，請求 </span></span></span><div></div></div></span><span type="bbsrow" srow="15"><div><span class="" data-type="bbsline" data-row="15"><span><span class="q7 b0">   588    6/03 uttabi         ◇ 推文疑似違反板規                               </span></span></span><div></div></div></span><span type="bbsrow" srow="16"><div><span class="" data-type="bbsline" data-row="16"><span><span class="q7 b0">   589    7/03 kenny04s       ◇ J-POP發文疑慮                                  </span></span></span><div></div></div></span><span type="bbsrow" srow="17"><div><span class="" data-type="bbsline" data-row="17"><span><span class="q7 b0">   590    7/14 mewhywhy       ◇ #1T9Be2fL檢舉                                  </span></span></span><div></div></div></span><span type="bbsrow" srow="18"><div><span class="" data-type="bbsline" data-row="18"><span><span class="q7 b0">   591    9/02 saiiys         ◇ 刪除文章                                       </span></span></span><div></div></div></span><span type="bbsrow" srow="19"><div><span class="" data-type="bbsline" data-row="19"><span><span class="q7 b0">   592    1/04 batis          ◇ 檢舉違規                                       </span></span></span><div></div></div></span><span type="bbsrow" srow="20"><div><span class="" data-type="bbsline" data-row="20"><span><span class="q7 b0">   593    8/07 Charmon        ◇ test                                           </span></span></span><div></div></div></span><span type="bbsrow" srow="21"><div><span class="" data-type="bbsline" data-row="21"><span><span class="q7 b0">   594    9/22 Charmon        ◇ Test                                           </span></span></span><div></div></div></span><span type="bbsrow" srow="22"><div><span class="" data-type="bbsline" data-row="22"><span><span class="q7 b0">● 595    9/22 [備.忘.錄]     ◇ (Charmon) Test                                 </span></span></span><div></div></div></span><span type="bbsrow" srow="23"><div><span class="" data-type="bbsline" data-row="23"><span><span class="q4 b6"> 鴻雁往返 </span><span class="q0 b7"> </span><span class="q1 b7">(R/y)</span><span class="q0 b7">回信 </span><span class="q1 b7">(x)</span><span class="q0 b7">站內轉寄 </span><span class="q1 b7">(d/D)</span><span class="q0 b7">刪信 </span><span class="q1 b7">(^P)</span><span class="q0 b7">寄發新信             </span><span class="q1 b7">(←/q)</span><span class="q0 b7">離開 </span><span class="q7 b0"> </span></span></span><div></div></div></span></div>
+    <PCMail2/>
 </template>
 
 <script>
-import js from "../mail2";
-export default js;
+import PCMail2 from "@/components/pc_mail2.vue";
+export default {
+  name: "Mail2",
+  props: ["bbsrow"],
+  components: {
+    PCMail2
+  },
+  data: function () {
+    return {
+      
+    };
+  },
+  created() {
+    console.log("create");
+  },
+  mounted() {
+    this.onChange();
+    // this.$bus.$on("on-keyup", this.onKeyup);
+    console.log("mounted");
+  },
+  beforeDestroy() {
+    // this.$bus.$off("on-keyup", this.onKeyup);
+    console.log("destroy");
+  },
+  watch: {
+    // call again the method if the route changes
+    $route: "onChange",
+  },
+  methods: {
+    onChange() {
+      this.$store.commit("setRowIndex", 0);
+      this.$store.commit("setRowCount", this.bbsrow);
+    },
+    onKeyup: function (e) {
+    //   var i = this.$store.state.rowIndex;
+    //   if (i >= 0 && i < 20) this.page = 0;
+    //   else if (i >= 20 && i < 40) this.page = 1;
+    //   else this.page = 2;
+    },
+  },
+};
 </script>

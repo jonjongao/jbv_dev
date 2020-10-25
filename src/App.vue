@@ -9,18 +9,32 @@
           id="nav"
           v-bind:style="nav_tab ? 'display:block;' : 'display:none;'"
         >
-          <router-link to="/">Index</router-link>
-          <router-link to="/mainmenu">MainMenu</router-link>
-          <router-link to="/favorite">Favorite</router-link>
-          <router-link to="/class">Class1</router-link>
-          <router-link to="/class2">Class2</router-link>
-          <router-link to="/class3">Class3</router-link>
-          <router-link to="/forum-cover">ForumCover</router-link>
-          <router-link to="/forum">Forum</router-link>
-          <router-link to="/forum2">Forum2</router-link>
-          <router-link to="/forum-post">ForumPost</router-link>
-          <router-link to="/mail1">Mail1</router-link>
-          <router-link to="/mail2">Mail2</router-link>
+          <router-link to="/">Index</router-link
+          ><span style="color: white"> |</span>
+          <router-link to="/mainmenu">MainMenu</router-link
+          ><span style="color: white"> |</span>
+          <router-link to="/favorite">Favorite</router-link
+          ><span style="color: white"> |</span>
+          <router-link to="/class">Class1</router-link
+          ><span style="color: white"> |</span>
+          <router-link to="/class2">Class2</router-link
+          ><span style="color: white"> |</span>
+          <router-link to="/class3">Class3</router-link
+          ><span style="color: white"> |</span>
+          <router-link to="/forum-cover">ForumCover</router-link
+          ><span style="color: white"> |</span>
+          <router-link to="/forum">Forum</router-link
+          ><span style="color: white"> |</span>
+          <router-link to="/forum2">Forum2</router-link
+          ><span style="color: white"> |</span>
+          <router-link to="/forum-post">ForumPost</router-link
+          ><span style="color: white"> |</span>
+          <router-link to="/mail1">Mail1</router-link
+          ><span style="color: white"> |</span>
+          <router-link to="/mail2">Mail2</router-link
+          ><span style="color: white"> |</span>
+          <router-link to="/mail3">Mail3</router-link
+          ><span style="color: white"> |</span>
           <router-link to="/goodbye">Goodbye</router-link>
         </div>
         <div id="MobileWindow" v-if="this.$store.state.isMobile">
@@ -38,15 +52,23 @@
 
 <script>
 import u from "./assets/util";
-import fav_db from "./assets/favorite.json";
+import list_favorite from "./assets/favorite.json";
+import guest_mails from "./assets/guest_mails.json";
+import ziqi_mails from "./assets/ziqi_mails.json";
 export default {
   name: "App",
-  db1: fav_db,
-  data: function() {
+  db1: list_favorite,
+  db2: guest_mails,
+  db3: ziqi_mails,
+  data: function () {
     return { nav_tab: true };
   },
-  created: function() {
-    this.$store.commit("setDB1", this.$options.db1);
+  created: function () {
+    this.$store.commit("setDBs", [
+      this.$options.db1,
+      this.$options.db2,
+      this.$options.db3,
+    ]);
 
     window.addEventListener("keyup", this.onKeyup); // ! 監聽鍵盤事件
   },
@@ -55,14 +77,14 @@ export default {
     window.removeEventListener("keyup", this.onKeyup); // ! 監聽鍵盤事件
   },
   methods: {
-    onKeyup: function(e) {
+    onKeyup: function (e) {
       switch (e.which) {
         case 192:
           this.nav_tab = !this.nav_tab;
           break;
       }
-    }
-  }
+    },
+  },
 };
 
 // <style scoped src="../assets/pttchrome.css"></style>

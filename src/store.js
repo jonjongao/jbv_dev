@@ -14,11 +14,15 @@ const store = new Vuex.Store({
     width: 0,
     height: 0,
     isMobile: false,
-    db1: {}
+    listFavorite: {},
+    guestMails: {},
+    ziqiMails: {}
   },
   mutations: {
-    setDB1(state,db){
-      state.db1=db;
+    setDBs(state,dbs){
+      state.listFavorite=dbs[0];
+      state.guestMails=dbs[1];
+      state.ziqiMails=dbs[2];
     },
     setRowIndex(state, index) {
       state.rowIndex = index;
