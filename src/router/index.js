@@ -130,12 +130,10 @@ const routes = [{
         }
     },
     {
-        path: '/mail3',
+        path: '/mail3/:id',
         name: 'Mail3',
         component: Mail3,
-        props: {
-            bbsrow: 4
-        }
+        props: true
     },
     {
         path: '/goodbye',

@@ -1,28 +1,60 @@
 <template>
-<div id="mainContainer"><span type="bbsrow" srow="0"><div><span class="" data-type="bbsline" data-row="0"><span><span class="q15 b4">【郵件選單】                     </span><span class="q11 b4">批踢踢實業坊</span><span class="q15 b4">                                  </span><span class="q7 b0"> </span></span></span><div></div></div></span><span type="bbsrow" srow="1"><div><span class="" data-type="bbsline" data-row="1"><span><span class="q7 b0">[←]離開[↑↓]選擇[→]閱讀信件 [O]站外信:開 [h]求助 [~]資源回收筒               </span></span></span><div></div></div></span><span type="bbsrow" srow="2"><div><span class="" data-type="bbsline" data-row="2"><span><span class="q0 b7">  編號   日 期 作 者          信  件  標  題                 </span><span class="q2 b7">(容量:595/1500篇) </span><span class="q7 b0"> </span></span></span><div></div></div></span><span type="bbsrow" srow="3"><div><span class="" data-type="bbsline" data-row="3"><span><span class="q7 b0">   576 r  2/10 chulin         R: [贈送] 閃靈2人組+獵人 二手漫畫(缺集數)         </span></span></span><div></div></div></span><span type="bbsrow" srow="4"><div><span class="" data-type="bbsline" data-row="4"><span><span class="q7 b0">   577    2/10 [備.忘.錄]     ◇ (chulin) Re: [贈送] 閃靈2人組+獵人 二手漫畫(缺 </span></span></span><div></div></div></span><span type="bbsrow" srow="5"><div><span class="" data-type="bbsline" data-row="5"><span><span class="q7 b0">   578 r  2/10 hn114906668    R: [贈送] 閃靈2人組+獵人 二手漫畫(缺集數)         </span></span></span><div></div></div></span><span type="bbsrow" srow="6"><div><span class="" data-type="bbsline" data-row="6"><span><span class="q7 b0">   579    2/10 hn114906668    R: [贈送] 閃靈2人組+獵人 二手漫畫(缺集數)         </span></span></span><div></div></div></span><span type="bbsrow" srow="7"><div><span class="" data-type="bbsline" data-row="7"><span><span class="q7 b0">   580    2/11 likat          R: [贈送] 16個夏天DVD(已送出)                     </span></span></span><div></div></div></span><span type="bbsrow" srow="8"><div><span class="" data-type="bbsline" data-row="8"><span><span class="q7 b0">   581 r  2/11 hn114906668    R: [贈送] 閃靈2人組+獵人 二手漫畫(缺集數)         </span></span></span><div></div></div></span><span type="bbsrow" srow="9"><div><span class="" data-type="bbsline" data-row="9"><span><span class="q7 b0">   582 r  2/12 hn114906668    R: [贈送] 閃靈2人組+獵人 二手漫畫(缺集數)         </span></span></span><div></div></div></span><span type="bbsrow" srow="10"><div><span class="" data-type="bbsline" data-row="10"><span><span class="q7 b0">   583 r  2/17 hn114906668    R: [贈送] 閃靈2人組+獵人 二手漫畫(缺集數)         </span></span></span><div></div></div></span><span type="bbsrow" srow="11"><div><span class="" data-type="bbsline" data-row="11"><span><span class="q7 b0">   584    2/22 hn114906668    R: [贈送] 閃靈2人組+獵人 二手漫畫(缺集數)         </span></span></span><div></div></div></span><span type="bbsrow" srow="12"><div><span class="" data-type="bbsline" data-row="12"><span><span class="q7 b0">   585    3/10 epitaph        ◇ 詢問日音板問卷發放事宜                         </span></span></span><div></div></div></span><span type="bbsrow" srow="13"><div><span class="" data-type="bbsline" data-row="13"><span><span class="q7 b0">   586    4/13 shanyaochung   ◇ 板主您好                                       </span></span></span><div></div></div></span><span type="bbsrow" srow="14"><div><span class="" data-type="bbsline" data-row="14"><span><span class="q7 b0">   587    5/21 EDGE           ◇ 版主您好，我想辦LUNA SEA樂團fans小聚活動，請求 </span></span></span><div></div></div></span><span type="bbsrow" srow="15"><div><span class="" data-type="bbsline" data-row="15"><span><span class="q7 b0">   588    6/03 uttabi         ◇ 推文疑似違反板規                               </span></span></span><div></div></div></span><span type="bbsrow" srow="16"><div><span class="" data-type="bbsline" data-row="16"><span><span class="q7 b0">   589    7/03 kenny04s       ◇ J-POP發文疑慮                                  </span></span></span><div></div></div></span><span type="bbsrow" srow="17"><div><span class="" data-type="bbsline" data-row="17"><span><span class="q7 b0">   590    7/14 mewhywhy       ◇ #1T9Be2fL檢舉                                  </span></span></span><div></div></div></span><span type="bbsrow" srow="18"><div><span class="" data-type="bbsline" data-row="18"><span><span class="q7 b0">   591    9/02 saiiys         ◇ 刪除文章                                       </span></span></span><div></div></div></span><span type="bbsrow" srow="19"><div><span class="" data-type="bbsline" data-row="19"><span><span class="q7 b0">   592    1/04 batis          ◇ 檢舉違規                                       </span></span></span><div></div></div></span><span type="bbsrow" srow="20"><div><span class="" data-type="bbsline" data-row="20"><span><span class="q7 b0">   593    8/07 Charmon        ◇ test                                           </span></span></span><div></div></div></span><span type="bbsrow" srow="21"><div><span class="" data-type="bbsline" data-row="21"><span><span class="q7 b0">   594    9/22 Charmon        ◇ Test                                           </span></span></span><div></div></div></span><span type="bbsrow" srow="22"><div><span class="" data-type="bbsline" data-row="22"><span><span class="q7 b0">● 595    9/22 [備.忘.錄]     ◇ (Charmon) Test                                 </span></span></span><div></div></div></span><span type="bbsrow" srow="23"><div><span class="" data-type="bbsline" data-row="23"><span><span class="q4 b6"> 鴻雁往返 </span><span class="q0 b7"> </span><span class="q1 b7">(R/y)</span><span class="q0 b7">回信 </span><span class="q1 b7">(x)</span><span class="q0 b7">站內轉寄 </span><span class="q1 b7">(d/D)</span><span class="q0 b7">刪信 </span><span class="q1 b7">(^P)</span><span class="q0 b7">寄發新信             </span><span class="q1 b7">(←/q)</span><span class="q0 b7">離開 </span><span class="q7 b0"> </span></span></span><div></div></div></span></div>
+  <div id="mainContainer">
+    <pre><span type="bbsrow" srow="0"><div><span class="" data-type="bbsline" data-row="0"><span><span class="q15 b4">【郵件選單】                     </span><span class="q11 b4">批踢踢實業坊</span><span class="q15 b4">                                  </span><span class="q7 b0"> </span></span></span><div></div></div></span></pre>
+    <pre><span type="bbsrow" srow="1"><div><span class="" data-type="bbsline" data-row="1"><span><span class="q7 b0">[←]離開[↑↓]選擇[→]閱讀信件 [O]站外信:開 [h]求助 [~]資源回收筒               </span></span></span><div></div></div></span></pre>
+    <pre><span type="bbsrow" srow="2"><div><span class="" data-type="bbsline" data-row="2"><span><span class="q0 b7">  編號   日 期 作 者          信  件  標  題                 </span><span class="q2 b7">{{ getCapacity }}</span><span class="q7 b0"> </span></span></span><div></div></div></span></pre>
+    <pre v-for="p in 20" :key="p">
+        <span v-if="p-1 < getMETA.length"><span type="bbsrow" srow="6"><div><span class="" data-type="bbsline" data-row="6"><span><span class="q7 b0"><span class="pointer">{{ isSelect(p-1) }}</span><span class="id">{{ getMETA[p-1].id }}</span><span class="reply">{{ getMETA[p-1].reply }}</span><span class="date">{{ getMETA[p-1].date }}</span><span class="author">{{ getMETA[p-1].author }}</span><span class="caption2">{{ getMETA[p-1].caption }}</span></span></span></span><div></div></div></span></span>
+        <span v-else class="empty"></span>
+    </pre>
+    <pre><span type="bbsrow" srow="23"><div><span class="" data-type="bbsline" data-row="23"><span><span class="q4 b6"> 鴻雁往返 </span><span class="q0 b7"> </span><span class="q1 b7">(R/y)</span><span class="q0 b7">回信 </span><span class="q1 b7">(x)</span><span class="q0 b7">站內轉寄 </span><span class="q1 b7">(d/D)</span><span class="q0 b7">刪信 </span><span class="q1 b7">(^P)</span><span class="q0 b7">寄發新信             </span><span class="q1 b7">(←/q)</span><span class="q0 b7">離開 </span><span class="q7 b0"> </span></span></span><div></div></div></span></pre>
+  </div>
 </template>
 
 <script>
 export default {
-    name: "PCMail2",
-    computed:{
+  name: "PCMail2",
+  props: ["login"],
+  mounted: function () {
+    this.$store.commit("setRowCount", this.getMETA.length);
+  },
+  computed: {
+    getCapacity: function () {
+      return ("(容量:" + this.getGuestMETA.length + "/1500篇) ").padStart(15);
     },
-    data:function(){
-        return{
-            select: '●   ',
-            deselect: '     '
-        }
+    getMETA: function () {
+      if (this.$store.state.accountLabel == "Chi") return this.getZiqiMETA;
+      else return this.getGuestMETA;
     },
-    methods:{
-        getPointer: function (index) {
-            if (index == this.$store.state.rowIndex) {
-                if (index > 8) return this.select;
-                else return this.select+' ';
-            } else {
-                if (index > 8) return this.deselect;
-                else return ' '+this.deselect;
-            }
-        },
-    }
-}
+    getGuestMETA: function () {
+      var db = this.$store.state.guestMails;
+      return db;
+    },
+    getZiqiMETA: function () {
+      var db = this.$store.state.ziqiMails;
+      return db;
+    },
+  },
+  data: function () {
+    return {
+      select: "●",
+      deselect: "  ",
+    };
+  },
+  methods: {
+    isSelect: function (index) {
+      if (index == this.$store.state.rowIndex) return "●";
+      else return "";
+    },
+    getPointer: function (index) {
+      if (index == this.$store.state.rowIndex) {
+        if (index > 8) return this.select;
+        else return this.select + " ";
+      } else {
+        if (index > 8) return this.deselect;
+        else return " " + this.deselect;
+      }
+    },
+  },
+};
 </script>

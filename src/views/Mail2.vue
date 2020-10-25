@@ -34,7 +34,7 @@ export default {
   methods: {
     onChange() {
       this.$store.commit("setRowIndex", 0);
-      this.$store.commit("setRowCount", this.bbsrow);
+      // this.$store.commit("setRowCount", this.bbsrow);
     },
     onKeyup: function (e) {
     //   var i = this.$store.state.rowIndex;

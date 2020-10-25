@@ -48,18 +48,18 @@ span {
 
 #mainContainer pre {
   height: 24px;
-  display: table;
+  display: flex;
 }
 
 #mainContainer pre .pointer{
   display: inline-block;
-  width: 60px;
+  width: 24px;
   text-align: left;
 }
 
 #mainContainer pre .index{
   display: inline-block;
-  width: 24px;
+  width: 60px;
   text-align: right;
 }
 
@@ -97,7 +97,58 @@ span {
   margin-left: 12px;
 }
 
-#mainContainer pre .empty{
+#mainContainer .empty{
   display: inline-block;
   width: 970px;
+  line-height: 24px;
+  height: 24px;
 }
+
+#mainContainer pre .id {
+  display: inline-block;
+  width: 48px;
+  text-align: right;
+}
+
+#mainContainer pre .reply {
+  display: inline-block;
+  width: 36px;
+  margin-left: 12px;
+}
+
+#mainContainer pre .date {
+  display: inline-block;
+  width: 60px;
+}
+
+#mainContainer pre .author {
+  display: inline-block;
+  width: 180px;
+}
+
+#mainContainer > pre > span.p_field  {
+  display: inline-block;
+  width: 864px;
+  padding-left: 12px;
+  height: 24px;
+}
+
+#mainContainer > div > p.text_field  {
+  display: inline-block;
+  width: 936px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+#mainContainer > span.p_foot {
+  bottom: 10px;
+  position: absolute;
+}
+
+#mainContainer pre .caption2 {
+  display: inline-block;
+  /* width: 588px; */
+  width: 612px;
+}
+

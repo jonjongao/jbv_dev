@@ -21,8 +21,6 @@
           ><span style="color: white"> |</span>
           <router-link to="/class3">Class3</router-link
           ><span style="color: white"> |</span>
-          <router-link to="/forum-cover">ForumCover</router-link
-          ><span style="color: white"> |</span>
           <router-link to="/forum">Forum</router-link
           ><span style="color: white"> |</span>
           <router-link to="/forum2">Forum2</router-link
@@ -33,7 +31,7 @@
           ><span style="color: white"> |</span>
           <router-link to="/mail2">Mail2</router-link
           ><span style="color: white"> |</span>
-          <router-link to="/mail3">Mail3</router-link
+          <router-link to="/mail3/1">Mail3</router-link
           ><span style="color: white"> |</span>
           <router-link to="/goodbye">Goodbye</router-link>
         </div>

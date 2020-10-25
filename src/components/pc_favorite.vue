@@ -21,7 +21,7 @@ export default {
   },
   computed: {
     getMETA: function () {
-      var db = this.$store.state.db1;
+      var db = this.$store.state.listFavorite;
       return db;
     },
   },
