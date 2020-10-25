@@ -79,6 +79,7 @@ new Vue({
   },
   methods: {
     checkLogin: function (id, pw) {
+      console.log("check login:"+id+" ,"+pw);
       this.account = id;
       this.password = pw;
     },
@@ -124,7 +125,7 @@ new Vue({
       var from = this.$route.name;
       var to = '';
       console.log("from:" + from + " to:" + to);
-
+      return;
       if (from == 'Login') {
         if (this.account != "" &&
           this.password != "") {

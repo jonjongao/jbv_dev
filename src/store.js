@@ -6,6 +6,8 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
+    account: '',
+    password: '',
     rowIndex: 0,
     rowCount: 0,
     count: 0,
@@ -19,6 +21,11 @@ const store = new Vuex.Store({
     ziqiMails: {}
   },
   mutations: {
+    setUser(state, data){
+      console.log("set user="+data[0]+"/"+data[1]);
+      state.account = data[0];
+      state.password= data[1];
+    },
     setDBs(state,dbs){
       state.listFavorite=dbs[0];
       state.guestMails=dbs[1];
