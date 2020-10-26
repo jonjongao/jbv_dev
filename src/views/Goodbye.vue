@@ -3,6 +3,27 @@
 </template>
 
 <script>
-import js from "../goodbye";
-export default js;
+export default {
+  name: "Goodbye",
+  props: ['bbsrow'],
+  data: function () {
+    return {
+    }
+  },
+  created() {
+  },
+  mounted() {
+    this.$bus.$on('on-keyup', this.onKeyup);
+  },
+  beforeDestroy() {
+    this.$bus.$off('on-keyup', this.onKeyup);
+  },
+  watch: {
+  },
+  methods: {
+    onKeyup: function (e) {
+      this.$router.push({ name: "Login" });
+    }
+  }
+};
 </script>
