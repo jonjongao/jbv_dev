@@ -1,12 +1,12 @@
 <template>
-  <PCMail3 :id="this.id" />
+  <PCMail3 :type="this.type" :id="this.id" />
 </template>
 
 <script>
 import PCMail3 from "@/components/pc_mail3.vue";
 export default {
   name: "Mail3",
-  props: ["id"],
+  props: ["type","id"],
   components: {
     PCMail3,
   },

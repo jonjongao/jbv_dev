@@ -175,3 +175,23 @@ span {
   line-height: 35px;
 }
 
+#mainContainer span.h_manager{
+  display: inline-block;
+  width: 350px;
+}
+
+#mainContainer span.h_pin{
+  display: inline-block;
+}
+
+#mainContainer span.h_name{
+  display: inline-block;
+  text-align: right;
+  width: 350px;
+  margin-right: 22px;
+}
+
+#mainContainer span.h_pop{
+  display: inline-block;
+  min-width: 84px;
+}

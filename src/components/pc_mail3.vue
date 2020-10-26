@@ -5,7 +5,7 @@
     <pre><span class="q4 b7"> 時間 </span><span class="q7 b4 p_field">{{ getMETA.time }}</span><span class="q7 b0">  </span></pre>
     <pre><span type="bbsrow" srow="3"><div><span class="" data-type="bbsline" data-row="3"><span><span class="q6 b0">───────────────────────────────────────</span><span class="q7 b0">  </span></span></span><div></div></div></span></pre>
     <pre><span type="bbsrow" srow="4"><div><span class="" data-type="bbsline" data-row="4"><span><span class="q7 b0">                                                                                </span></span></span><div></div></div></span></pre>
-    <div><p class="q7 b0 text_field">{{ getMETA.text }}</p></div>
+    <div><p class="q7 b0 text_field" v-html="getText">{{ getText }}</p></div>
     <pre><span type="bbsrow" srow="6"><div><span class="" data-type="bbsline" data-row="6"><span><span class="q7 b0">                                                                                </span></span></span><div></div></div></span></pre>
     <pre><span type="bbsrow" srow="7"><div><span class="" data-type="bbsline" data-row="7"><span><span class="q7 b0">--                                                                              </span></span></span><div></div></div></span></pre>
     <pre><span type="bbsrow" srow="8"><div><span class="" data-type="bbsline" data-row="8"><span><span class="q2 b0">※ 發信站: 批踢踢實業坊(ptt.cc), 來自: 114.136.173.9 (臺灣)</span><span class="q7 b0">                     </span></span></span><div></div></div></span></pre>
@@ -16,9 +16,10 @@
 
 <script>
 import u from "../assets/util";
+import post from "../assets/post_pool.json";
 export default {
   name: "PCMail3",
-  props: ["id"],
+  props: ["type","id"],
   mounted: function () {
     this.$bus.$on("on-keyup", this.onKeyup);
   },
@@ -26,10 +27,24 @@ export default {
     this.$bus.$off("on-keyup", this.onKeyup);
   },
   computed: {
+    getText: function(){
+      return this.getMETA.text.replace(/\n|\r\n/g,"<br/>");
+    },
     getMETA: function () {
       var meta = {};
-      if (this.$store.state.accountLabel == "Chi") meta = this.getZiqiMETA;
-      else meta = this.getGuestMETA;
+      if(this.type == "mail")
+      {
+        console.log("this is mail");
+        if (this.$store.state.accountLabel == "Chi") meta = this.getZiqiMETA;
+        else meta = this.getGuestMETA;
+      }
+      else
+      {
+        console.log("this is post");
+        // var db = this.$store.state.guestMails;
+        var db = post;
+        for (var i = 0; i < db.length; i++) if (db[i].id == this.id) meta = db[i];
+      }
 
       if (meta == {}) return this.ph;
       else return meta;
@@ -81,7 +96,8 @@ export default {
     onKeyup(e) {
       switch (e.which) {
         case 37: // ! left
-          this.$router.push({ name: "Mail2" });
+          // this.$router.push({ name: "Mail2" });
+          this.$router.go(-1);
           break;
         case 38: // ! up
           break;

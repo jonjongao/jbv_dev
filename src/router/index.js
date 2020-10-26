@@ -89,14 +89,14 @@ const routes = [{
             bbsrow: 4
         }
     },
-    {
-        path: '/forum',
-        name: 'Forum',
-        component: Forum,
-        props: {
-            bbsrow: 4
-        }
-    },
+    // {
+    //     path: '/forum',
+    //     name: 'Forum',
+    //     component: Forum,
+    //     props: {
+    //         bbsrow: 4
+    //     }
+    // },
     {
         path: '/forum2',
         name: 'Forum2',
@@ -104,6 +104,12 @@ const routes = [{
         props: {
             bbsrow: 5
         }
+    },
+    {
+        path: '/f/:id',
+        name: 'Forum',
+        component: Forum2,
+        props: true
     },
     {
         path: '/forum-post',
@@ -130,8 +136,14 @@ const routes = [{
         }
     },
     {
-        path: '/mail3/:id',
+        path: '/p/:type/:id',
         name: 'Mail3',
+        component: Mail3,
+        props: true
+    },
+    {
+        path: '/p/:type/:id',
+        name: 'Post',
         component: Mail3,
         props: true
     },

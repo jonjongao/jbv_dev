@@ -49,7 +49,7 @@ import u from "./assets/util";
 import list_favorite from "./assets/favorite.json";
 import guest_mails from "./assets/guest_mails.json";
 import ziqi_mails from "./assets/ziqi_mails.json";
-import forum_posts from "./assets/forum-posts.json";
+import forum_posts from "./assets/forum.json";
 export default {
   name: "App",
   db1: list_favorite,
@@ -57,7 +57,7 @@ export default {
   db3: ziqi_mails,
   db4: forum_posts,
   data: function () {
-    return { nav_tab: true };
+    return { nav_tab: false };
   },
   created: function () {
     this.$store.commit("setDBs", [

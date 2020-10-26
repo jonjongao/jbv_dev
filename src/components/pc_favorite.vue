@@ -93,7 +93,8 @@ export default {
     onKeyup(e) {
       switch (e.which) {
         case 37: // ! left
-          this.$router.push({ name: "MainMenu" });
+          // this.$router.push({ name: "MainMenu" });
+          this.$router.go(-1);
           break;
         case 38: // ! up
           break;
@@ -101,8 +102,23 @@ export default {
           break;
         case 13: // ! enter
         case 39: // ! right
-          
-          break;
+          var to = this.getMETA[this.$store.state.rowIndex].id;
+          if (to == null || to == "") {
+            console.log("can't find target");
+            return;
+          }
+          to = parseInt(to);
+          switch (to) {
+            case 1:
+            case 2:
+              this.$router.push({
+                name: "Forum",
+                params: { id: to },
+              });
+              break;
+            default:
+              break;
+          }
       }
     },
   },

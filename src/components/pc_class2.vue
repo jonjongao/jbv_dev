@@ -32,7 +32,8 @@ export default {
         onKeyup(e){
             switch(e.which){
                 case 37: // ! left
-                    this.$router.push({ name: "Class" });
+                    // this.$router.push({ name: "Class" });
+                    this.$router.go(-1);
                     break;
                 case 38: // ! up
                     break;

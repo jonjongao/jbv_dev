@@ -52,7 +52,8 @@ export default {
 
       switch (e.which) {
         case 37: // ! left
-          this.$router.push({ name: "Class2" });
+          // this.$router.push({ name: "Class2" });
+          this.$router.go(-1);
           break;
         case 38: // ! up
           break;
@@ -62,7 +63,7 @@ export default {
         case 39: // ! right
           switch (this.$store.state.rowIndex) {
             case 54: // ! Truth
-              this.$router.push({ name: "Forum2" });
+              this.$router.push({ name: "Forum", params: { id: 0 }, });
               break;
           }
           break;
