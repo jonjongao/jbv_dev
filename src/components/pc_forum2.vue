@@ -1,7 +1,8 @@
 <template>
   <div id="mainContainer">
     <pre><span class="q15 b4 h_manager">{{ getHEAD.manager }}</span><span class="q11 b4 h_pin">{{ getHEAD.pin }}</span><span class="q15 b4 h_name">{{ getHEAD.name }}</span></pre>
-    <pre><span type="bbsrow" srow="1"><div><span class="" data-type="bbsline" data-row="1"><span><span class="q7 b0">[←]離開 [→]閱讀 [Ctrl-P]發表文章 [d]刪除 [z]精華區 [i]看板資訊/設定 [h]說明   </span></span></span><div></div></div></span></pre>
+    <pre><span class="q7 b0" v-if="!isDeleting">[←]離開 [→]閱讀 [Ctrl-P]發表文章 [d]刪除 [z]精華區 [i]看板資訊/設定 [h]說明   </span>
+    <span v-else><span class="q7 b0">請確定刪除(Y/N)? </span><input class="col-1" type="text" ref="del" v-on:keyup.enter="onDeleteField(inDelete)" v-model="inDelete" :placeholder="''"></span></pre>
     <pre><span class="q0 b7">   編號    日 期 作  者       文  章  標  題                       人氣:</span><span class="q0 b7 h_pop">{{ getHEAD.views }}</span><span class="q7 b0"> </span></pre>
     <pre v-for="p in 20" :key="p">
     <span v-if="(p+startIndex)-1 < getMETA.length"><span type="bbsrow" srow="6"><div><span class="" data-type="bbsline" data-row="6"><span><span class="q7 b0"><span class="pointer">{{ isSelect((p+startIndex)-1) }}</span><span class="id2">{{ getMETA[(p+startIndex)-1].id }}</span><span class="reply2">{{ getMETA[(p+startIndex)-1].ext1 }}{{ getMETA[(p+startIndex)-1].ext2 }}</span><span class="date">{{ getMETA[(p+startIndex)-1].date }}</span><span class="author2">{{ getMETA[(p+startIndex)-1].author }}</span><span class="caption2">{{ getMETA[(p+startIndex)-1].caption }}</span></span></span></span><div></div></div></span></span>
@@ -132,7 +133,8 @@ export default {
     return {
       rowIndex: 0,
       startIndex: 0,
-      deleteText: "請確定刪除(Y/N)?"
+      inDelete: "",
+      isDeleting: false,
     };
   },
   created() {
@@ -152,6 +154,16 @@ export default {
     $route: "onChange",
   },
   methods: {
+    onDeleteField(value) {
+      if (value == null || value == "") return;
+      if (value.toLowerCase() == "y") {
+        console.log("yes");
+      } else if (value.toLowerCase() == "n") {
+        console.log("no");
+      }
+      this.inDelete = "";
+      this.isDeleting = false;
+    },
     isSelect: function (index) {
       if (index == this.$store.state.rowIndex) return "●";
       else return "";
@@ -201,7 +213,11 @@ export default {
           break;
         case 68: // ! d
           // var to = this.getMETA[this.$store.state.rowIndex].to;
-          console.log("try delete:"+this.$store.state.rowIndex);
+          console.log("try delete:" + this.$store.state.rowIndex);
+          this.isDeleting = true;
+          this.$nextTick(function () {
+            this.$refs.del.focus();
+          });
           break;
       }
     },

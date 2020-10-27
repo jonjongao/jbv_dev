@@ -170,10 +170,10 @@ span {
   width: 612px;
 }
 
-.pw {
+/* .pw {
   height: 35px;
   line-height: 35px;
-}
+} */
 
 #mainContainer span.h_manager{
   display: inline-block;
@@ -194,4 +194,11 @@ span {
 #mainContainer span.h_pop{
   display: inline-block;
   min-width: 84px;
+}
+
+#mainContainer input{
+  line-height: 24px;
+  height: 24px;
+  border: 0px;
+  padding: 0px;
 }
