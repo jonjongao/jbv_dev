@@ -46,6 +46,7 @@ new Vue({
   data: {},
   methods: {
     onKeyup: function (e) {
+
       var now = this.$store.state.rowIndex;
       var length = this.$store.state.rowCount;
       //console.log(now+" -> "+length);
@@ -70,7 +71,9 @@ new Vue({
           // console.log(e.which);
           return;
       }
-      this.$store.commit('setRowIndex', now);
+      if (this.$store.state.isFreeze == false) {
+        this.$store.commit('setRowIndex', now);
+      }
       // ! 轉發鍵盤事件
       this.$bus.$emit('on-keyup', e);
       e.preventDefault();

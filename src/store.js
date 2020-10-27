@@ -6,6 +6,7 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
+    isFreeze: false,
     account: '',
     password: '',
     rowIndex: 0,
@@ -22,6 +23,9 @@ const store = new Vuex.Store({
     forumPosts: {}
   },
   mutations: {
+    setFreeze(state,val){
+      this.state.isFreeze = val;
+    },
     setUser(state, data){
       console.log("set user="+data[0]+"/"+data[1]);
       state.account = data[0];

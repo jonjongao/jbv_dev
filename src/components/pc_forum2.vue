@@ -1,14 +1,20 @@
 <template>
   <div id="mainContainer">
     <pre><span class="q15 b4 h_manager">{{ getHEAD.manager }}</span><span class="q11 b4 h_pin">{{ getHEAD.pin }}</span><span class="q15 b4 h_name">{{ getHEAD.name }}</span></pre>
-    <pre><span class="q7 b0" v-if="!isDeleting">[←]離開 [→]閱讀 [Ctrl-P]發表文章 [d]刪除 [z]精華區 [i]看板資訊/設定 [h]說明   </span>
-    <span v-else><span class="q7 b0">請確定刪除(Y/N)? </span><input class="col-1" type="text" ref="del" v-on:keyup.enter="onDeleteField(inDelete)" v-model="inDelete" :placeholder="''"></span></pre>
+    <pre><span class="q7 b0" v-if="deletingStep == 0"><span class="q7 b0">[←]離開 [→]閱讀 [Ctrl-P]發表文章 [d]刪除 [z]精華區 [i]看板資訊/設定 [h]說明   </span></span>
+    <span v-else><span class="q7 b0">請確定刪除(Y/N)?[N]</span><input class="col-1" type="text" ref="del" v-on:keyup.enter="onDeleteField(inDelete)" v-model="inDelete" :placeholder="''"></span></pre>
     <pre><span class="q0 b7">   編號    日 期 作  者       文  章  標  題                       人氣:</span><span class="q0 b7 h_pop">{{ getHEAD.views }}</span><span class="q7 b0"> </span></pre>
     <pre v-for="p in 20" :key="p">
     <span v-if="(p+startIndex)-1 < getMETA.length"><span type="bbsrow" srow="6"><div><span class="" data-type="bbsline" data-row="6"><span><span class="q7 b0"><span class="pointer">{{ isSelect((p+startIndex)-1) }}</span><span class="id2">{{ getMETA[(p+startIndex)-1].id }}</span><span class="reply2">{{ getMETA[(p+startIndex)-1].ext1 }}{{ getMETA[(p+startIndex)-1].ext2 }}</span><span class="date">{{ getMETA[(p+startIndex)-1].date }}</span><span class="author2">{{ getMETA[(p+startIndex)-1].author }}</span><span class="caption2">{{ getMETA[(p+startIndex)-1].caption }}</span></span></span></span><div></div></div></span></span>
     <span v-else class="empty"></span>
 </pre>
     <pre><span type="bbsrow" srow="23"><div><span class="" data-type="bbsline" data-row="23"><span><span class="q4 b6"> 文章選讀 </span><span class="q0 b7"> </span><span class="q1 b7">(y)</span><span class="q0 b7">回應</span><span class="q1 b7">(X)</span><span class="q0 b7">推文</span><span class="q1 b7">(^X)</span><span class="q0 b7">轉錄 </span><span class="q1 b7">(=[]&lt;&gt;)</span><span class="q0 b7">相關主題</span><span class="q1 b7">(/?a)</span><span class="q0 b7">找標題/作者 </span><span class="q1 b7">(b)</span><span class="q0 b7">進板畫面  </span><span class="q7 b0"> </span></span></span><div></div></div></span></pre>
+    <div class="del_popup" v-if="deletingStep == 2">
+      <span class="empty"></span>
+      <pre><span class="q7 b0">正在刪除文章: {{ getMETA[this.$store.state.rowIndex].caption }}</span></pre>
+      <pre><span class="q7 b0">您的文章減為 {{ getMETA.length-1 }} 篇，支付清潔費 28 Ptt幣</span></pre>
+      <span class="q14 b4 col-12 text-center">請按任意鍵繼續</span>
+    </div>
   </div>
 </template>
 
@@ -135,6 +141,7 @@ export default {
       startIndex: 0,
       inDelete: "",
       isDeleting: false,
+      deletingStep: 0,
     };
   },
   created() {
@@ -148,6 +155,7 @@ export default {
   beforeDestroy() {
     this.$bus.$off("on-keyup", this.onKeyup);
     console.log("destroy");
+    this.$store.commit("setFreeze", false);
   },
   watch: {
     // call again the method if the route changes
@@ -158,11 +166,13 @@ export default {
       if (value == null || value == "") return;
       if (value.toLowerCase() == "y") {
         console.log("yes");
+        this.deletingStep = 2;
       } else if (value.toLowerCase() == "n") {
         console.log("no");
+        this.deletingStep = 0;
+        this.$store.commit("setFreeze", false);
       }
       this.inDelete = "";
-      this.isDeleting = false;
     },
     isSelect: function (index) {
       if (index == this.$store.state.rowIndex) return "●";
@@ -174,6 +184,14 @@ export default {
       this.$store.commit("setRowCount", this.getMETA.length);
     },
     onKeyup(e) {
+      if (this.deletingStep == 2) {
+        console.log("confirm at step 2");
+        this.getMETA[this.$store.state.rowIndex].caption = "□ (本文已被刪除) [Charmon]";
+        this.deletingStep = 0;
+        this.$store.commit("setFreeze", false);
+        return;
+      }
+
       switch (e.which) {
         case 37: // ! left
           // this.$router.push({ name: "Class3" });
@@ -214,9 +232,10 @@ export default {
         case 68: // ! d
           // var to = this.getMETA[this.$store.state.rowIndex].to;
           console.log("try delete:" + this.$store.state.rowIndex);
-          this.isDeleting = true;
+          this.deletingStep = 1;
           this.$nextTick(function () {
             this.$refs.del.focus();
+            this.$store.commit("setFreeze", true);
           });
           break;
       }
