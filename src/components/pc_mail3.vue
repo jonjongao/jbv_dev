@@ -4,22 +4,38 @@
     <pre><span class="q4 b7"> 標題 </span><span class="q7 b4 p_field">{{ getMETA.caption }}</span><span class="q7 b0">  </span></pre>
     <pre><span class="q4 b7"> 時間 </span><span class="q7 b4 p_field">{{ getMETA.time }}</span><span class="q7 b0">  </span></pre>
     <pre><span type="bbsrow" srow="3"><div><span class="" data-type="bbsline" data-row="3"><span><span class="q6 b0">───────────────────────────────────────</span><span class="q7 b0">  </span></span></span><div></div></div></span></pre>
-    <pre><span type="bbsrow" srow="4"><div><span class="" data-type="bbsline" data-row="4"><span><span class="q7 b0">                                                                                </span></span></span><div></div></div></span></pre>
-    <div><p class="q7 b0 text_field" v-html="getText">{{ getText }}</p></div>
-    <pre><span type="bbsrow" srow="6"><div><span class="" data-type="bbsline" data-row="6"><span><span class="q7 b0">                                                                                </span></span></span><div></div></div></span></pre>
-    <pre><span type="bbsrow" srow="7"><div><span class="" data-type="bbsline" data-row="7"><span><span class="q7 b0">--                                                                              </span></span></span><div></div></div></span></pre>
-    <pre><span type="bbsrow" srow="8"><div><span class="" data-type="bbsline" data-row="8"><span><span class="q2 b0">※ 發信站: 批踢踢實業坊(ptt.cc), 來自: 114.136.173.9 (臺灣)</span><span class="q7 b0">                     </span></span></span><div></div></div></span></pre>
-    <span class="empty"></span>
-    <span class="p_foot"><span class="q7 b4">  瀏覽 第 1/1 頁 (100%) </span><span class="q8 b7"> 目前顯示: 第 01~08 行</span><span class="q7 b7">      </span><span class="q1 b7">(y)</span><span class="q0 b7">回信 </span><span class="q1 b7">(h)</span><span class="q0 b7">說明 </span><span class="q1 b7">(←/q)</span><span class="q0 b7">離開 </span><span class="q7 b0"> </span></span>
+    <div
+      style="height: 448px; overflow-x: hidden; overflow-y: hidden"
+      ref="box"
+      class="post"
+    >
+      <pre><span type="bbsrow" srow="4"><div><span class="" data-type="bbsline" data-row="4"><span><span class="q7 b0">                                                                                </span></span></span><div></div></div></span></pre>
+
+      <div>
+        <p class="q7 b0 text_field" v-html="getText">{{ getText }}</p>
+      </div>
+      <!-- <pre v-for="(l, index) in getText" :key="index">
+      <span class="q7 b0">{{ l }}</span>
+    </pre> -->
+      <pre><span type="bbsrow" srow="6"><div><span class="" data-type="bbsline" data-row="6"><span><span class="q7 b0">                                                                                </span></span></span><div></div></div></span></pre>
+      <pre><span type="bbsrow" srow="7"><div><span class="" data-type="bbsline" data-row="7"><span><span class="q7 b0">--                                                                              </span></span></span><div></div></div></span></pre>
+      <pre><span type="bbsrow" srow="8"><div><span class="" data-type="bbsline" data-row="8"><span><span class="q2 b0">※ 發信站: 批踢踢實業坊(ptt.cc), 來自: 114.136.173.9 (臺灣)</span><span class="q7 b0">                     </span></span></span><div></div></div></span></pre>
+      <pre v-for="(r, index) in getReply" :key="index">
+      <span class="q7 b0">{{ r.ext1 }} </span><span class="q7 b0">{{ r.author }}: </span><span class="q7 b0">{{ r.text }}</span><span class="q7 b0 time text-right">{{ r.time }}</span>
+    </pre>
+      <span class="empty"></span>
+    </div>
+    <pre><span class="p_foot"><span class="q7 b4">  瀏覽 第 1/1 頁 (100%) </span><span class="q8 b7"> 目前顯示: 第 01~08 行</span><span class="q7 b7">      </span><span class="q1 b7">(y)</span><span class="q0 b7">回信 </span><span class="q1 b7">(h)</span><span class="q0 b7">說明 </span><span class="q1 b7">(←/q)</span><span class="q0 b7">離開 </span><span class="q7 b0"> </span></span></pre>
   </div>
 </template>
 
 <script>
 import u from "../assets/util";
 import post from "../assets/post_pool.json";
+import reply from "../assets/reply_pool.json";
 export default {
   name: "PCMail3",
-  props: ["type","id"],
+  props: ["type", "id"],
   mounted: function () {
     this.$bus.$on("on-keyup", this.onKeyup);
   },
@@ -27,25 +43,38 @@ export default {
     this.$bus.$off("on-keyup", this.onKeyup);
   },
   computed: {
-    getText: function(){
-      return this.getMETA.text.replace(/\n|\r\n/g,"<br/>");
+    getText: function () {
+      var n = this.getMETA.text.replace(/\n|\r\n/g, "<br/>");
+      var m = (n.match(new RegExp("<br/>", "g")) || []).length;
+      m += 5;
+      console.log("text got num of " + m + " <br/>");
+
+      // var p = [];
+      // var n = this.getMETA.text.split("\n");
+      // for (var i = 0; i < n.length; i++) {
+      //   console.log(n[i]);
+      // }
+
+      // var r = this.getReply;
+      // for (var i = 0; i < r.length; i++) {
+      //   n.push(r[i].text);
+      // }
+
+      return n;
     },
     getMETA: function () {
       var meta = {};
-      if(this.type == "mail")
-      {
+      if (this.type == "mail") {
         console.log("this is mail");
         if (this.$store.state.account == "Chi") meta = this.getZiqiMETA;
         else meta = this.getGuestMETA;
-      }
-      else
-      {
+      } else {
         console.log("this is post");
         // var db = this.$store.state.guestMails;
         var db = post;
-        for (var i = 0; i < db.length; i++) if (db[i].id == this.id) meta = db[i];
+        for (var i = 0; i < db.length; i++)
+          if (db[i].id == this.id) meta = db[i];
       }
-
       if (meta == {}) return this.ph;
       else return meta;
     },
@@ -58,6 +87,17 @@ export default {
       var db = this.$store.state.ziqiMails;
       for (var i = 0; i < db.length; i++) if (db[i].id == this.id) return db[i];
       return {};
+    },
+    getReply: function () {
+      var meta = [];
+      var a = parseInt(this.getMETA.reply_start);
+      var b = parseInt(this.getMETA.reply_end);
+      for (var i = 0; i < reply.length; i++) {
+        if (reply[i].id >= a && reply[i].id <= b) {
+          meta.push(reply[i]);
+        }
+      }
+      return meta;
     },
   },
   watch: {
@@ -100,8 +140,15 @@ export default {
           this.$router.go(-1);
           break;
         case 38: // ! up
+          this.$nextTick(() => {
+            this.$refs.box.scrollTop -= 24;
+          });
           break;
         case 40: // ! down
+          this.$nextTick(() => {
+            this.$refs.box.scrollTop += 24;
+          });
+
           break;
         case 13: // ! enter
         case 39: // ! right

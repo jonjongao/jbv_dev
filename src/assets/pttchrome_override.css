@@ -225,3 +225,8 @@ span {
   width: 324px;
   top: 0px;
 }
+
+#mainContainer span.time{
+  width: 100%;
+  margin-right: 34px;
+}
