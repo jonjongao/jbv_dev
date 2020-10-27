@@ -195,6 +195,10 @@ export default {
         this.deletingStep = 0;
         this.$store.commit("setFreeze", false);
         this.newLength--;
+
+        if (this.$store.state.rowIndex == 61) {
+          this.$bus.$emit("on-mail-popup",true);
+        }
         return;
       }
 
@@ -236,6 +240,12 @@ export default {
           }
           break;
         case 68: // ! d
+          var name = this.$store.state.account;
+          if(name != "Chi")
+          {
+            console.log("not authorized");
+            return;
+          }
           // var to = this.getMETA[this.$store.state.rowIndex].to;
           console.log("try delete:" + this.$store.state.rowIndex);
           this.deletingStep = 1;

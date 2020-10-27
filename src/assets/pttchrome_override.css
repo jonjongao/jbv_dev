@@ -218,3 +218,10 @@ span {
   max-width: 948px;
   bottom: 0px;
 }
+
+#BBSWindow .new_popup span{
+  position: absolute;
+  display: inline-block;
+  width: 324px;
+  top: 0px;
+}

@@ -36,6 +36,12 @@
         </div>
         <div id="BBSWindow" v-else>
           <div class="main">
+            <div
+              class="new_popup row d-flex justify-content-center"
+              v-if="hasMail"
+            >
+              <span class="q15 b1 text-center" v-if="blink">你有新信件</span>
+            </div>
             <router-view></router-view>
           </div>
         </div>
@@ -49,29 +55,47 @@ import u from "./assets/util";
 import list_favorite from "./assets/favorite.json";
 import guest_mails from "./assets/guest_mails.json";
 import ziqi_mails from "./assets/ziqi_mails.json";
+import secret_mails from "./assets/secret_mails.json";
 import forum_posts from "./assets/forum.json";
 export default {
   name: "App",
   db1: list_favorite,
   db2: guest_mails,
   db3: ziqi_mails,
-  db4: forum_posts,
+  db4: secret_mails,
+  db5: forum_posts,
   data: function () {
-    return { nav_tab: false };
+    return {
+      nav_tab: false,
+      blink: false,
+      hasMail: false,
+      timeBlinks: 0,
+    };
   },
   created: function () {
     this.$store.commit("setDBs", [
       this.$options.db1,
       this.$options.db2,
       this.$options.db3,
-      this.$options.db4
+      this.$options.db4,
+      this.$options.db5
     ]);
 
     window.addEventListener("keyup", this.onKeyup); // ! 監聽鍵盤事件
+
+    this.timeOutRefresh = window.setInterval(() => {
+      this.$bus.$emit("on-blink");
+    }, 1000);
   },
-  mounted() {},
+  mounted() {
+    this.$bus.$on("on-blink", this.onBlink);
+    this.$bus.$on("on-mail-popup", this.onMailPopup);
+  },
   beforeDestroy() {
     window.removeEventListener("keyup", this.onKeyup); // ! 監聽鍵盤事件
+    this.$bus.$off("on-blink", this.onBlink);
+    this.$bus.$off("on-mail-popup", this.onMailPopup);
+    window.clearInterval(this.timeOutRefresh);
   },
   methods: {
     onKeyup: function (e) {
@@ -80,6 +104,20 @@ export default {
           this.nav_tab = !this.nav_tab;
           break;
       }
+    },
+    onBlink: function () {
+      this.blink = !this.blink;
+      if (this.hasMail) {
+        this.timeBlinks++;
+        if (this.timeBlinks >= 6) {
+          this.hasMail = false;
+          this.timeBlinks = 0;
+        }
+      }
+    },
+    onMailPopup: function (val) {
+      this.hasMail = val;
+      this.$store.commit("setSecret", true);
     },
   },
 };

@@ -1,41 +1,55 @@
-import Vue from 'vue'
-import 'es6-promise/auto'
-import Vuex from 'vuex'
+import Vue from "vue";
+import "es6-promise/auto";
+import Vuex from "vuex";
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 const store = new Vuex.Store({
   state: {
     isFreeze: false,
-    account: '',
-    password: '',
+    account: "",
+    password: "",
     rowIndex: 0,
     rowCount: 0,
     count: 0,
-    accountLabel: '',
-    dateLabel: '',
+    accountLabel: "",
+    dateLabel: "",
     width: 0,
     height: 0,
     isMobile: false,
     listFavorite: {},
-    guestMails: {},
-    ziqiMails: {},
-    forumPosts: {}
+    guestMails: [],
+    ziqiMails: [],
+    forumPosts: {},
+    secretMails: [],
+    isUnlockedSecret: false
   },
   mutations: {
-    setFreeze(state,val){
+    setFreeze(state, val) {
       this.state.isFreeze = val;
     },
-    setUser(state, data){
-      console.log("set user="+data[0]+"/"+data[1]);
-      state.account = data[0];
-      state.password= data[1];
+    setSecret(state, val) {
+      if (val == this.state.isUnlockedSecret) return;
+      if (val) {
+        this.state.isUnlockedSecret = val;
+        for (var i = 0; i < this.state.secretMails.length; i++) {
+          this.state.ziqiMails.push(this.state.secretMails[i]);
+        }
+        console.log("add secret mail to ziqi's mail list");
+      } else {
+      }
     },
-    setDBs(state,dbs){
-      state.listFavorite=dbs[0];
-      state.guestMails=dbs[1];
-      state.ziqiMails=dbs[2];
-      state.forumPosts=dbs[3];
+    setUser(state, data) {
+      console.log("set user=" + data[0] + "/" + data[1]);
+      state.account = data[0];
+      state.password = data[1];
+    },
+    setDBs(state, dbs) {
+      state.listFavorite = dbs[0];
+      state.guestMails = dbs[1];
+      state.ziqiMails = dbs[2];
+      state.secretMails = dbs[3];
+      state.forumPosts = dbs[4];
     },
     setRowIndex(state, index) {
       state.rowIndex = index;
@@ -46,7 +60,7 @@ const store = new Vuex.Store({
       console.log("set row count=" + index);
     },
     increment(state) {
-      state.count++
+      state.count++;
     },
     setAccount(state, id) {
       state.accountLabel = id;
@@ -57,12 +71,10 @@ const store = new Vuex.Store({
     setWindowSize(state, size) {
       state.width = size[0];
       state.height = size[1];
-      if (state.width < 1024)
-        state.isMobile = true;
-      else
-        state.isMobile = false;
+      if (state.width < 1024) state.isMobile = true;
+      else state.isMobile = false;
     }
   }
-})
+});
 
 export default store;
