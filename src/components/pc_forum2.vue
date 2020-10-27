@@ -12,7 +12,7 @@
     <div class="del_popup" v-if="deletingStep == 2">
       <span class="empty"></span>
       <pre><span class="q7 b0">正在刪除文章: {{ getMETA[this.$store.state.rowIndex].caption }}</span></pre>
-      <pre><span class="q7 b0">您的文章減為 {{ getMETA.length-1 }} 篇，支付清潔費 28 Ptt幣</span></pre>
+      <pre><span class="q7 b0">您的文章減為 {{ newLength-1 }} 篇，支付清潔費 28 Ptt幣</span></pre>
       <span class="q14 b4 col-12 text-center">請按任意鍵繼續</span>
     </div>
   </div>
@@ -142,10 +142,13 @@ export default {
       inDelete: "",
       isDeleting: false,
       deletingStep: 0,
+      newLength: 0,
     };
   },
   created() {
     console.log("create");
+    this.newLength = this.getMETA.length;
+    console.log(this.newLength);
   },
   mounted() {
     this.onChange();
@@ -186,9 +189,12 @@ export default {
     onKeyup(e) {
       if (this.deletingStep == 2) {
         console.log("confirm at step 2");
-        this.getMETA[this.$store.state.rowIndex].caption = "□ (本文已被刪除) [Charmon]";
+        var name = this.$store.state.account;
+        this.getMETA[this.$store.state.rowIndex].caption =
+          "□ (本文已被刪除) [" + name + "]";
         this.deletingStep = 0;
         this.$store.commit("setFreeze", false);
+        this.newLength--;
         return;
       }
 
