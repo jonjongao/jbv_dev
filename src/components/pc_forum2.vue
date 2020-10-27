@@ -54,9 +54,10 @@ export default {
         case 1:
           return tsueihua;
         case 2:
-          return eil_guest;
-        case 3:
-          return eil_ziqi;
+          if(this.$store.state.account == "Chi")
+            return eil_ziqi;
+          else
+            return eil_guest;
         default:
           return [];
       }
