@@ -64,6 +64,8 @@ new Vue({
           break;
         case 13: // * 按下enter
           break;
+        case 68: // ! d
+          break;
         default:
           // console.log(e.which);
           return;

@@ -132,6 +132,7 @@ export default {
     return {
       rowIndex: 0,
       startIndex: 0,
+      deleteText: "請確定刪除(Y/N)?"
     };
   },
   created() {
@@ -197,6 +198,10 @@ export default {
               params: { type: "post", id: to },
             });
           }
+          break;
+        case 68: // ! d
+          // var to = this.getMETA[this.$store.state.rowIndex].to;
+          console.log("try delete:"+this.$store.state.rowIndex);
           break;
       }
     },

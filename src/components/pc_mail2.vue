@@ -71,7 +71,7 @@ export default {
           break;
         case 13: // ! enter
         case 39: // ! right
-            this.$router.push({ name: "Mail3",params: { id: this.$store.state.rowIndex+1 } });
+            this.$router.push({ name: "Post",params: { type: "mail", id: this.$store.state.rowIndex+1 } });
           break;
       }
     },

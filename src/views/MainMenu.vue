@@ -16,8 +16,9 @@ export default {
        * * Original 'Charmon' length = 7
        * * Rest of space length = 9, so is 16 in total
        */
+      var ac = this.$store.state.account;
       var t =
-        this.account == null || this.account == '' ? "Guest" : this.account;
+        ac == null || ac == '' ? "Guest" : ac;
       t = t.padEnd(14);
       return t;
     },
@@ -40,7 +41,8 @@ export default {
     },
   },
   data: function () {
-    return {};
+    return {
+    };
   },
   created() {
     console.log("create");
