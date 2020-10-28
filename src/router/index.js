@@ -23,151 +23,139 @@ import Goodbye from "@/views/Goodbye"
 Vue.use(Router)
 
 const routes = [{
-        path: '/',
-        name: 'Login',
-        component: () =>
-            import ("@/views/Login"),
-        props: {
-            bbsrow: 2
-        }
-    },
-    {
-        path: '/home',
-        name: "Home",
-        component: Home
-    },
-    {
-        path: '/about',
-        name: 'About',
-        component: About
-    },
-    {
-        path: '/mainmenu',
-        name: 'MainMenu',
-        component: MainMenu,
-        props: {
-            bbsrow: 10
-        }
-    },
-    {
-        path: '/favorite',
-        name: 'Favorite',
-        component: Favorite,
-        props: {
-            bbsrow: 20
-        }
-    },
-    {
-        path: '/class',
-        name: 'Class',
-        component: Class,
-        props: {
-            bbsrow: 14
-        }
-    },
-    {
-        path: '/class2',
-        name: 'Class2',
-        component: Class2,
-        props: {
-            bbsrow: 15
-        }
-    },
-    {
-        path: '/class3',
-        name: 'Class3',
-        component: Class3,
-        props: {
-            bbsrow: 58
-        }
-    },
-    {
-        path: '/forum-cover',
-        name: 'ForumCover',
-        component: ForumCover,
-        props: {
-            bbsrow: 4
-        }
-    },
-    // {
-    //     path: '/forum',
-    //     name: 'Forum',
-    //     component: Forum,
-    //     props: {
-    //         bbsrow: 4
-    //     }
-    // },
-    {
-        path: '/forum2',
-        name: 'Forum2',
-        component: Forum2,
-        props: {
-            bbsrow: 5
-        }
-    },
-    {
-        path: '/f/:id',
-        name: 'Forum',
-        component: Forum2,
-        props: true
-    },
-    {
-        path: '/forum-post',
-        name: 'ForumPost',
-        component: ForumPost,
-        props: {
-            bbsrow: 4
-        }
-    },
-    {
-        path: '/mail1',
-        name: 'Mail1',
-        component: Mail1,
-        props: {
-            bbsrow: 7
-        }
-    },
-    {
-        path: '/mail2',
-        name: 'Mail2',
-        component: Mail2,
-        props: {
-            bbsrow: 4
-        }
-    },
-    {
-        path: '/p/:type/:id',
-        name: 'Mail3',
-        component: Mail3,
-        props: true
-    },
-    {
-        path: '/p/:type/:id',
-        name: 'Post',
-        component: Mail3,
-        props: true
-    },
-    {
-        path: '/goodbye',
-        name: 'Goodbye',
-        component: Goodbye,
-        props: {
-            bbsrow: 4
-        }
+    path: '/',
+    name: 'Login',
+    component: Login
+  },
+  {
+    path: '/about',
+    name: 'About',
+    component: About
+  },
+  {
+    path: '/mainmenu',
+    name: 'MainMenu',
+    component: MainMenu,
+    props: {
+      bbsrow: 10
     }
+  },
+  {
+    path: '/favorite',
+    name: 'Favorite',
+    component: Favorite,
+  },
+  {
+    path: '/class',
+    name: 'Class',
+    component: Class,
+    props: {
+      bbsrow: 14
+    }
+  },
+  {
+    path: '/class2',
+    name: 'Class2',
+    component: Class2,
+    props: {
+      bbsrow: 15
+    }
+  },
+  {
+    path: '/class3',
+    name: 'Class3',
+    component: Class3,
+    props: {
+      bbsrow: 58
+    }
+  },
+  {
+    path: '/forum-cover',
+    name: 'ForumCover',
+    component: ForumCover,
+    props: {
+      bbsrow: 4
+    }
+  },
+  // {
+  //     path: '/forum',
+  //     name: 'Forum',
+  //     component: Forum,
+  //     props: {
+  //         bbsrow: 4
+  //     }
+  // },
+  // {
+  //     path: '/forum2',
+  //     name: 'Forum2',
+  //     component: Forum2,
+  //     props: {
+  //         bbsrow: 5
+  //     }
+  // },
+  {
+    path: '/f/:id',
+    name: 'Forum',
+    component: Forum2,
+    props: true
+  },
+  {
+    path: '/forum-post',
+    name: 'ForumPost',
+    component: ForumPost,
+    props: {
+      bbsrow: 4
+    }
+  },
+  {
+    path: '/mail1',
+    name: 'Mail1',
+    component: Mail1,
+    props: {
+      bbsrow: 7
+    }
+  },
+  {
+    path: '/mail2',
+    name: 'Mail2',
+    component: Mail2,
+    props: {
+      bbsrow: 4
+    }
+  },
+  {
+    path: '/p/:type/:id',
+    name: 'Mail3',
+    component: Mail3,
+    props: true
+  },
+  {
+    path: '/p/:type/:id',
+    name: 'Post',
+    component: Mail3,
+    props: true
+  },
+  {
+    path: '/goodbye',
+    name: 'Goodbye',
+    component: Goodbye,
+    props: {
+      bbsrow: 4
+    }
+  }
 ];
 
 const router = new VueRouter({
-    moode: "history",
-    base: process.env.NODE_ENV === 'production' ?
-        process.env.PUBLIC_PATH : process.env.BASE_URL,
-    routes
+  moode: "history",
+  base: process.env.NODE_ENV === 'production' ?
+    process.env.PUBLIC_PATH : process.env.BASE_URL,
+  routes
 });
 
 router.beforeEach((to, from, next) => {
-    // Fired before load route template
-    // Must execute next() so it'll do rendering
-    next();
+  // Fired before load route template
+  // Must execute next() so it'll do rendering
+  next();
 })
 
 export default router;
