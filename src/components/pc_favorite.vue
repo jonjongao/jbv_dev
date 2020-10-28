@@ -52,7 +52,7 @@ export default {
       else return "";
     },
     randomColor: function () {
-      var max = 16;
+      var max = 15;
       var min = 3;
       var i = Math.floor(Math.random() * (max - min + 1) + min);
       return "q" + i + " b0";

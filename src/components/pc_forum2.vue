@@ -5,7 +5,7 @@
     <span v-else><span class="q7 b0">請確定刪除(Y/N)?[N]</span><input class="col-1" type="text" ref="del" v-on:keyup.enter="onDeleteField(inDelete)" v-model="inDelete" :placeholder="''"></span></pre>
     <pre><span class="q0 b7">   編號    日 期 作  者       文  章  標  題                       人氣:</span><span class="q0 b7 h_pop">{{ getHEAD.views }}</span><span class="q7 b0"> </span></pre>
     <pre v-for="p in 20" :key="p">
-    <span v-if="(p+startIndex)-1 < getMETA.length"><span type="bbsrow" srow="6"><div><span class="" data-type="bbsline" data-row="6"><span><span class="q7 b0"><span class="pointer">{{ isSelect((p+startIndex)-1) }}</span><span class="id2">{{ getMETA[(p+startIndex)-1].id }}</span><span class="reply2">{{ getMETA[(p+startIndex)-1].ext1 }}{{ getMETA[(p+startIndex)-1].ext2 }}</span><span class="date">{{ getMETA[(p+startIndex)-1].date }}</span><span class="author2">{{ getMETA[(p+startIndex)-1].author }}</span><span class="caption2">{{ getMETA[(p+startIndex)-1].caption }}</span></span></span></span><div></div></div></span></span>
+    <span v-if="(p+startIndex)-1 < getMETA.length"><span type="bbsrow" srow="6"><div><span class="" data-type="bbsline" data-row="6"><span><span class="q7 b0"><span class="pointer">{{ isSelect((p+startIndex)-1) }}</span><span :class="getId[(p+startIndex)-1]">{{ getMETA[(p+startIndex)-1].id }}</span><span :class="getPop[(p+startIndex)-1]">{{ getMETA[(p+startIndex)-1].ext1 }}{{ getExt2[(p+startIndex)-1] }}</span><span class="date">{{ getMETA[(p+startIndex)-1].date }}</span><span class="author2">{{ getMETA[(p+startIndex)-1].author }}</span><span class="caption2">{{ getMETA[(p+startIndex)-1].caption }}</span></span></span></span><div></div></div></span></span>
     <span v-else class="empty"></span>
 </pre>
     <pre><span type="bbsrow" srow="23"><div><span class="" data-type="bbsline" data-row="23"><span><span class="q4 b6"> 文章選讀 </span><span class="q0 b7"> </span><span class="q1 b7">(y)</span><span class="q0 b7">回應</span><span class="q1 b7">(X)</span><span class="q0 b7">推文</span><span class="q1 b7">(^X)</span><span class="q0 b7">轉錄 </span><span class="q1 b7">(=[]&lt;&gt;)</span><span class="q0 b7">相關主題</span><span class="q1 b7">(/?a)</span><span class="q0 b7">找標題/作者 </span><span class="q1 b7">(b)</span><span class="q0 b7">進板畫面  </span><span class="q7 b0"> </span></span></span><div></div></div></span></pre>
@@ -54,51 +54,43 @@ export default {
         case 1:
           return tsueihua;
         case 2:
-          if(this.$store.state.account == "Chi")
-            return eil_ziqi;
-          else
-            return eil_guest;
+          if (this.$store.state.account == "Chi") return eil_ziqi;
+          else return eil_guest;
         default:
           return [];
       }
       // return this.$store.state.forumPosts["fpost"];
     },
-    managerLabel: function () {
-      // Original = 【板主:macauboy】
-      // space in total = 34
-      var f = this.$store.state.forumPosts;
-      var s = f.fmeta.manager;
-      var a = u.getSpaceCount(f.fmeta.manager);
-      var b = u.getSpaceCount(f.fmeta.pin);
-      var c = u.getSpaceCount(f.fmeta.name);
-
-      var length = Math.floor((80 - a - b - c) / 2);
-      s = s.padEnd(f.fmeta.manager.length + length);
-      return s;
+    getExt2: function () {
+      var e = [];
+      for (var i = 0; i < this.getMETA.length; i++) {
+        var num = parseInt(this.getMETA[i].ext2);
+        if (num > 99) e.push("爆");
+        else if (num < -99) e.push("XX");
+        else e.push(this.getMETA[i].ext2);
+      }
+      return e;
     },
-    pinLabel: function () {
-      // Original = 魔法風雲會
-      var f = this.$store.state.forumPosts;
-      var s = f.fmeta.pin;
-      return s;
+    getPop: function () {
+      var p = [];
+      for (var i = 0; i < this.getMETA.length; i++) {
+        var num = parseInt(this.getMETA[i].ext2);
+        var val = "reply2";
+        if (num > 0) val = "q10 b0 reply2";
+        if (num > 9) val = "q11 b0 reply2";
+        if (num > 99 || this.getMETA[i].ext2 == "爆") val = "q9 b0 reply2";
+        if (num < -99 || this.getMETA[i].ext2 == "XX") val = "q8 b0 reply2";
+        p.push(val);
+      }
+      return p;
     },
-    nameLabel: function () {
-      // Original =                       看板《Magic》
-      // space in total = 36
-      var f = this.$store.state.forumPosts;
-      var s = f.fmeta.name;
-      var a = u.getSpaceCount(f.fmeta.manager);
-      var b = u.getSpaceCount(f.fmeta.pin);
-      var c = u.getSpaceCount(f.fmeta.name);
-      var length = Math.ceil((80 - a - b - c) / 2);
-      s = s.padStart(f.fmeta.name.length + length);
-      return s;
-    },
-    viewsLabel: function () {
-      var f = this.$store.state.forumPosts;
-      var s = "人氣:" + f.fmeta.views;
-      s = s.padEnd(10);
-      return s;
+    getId: function () {
+      var p = [];
+      for (var i = 0; i < this.getMETA.length; i++) {
+        if (this.getMETA[i].id == "★") p.push("q11 b0 id2");
+        else p.push("id2");
+      }
+      return p;
     },
     fpost: function () {
       var f = this.$store.state.forumPosts;
@@ -198,7 +190,7 @@ export default {
         this.newLength--;
 
         if (this.$store.state.rowIndex == 61) {
-          this.$bus.$emit("on-mail-popup",true);
+          this.$bus.$emit("on-mail-popup", true);
         }
         return;
       }
@@ -242,8 +234,7 @@ export default {
           break;
         case 68: // ! d
           var name = this.$store.state.account;
-          if(name != "Chi")
-          {
+          if (name != "Chi") {
             console.log("not authorized");
             return;
           }

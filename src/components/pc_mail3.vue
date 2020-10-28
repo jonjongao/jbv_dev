@@ -21,7 +21,7 @@
       <pre><span type="bbsrow" srow="7"><div><span class="" data-type="bbsline" data-row="7"><span><span class="q7 b0">--                                                                              </span></span></span><div></div></div></span></pre>
       <pre><span type="bbsrow" srow="8"><div><span class="" data-type="bbsline" data-row="8"><span><span class="q2 b0">※ 發信站: 批踢踢實業坊(ptt.cc), 來自: 114.136.173.9 (臺灣)</span><span class="q7 b0">                     </span></span></span><div></div></div></span></pre>
       <pre v-for="(r, index) in getReply" :key="index">
-      <span class="q7 b0">{{ r.ext1 }} </span><span class="q7 b0">{{ r.author }}: </span><span class="q7 b0">{{ r.text }}</span><span class="q7 b0 time text-right">{{ r.time }}</span>
+      <span :class="getExt1[index]">{{ r.ext1 }} </span><span class="q11 b0">{{ r.author }}: </span><span class="q3 b0">{{ r.text }}</span><span class="q7 b0 time text-right">{{ r.time }}</span>
     </pre>
       <span class="empty"></span>
     </div>
@@ -43,6 +43,15 @@ export default {
     this.$bus.$off("on-keyup", this.onKeyup);
   },
   computed: {
+    getExt1: function () {
+      var s = [];
+      for (var i = 0; i < this.getReply.length; i++) {
+        if (this.getReply[i].ext1 == "→" || this.getReply[i].ext1 == "噓")
+          s.push("q9 b0");
+        else s.push("q15 b0");
+      }
+      return s;
+    },
     getText: function () {
       var n = this.getMETA.text.replace(/\n|\r\n/g, "<br/>");
       var m = (n.match(new RegExp("<br/>", "g")) || []).length;
