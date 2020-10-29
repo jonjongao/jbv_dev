@@ -40,7 +40,7 @@
               class="new_popup row d-flex justify-content-center"
               v-if="hasMail"
             >
-              <span class="q15 b1 text-center" v-if="blink">你有新信件</span>
+              <span class="q15 b1 text-center" v-if="blink">{{ popupMessage }}</span>
             </div>
             <router-view></router-view>
           </div>
@@ -70,6 +70,7 @@ export default {
       blink: false,
       hasMail: false,
       timeBlinks: 0,
+      popupMessage: '',
     };
   },
   created: function () {
@@ -90,11 +91,13 @@ export default {
   mounted() {
     this.$bus.$on("on-blink", this.onBlink);
     this.$bus.$on("on-mail-popup", this.onMailPopup);
+    this.$bus.$on("on-warning-popup", this.onWarningPopup);
   },
   beforeDestroy() {
     window.removeEventListener("keyup", this.onKeyup); // ! 監聽鍵盤事件
     this.$bus.$off("on-blink", this.onBlink);
     this.$bus.$off("on-mail-popup", this.onMailPopup);
+    this.$bus.$on("on-warning-popup", this.onWarningPopup);
     window.clearInterval(this.timeOutRefresh);
   },
   methods: {
@@ -116,9 +119,14 @@ export default {
       }
     },
     onMailPopup: function (val) {
+      this.popupMessage = "你有新信件";
       this.hasMail = val;
       this.$store.commit("setSecret", true);
     },
+    onWarningPopup:function(val){
+      this.popupMessage = "壞孩子會被趕出去";
+      this.hasMail = val;
+    }
   },
 };
 

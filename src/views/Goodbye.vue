@@ -22,7 +22,8 @@ export default {
   },
   methods: {
     onKeyup: function (e) {
-      this.$router.push({ name: "Login" });
+      //this.$router.push({ name: "Login" });
+      window.location.href = '/';
     }
   }
 };
