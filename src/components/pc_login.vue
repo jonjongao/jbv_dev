@@ -61,10 +61,16 @@
     <span type="bbsrow" srow="19"><div><span class="" data-type="bbsline" data-row="19"><span><span class="q7 b0">                                                                                </span></span></span><div></div></div></span>
 </pre>
     <pre>
-    <span type="bbsrow" srow="20"><div><span class="" data-type="bbsline" data-row="20"><span><span class="q7 b0">請輸入代號，或以 guest 參觀，或以 new 註冊: </span><input type="text" ref="acfield" v-on:keyup.enter="onAccountField(inAccount)" v-model="inAccount" :placeholder="phAccount"><span class="q7 b0">                      </span></span></span><div></div></div></span>
+    <span class="q7 b0">請輸入代號，或以 guest 參觀，或以 new 註冊: </span><input type="text" ref="acfield" v-on:keyup.enter="onAccountField(inAccount)" v-model="inAccount" :placeholder="phAccount">
 </pre>
-    <pre>
-    <span type="bbsrow" srow="21" v-if="!isError" v-bind:style="isGuest ? 'visibility:hidden' : 'visibility:visible'"><div><span class="" data-type="bbsline" data-row="21"><span><span class="q7 b0">請輸入您的密碼:</span><input type="text" ref="pwfield" v-on:keyup.enter="onPasswordField(inPassword)" v-model="inPassword" :placeholder="phPassword" class="pw"></span></span><div></div></div></span><span class="q7 b0 pw" v-else>{{ errorText }}</span>
+    <pre
+      v-if="!isError"
+      v-bind:style="isGuest ? 'visibility:hidden' : 'visibility:visible'"
+    >
+    <span class="q7 b0">請輸入您的密碼:</span><input type="text" ref="pwfield" v-on:keyup.enter="onPasswordField(inPassword)" v-model="inPassword" :placeholder="phPassword" class="pw">
+</pre>
+    <pre v-else>
+  <span class="q7 b0 pw">{{ errorText }}</span>
 </pre>
     <pre>
     <span type="bbsrow" srow="22"><div><span class="" data-type="bbsline" data-row="22"><span><span class="q7 b0"> </span><span class="q15 b0">※本站目前僅開放 ***@ntu.edu.tw 註冊帳號。</span><span class="q7 b0">                                     </span></span></span><div></div></div></span>
