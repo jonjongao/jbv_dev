@@ -34,10 +34,12 @@ export default {
   name: "PCMail3",
   props: ["type", "id"],
   mounted: function () {
+    this.onChange();
     this.$bus.$on("on-keyup", this.onKeyup);
   },
   beforeDestroy() {
     this.$bus.$off("on-keyup", this.onKeyup);
+    this.$store.commit("setFreeze", false);
   },
   computed: {
     getExt1: function () {
@@ -106,10 +108,7 @@ export default {
     },
   },
   watch: {
-    // id: function (val) {
-    //   console.log("update2->" + val);
-    //   console.log("next=" + this.id);
-    // },
+    $route: "onChange"
   },
   data: function () {
     return {
@@ -125,6 +124,9 @@ export default {
     };
   },
   methods: {
+    onChange() {
+      this.$store.commit("setFreeze", true);
+    },
     isSelect: function (index) {
       if (index == this.$store.state.rowIndex) return "●";
       else return "";
