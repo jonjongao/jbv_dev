@@ -112,7 +112,8 @@ span {
 
 #mainContainer pre .id2 {
   display: inline-block;
-  width: 72px;
+  /* width: 72px; */
+  width: 60px;
   text-align: right;
 }
 
@@ -122,16 +123,26 @@ span {
   margin-left: 12px;
 }
 
+#mainContainer pre .ext1 {
+  display: inline-block;
+  text-align: right;
+  width: 12px;
+  margin-left: 12px;
+}
+
 #mainContainer pre .reply2 {
   display: inline-block;
-  width: 36px;
-  margin-left: 6px;
-  margin-right: 6px;
+  width: 24px;
+  /* margin-left: 12px; */
+  /* margin-right: 6px; */
+  text-align: right;
 }
 
 #mainContainer pre .date {
   display: inline-block;
   width: 60px;
+  margin-right: 12px;
+  text-align: right;
 }
 
 #mainContainer pre .author {
