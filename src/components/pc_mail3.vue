@@ -22,7 +22,7 @@
     </pre>
       <span class="empty"></span>
     </div>
-    <pre><span class="p_foot"><span class="q7 b4">  瀏覽 第 1/1 頁 (100%) </span><span class="q8 b7"> 目前顯示: 第 01~08 行</span><span class="q7 b7">      </span><span class="q1 b7">(y)</span><span class="q0 b7">回信 </span><span class="q1 b7">(h)</span><span class="q0 b7">說明 </span><span class="q1 b7">(←/q)</span><span class="q0 b7">離開 </span><span class="q7 b0"> </span></span></pre>
+    <pre><span class="p_foot"><span class="q7 b4">  瀏覽 第 {{ pageNow }}/{{ pageInTotal }} 頁 {{ progress }} </span><span class="q8 b7"> 目前顯示: 第 {{ pageStart }}~{{ pageEnd }} 行</span><span class="q7 b7">      </span><span class="q1 b7">(y)</span><span class="q0 b7">回信 </span><span class="q1 b7">(h)</span><span class="q0 b7">說明 </span><span class="q1 b7">(←/q)</span><span class="q0 b7">離開 </span><span class="q7 b0"> </span></span></pre>
   </div>
 </template>
 
@@ -36,6 +36,8 @@ export default {
   mounted: function () {
     this.onChange();
     this.$bus.$on("on-keyup", this.onKeyup);
+
+    this.updatePage();
   },
   beforeDestroy() {
     this.$bus.$off("on-keyup", this.onKeyup);
@@ -55,8 +57,13 @@ export default {
       var n = this.getMETA.text.replace(/\n|\r\n/g, "<br/>");
       var m = (n.match(new RegExp("<br/>", "g")) || []).length;
       m += 5;
-      console.log("text got num of " + m + " <br/>");
+      // ! 一頁18行
+      console.log("text got num of " + (m + this.getReply.length) + " <br/>");
 
+      this.lineInTotal = m + this.getReply.length;
+      this.pageInTotal = Math.ceil(this.lineInTotal / 18);
+
+      // this.updatePage();
       // var p = [];
       // var n = this.getMETA.text.split("\n");
       // for (var i = 0; i < n.length; i++) {
@@ -106,9 +113,17 @@ export default {
       }
       return meta;
     },
+    pageStart: function () {
+      var p = (this.line - 18).toString().padStart(2, "0");
+      return p;
+    },
+    pageEnd: function () {
+      var p = this.line.toString().padStart(2, "0");
+      return p;
+    },
   },
   watch: {
-    $route: "onChange"
+    $route: "onChange",
   },
   data: function () {
     return {
@@ -121,6 +136,11 @@ export default {
         caption: "",
         text: "----尚缺文案----",
       },
+      lineInTotal: 0,
+      line: 18,
+      pageInTotal: 0,
+      pageNow: 0,
+      progress: "",
     };
   },
   methods: {
@@ -138,19 +158,33 @@ export default {
           this.$router.go(-1);
           break;
         case 38: // ! up
-          this.$nextTick(() => {
-            this.$refs.box.scrollTop -= 24;
-          });
+          if (this.line > 18) {
+            this.$nextTick(() => {
+              this.$refs.box.scrollTop -= 24;
+            });
+            this.line--;
+            this.updatePage();
+          }
           break;
         case 40: // ! down
-          this.$nextTick(() => {
-            this.$refs.box.scrollTop += 24;
-          });
+          if (this.line < this.lineInTotal) {
+            this.$nextTick(() => {
+              this.$refs.box.scrollTop += 24;
+            });
+            this.line++;
+            this.updatePage();
+          }
           break;
         case 13: // ! enter
         case 39: // ! right
           break;
       }
+    },
+    updatePage() {
+      this.pageNow = Math.floor(this.line / this.lineInTotal) + 1;
+      this.progress =
+        "(" + Math.round((this.pageNow / this.pageInTotal) * 100) + "%)";
+      this.progress = this.progress.padEnd(6);
     },
   },
 };
