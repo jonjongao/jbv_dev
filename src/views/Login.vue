@@ -1,5 +1,10 @@
 <template>
-  <PCLogin :account="phAccount" :password="phPassword" />
+  <div v-if="this.$store.state.isMobile">
+    <MLogin :account="phAccount" :password="phPassword" />
+  </div>
+  <div v-else>
+    <PCLogin :account="phAccount" :password="phPassword" />
+  </div>
 </template>
 
 <script>

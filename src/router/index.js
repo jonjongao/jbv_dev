@@ -1,9 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import VueRouter from 'vue-router'
-//Test sample template
-import Home from "@/views/Home"
-import About from "@/views/About"
 // ! BBS template
 import Login from "@/views/Login"
 import MainMenu from "@/views/MainMenu"
@@ -12,9 +9,7 @@ import Class from "@/views/Class"
 import Class2 from "@/views/Class2"
 import Class3 from "@/views/Class3"
 import ForumCover from "@/views/ForumCover"
-import Forum from "@/views/Forum"
 import Forum2 from "@/views/Forum2"
-import ForumPost from "@/views/ForumPost"
 import Mail1 from "@/views/Mail1"
 import Mail2 from "@/views/Mail2"
 import Mail3 from "@/views/Mail3"
@@ -26,11 +21,6 @@ const routes = [{
     path: '/',
     name: 'Login',
     component: Login
-  },
-  {
-    path: '/about',
-    name: 'About',
-    component: About
   },
   {
     path: '/mainmenu',
@@ -70,42 +60,10 @@ const routes = [{
     }
   },
   {
-    path: '/forum-cover',
-    name: 'ForumCover',
-    component: ForumCover,
-    props: {
-      bbsrow: 4
-    }
-  },
-  // {
-  //     path: '/forum',
-  //     name: 'Forum',
-  //     component: Forum,
-  //     props: {
-  //         bbsrow: 4
-  //     }
-  // },
-  // {
-  //     path: '/forum2',
-  //     name: 'Forum2',
-  //     component: Forum2,
-  //     props: {
-  //         bbsrow: 5
-  //     }
-  // },
-  {
     path: '/f/:id',
     name: 'Forum',
     component: Forum2,
     props: true
-  },
-  {
-    path: '/forum-post',
-    name: 'ForumPost',
-    component: ForumPost,
-    props: {
-      bbsrow: 4
-    }
   },
   {
     path: '/mail1',

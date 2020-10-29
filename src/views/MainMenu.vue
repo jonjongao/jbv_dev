@@ -1,14 +1,21 @@
 <template>
-  <PCMenu />
+  <div v-if="this.$store.state.isMobile">
+    <MMenu />
+  </div>
+  <div v-else>
+    <PCMenu />
+  </div>
 </template>
 
 <script>
 import PCMenu from "@/components/pc_menu.vue";
+import MMenu from "@/components/m_menu.vue";
 export default {
   name: "MainMenu",
   props: ["bbsrow"],
   components: {
     PCMenu,
+    MMenu,
   },
   computed: {
     getAccountLabel: function () {
@@ -17,8 +24,7 @@ export default {
        * * Rest of space length = 9, so is 16 in total
        */
       var ac = this.$store.state.account;
-      var t =
-        ac == null || ac == '' ? "Guest" : ac;
+      var t = ac == null || ac == "" ? "Guest" : ac;
       t = t.padEnd(14);
       return t;
     },
@@ -41,8 +47,7 @@ export default {
     },
   },
   data: function () {
-    return {
-    };
+    return {};
   },
   created() {
     console.log("create");

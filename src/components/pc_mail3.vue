@@ -14,9 +14,6 @@
       <div>
         <p class="q7 b0 text_field" v-html="getText">{{ getText }}</p>
       </div>
-      <!-- <pre v-for="(l, index) in getText" :key="index">
-      <span class="q7 b0">{{ l }}</span>
-    </pre> -->
       <pre><span type="bbsrow" srow="6"><div><span class="" data-type="bbsline" data-row="6"><span><span class="q7 b0">                                                                                </span></span></span><div></div></div></span></pre>
       <pre><span type="bbsrow" srow="7"><div><span class="" data-type="bbsline" data-row="7"><span><span class="q7 b0">--                                                                              </span></span></span><div></div></div></span></pre>
       <pre><span type="bbsrow" srow="8"><div><span class="" data-type="bbsline" data-row="8"><span><span class="q2 b0">※ 發信站: 批踢踢實業坊(ptt.cc), 來自: 114.136.173.9 (臺灣)</span><span class="q7 b0">                     </span></span></span><div></div></div></span></pre>
@@ -79,7 +76,6 @@ export default {
         else meta = this.getGuestMETA;
       } else {
         console.log("this is post");
-        // var db = this.$store.state.guestMails;
         var db = post;
         for (var i = 0; i < db.length; i++)
           if (db[i].id == this.id) meta = db[i];
@@ -129,15 +125,6 @@ export default {
     };
   },
   methods: {
-    // getPointer: function (index) {
-    //   if (index == this.$store.state.rowIndex) {
-    //     if (index > 8) return this.select.padEnd(3);
-    //     else return this.select.padEnd(4);
-    //   } else {
-    //     if (index > 8) return this.deselect.padEnd(4);
-    //     else return this.deselect.padEnd(5);
-    //   }
-    // },
     isSelect: function (index) {
       if (index == this.$store.state.rowIndex) return "●";
       else return "";
@@ -157,7 +144,6 @@ export default {
           this.$nextTick(() => {
             this.$refs.box.scrollTop += 24;
           });
-
           break;
         case 13: // ! enter
         case 39: // ! right
