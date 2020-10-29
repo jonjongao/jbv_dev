@@ -1,6 +1,6 @@
 <template>
   <div id="mainContainer">
-    <pre><span class="q15 b4 h_manager">{{ getHEAD.manager }}</span><span class="q11 b4 h_pin">{{ getHEAD.pin }}</span><span class="q15 b4 h_name">{{ getHEAD.name }}</span></pre>
+    <pre class="d-flex flex-rowd-flex justify-content-between"><span class="q15 b4 h_manager">{{ getHEAD.manager }}</span><span class="q11 b4 h_pin">{{ getHEAD.pin }}</span><span class="q15 b4 h_name">{{ getHEAD.name }}</span></pre>
     <pre><span class="q7 b0" v-if="deletingStep == 0"><span class="q7 b0">[←]離開 [→]閱讀 [Ctrl-P]發表文章 [d]刪除 [z]精華區 [i]看板資訊/設定 [h]說明   </span></span>
     <span v-else><span class="q7 b0">請確定刪除(Y/N)?[N]</span><input class="col-1" type="text" ref="del" v-on:keyup.enter="onDeleteField(inDelete)" v-model="inDelete" :placeholder="''"></span></pre>
     <pre><span class="q0 b7">   編號    日 期 作  者       文  章  標  題                       人氣:</span><span class="q0 b7 h_pop">{{ getHEAD.views }}</span><span class="q7 b0"> </span></pre>
