@@ -1,14 +1,21 @@
 <template>
-  <PCClass1 />
+  <div v-if="this.$store.state.isMobile">
+    <MClass1 />
+  </div>
+  <div v-else>
+    <PCClass1 />
+  </div>
 </template>
 
 <script>
 import PCClass1 from "@/components/pc_class1.vue";
+import MClass1 from "@/components/m_class1.vue";
 export default {
   name: "Class",
   props: ["bbsrow"],
   components: {
     PCClass1,
+    MClass1
   },
   data: function () {
     return {};

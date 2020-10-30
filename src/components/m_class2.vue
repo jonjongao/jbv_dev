@@ -7,31 +7,34 @@
     </div>
     <ul class="nav flex-column bg-dark">
       <li class="nav-item">
-        <a class="nav-link text-left" href="#">Announce 【 精華公佈欄 】</a>
+        <a class="nav-link text-left" href="#">[ DigitalLife ]生活</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-left" href="#">Favorite 【 我 的 最愛 】</a>
+        <a class="nav-link text-left" href="#">[ DigitalTech ]科技</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-left" href="#">Class 【 分組討論區 】</a>
+        <a class="nav-link text-left" href="#">[ DigitalWare ]軟體</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-left" href="#">Mail 【 私人信件區 】</a>
+        <a class="nav-link text-left" href="#">[ G_Console ]電玩</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-left" href="#">Talk 【 休閒聊天區 】</a>
+        <a class="nav-link text-left" href="#">[ G_Mobile ]電玩</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-left" href="#">User 【 個人設定區 】</a>
+        <a class="nav-link text-left" href="#">[ G_Online ]電玩</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-left" href="#">Xyz 【 系統資訊區 】</a>
+        <a class="nav-link text-left" href="#">[ G_RolePlay ]電玩</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-left" href="#">Play 【 娛樂與休閒 】</a>
+        <a class="nav-link text-left" href="#">[ G_SportAct ]電玩</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-left" href="#">Namelist 【 編特別名單 】</a>
+        <a class="nav-link text-left" href="#">[ G_Strategy ]電玩</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-left" href="#">[ GameTopics ]綜合</a>
       </li>
     </ul>
     <div class="row">
@@ -46,7 +49,7 @@
 
 <script>
 export default {
-  name: "MMenu",
+  name: "MClass2",
   computed: {},
   data: function () {
     return {};
