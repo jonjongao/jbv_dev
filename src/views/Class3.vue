@@ -64,6 +64,7 @@ export default {
           switch (this.$store.state.rowIndex) {
             case 54: // ! Truth
               this.$router.push({ name: "Forum", params: { id: 0 }, });
+              this.$store.commit("setRowIndex", 0);
               break;
           }
           break;

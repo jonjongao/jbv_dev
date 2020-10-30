@@ -82,6 +82,7 @@ export default {
                 name: "Forum",
                 params: { id: to },
               });
+              this.$store.commit("setRowIndex", 0);
               break;
             default:
               break;
