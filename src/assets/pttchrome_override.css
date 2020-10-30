@@ -126,8 +126,8 @@ span {
 #mainContainer pre .ext1 {
   display: inline-block;
   text-align: right;
-  width: 12px;
-  margin-left: 12px;
+  width: 24px;
+  /* margin-left: 6px; */
 }
 
 #mainContainer pre .reply2 {
