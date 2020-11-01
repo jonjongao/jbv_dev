@@ -1,0 +1,497 @@
+[
+    {
+        "id": "1 ",
+        "ext1": "ˇ",
+        "name": "Pangya",
+        "type": "回憶",
+        "caption": "◎[魔法飛球] 電腦版只剩泰版",
+        "hot": "",
+        "manager": "Ain"
+    },
+    {
+        "id": "2 ",
+        "ext1": "ˇ",
+        "name": "Sub_GOnline",
+        "type": "組務",
+        "caption": "◎線上遊戲小組(G_Online) 組務板",
+        "hot": "",
+        "manager": "BaRanKa"
+    },
+    {
+        "id": "3 ",
+        "ext1": "ˇ",
+        "name": "MapleStoryM",
+        "type": "手遊",
+        "caption": "◎[楓Ｍ] 一直修、修也修不好",
+        "hot": "1",
+        "manager": "Japan2001"
+    },
+    {
+        "id": "4 ",
+        "ext1": "ˇ",
+        "name": "AVA-Online",
+        "type": "線上",
+        "caption": "◎   =Alliance of Valiant Arms=",
+        "hot": "",
+        "manager": "Sony5555/jim"
+    },
+    {
+        "id": "5 ",
+        "ext1": "ˇ",
+        "name": "BB_Online",
+        "type": "線上",
+        "caption": "◎[BBO S.] PRO分類及臨時版規上路",
+        "hot": "1",
+        "manager": "r51303/hong1"
+    },
+    {
+        "id": "6 ",
+        "ext1": "ˇ",
+        "name": "BlackDesert",
+        "type": "線上",
+        "caption": "◎-黑色沙漠- 展望奧迪爾莉塔",
+        "hot": "",
+        "manager": "m821014/ZMTL"
+    },
+    {
+        "id": "7 ",
+        "ext1": "ˇ",
+        "name": "BNS",
+        "type": "線上",
+        "caption": "◎[劍靈] 3周年系列活動",
+        "hot": "",
+        "manager": "a8504265556/"
+    },
+    {
+        "id": "8 ",
+        "ext1": "ˇ",
+        "name": "cabala",
+        "type": "線上",
+        "caption": "◎[卡巴拉島] 永遠的卡巴拉島",
+        "hot": "",
+        "manager": "fimir/bryan4"
+    },
+    {
+        "id": "10 ",
+        "ext1": "ˇ",
+        "name": "CrossGate",
+        "type": "線上",
+        "caption": "◎[XG] 周年慶+懷舊寵物大集合",
+        "hot": "",
+        "manager": "xingstar"
+    },
+    {
+        "id": "11 ",
+        "ext1": "ˇ",
+        "name": "CSonline",
+        "type": "線上",
+        "caption": "◎[CSO ] 2倒了 但1還在",
+        "hot": "",
+        "manager": "但1還在"
+    },
+    {
+        "id": "12 ",
+        "ext1": "ˇ",
+        "name": "DIABLO",
+        "type": "線上",
+        "caption": "◎[暗黑] 你各位標題該加的要加啊!",
+        "hot": "",
+        "manager": "你各位標題該加的要加啊!"
+    },
+    {
+        "id": "13 ",
+        "ext1": "ˇ",
+        "name": "DNF",
+        "type": "線上",
+        "caption": "◎韓測盜賊三覺 國際希洛克",
+        "hot": "1",
+        "manager": "a23810203"
+    },
+    {
+        "id": "14 ",
+        "ext1": "ˇ",
+        "name": "DragonNest",
+        "type": "線上",
+        "caption": "◎[龍谷] 龍之谷 正式開服",
+        "hot": "",
+        "manager": "Lavchi/jackt"
+    },
+    {
+        "id": "16 ",
+        "ext1": "ˇ",
+        "name": "ELSWORD",
+        "type": "線上",
+        "caption": "◎[艾爾] 艾爾之光",
+        "hot": "",
+        "manager": "naideath/ott"
+    },
+    {
+        "id": "17 ",
+        "ext1": "ˇ",
+        "name": "FreeStyle",
+        "type": "線上",
+        "caption": "◎FreeStyle2公測中",
+        "hot": "",
+        "manager": "jayin07"
+    },
+    {
+        "id": "18 ",
+        "ext1": "ˇ",
+        "name": "GuildWars",
+        "type": "線上",
+        "caption": "◎《GW2》來自Mike&Z的Message",
+        "hot": "1",
+        "manager": "DemonElf/Amy"
+    },
+    {
+        "id": "19 ",
+        "ext1": "ˇ",
+        "name": "GVOnline",
+        "type": "線上",
+        "caption": "◎[航海] Lost Memories",
+        "hot": "",
+        "manager": "popoyo"
+    },
+    {
+        "id": "20 ",
+        "ext1": "ˇ",
+        "name": "Gwent",
+        "type": "線上",
+        "caption": "◎[昆特] 昆特競技場",
+        "hot": "",
+        "manager": "bulcas"
+    },
+    {
+        "id": "21 ",
+        "ext1": "ˇ",
+        "name": "Hattrick",
+        "type": "線上",
+        "caption": "◎[ＨＴ] 最好玩的足球網頁線上遊戲",
+        "hot": "",
+        "manager": "bolam/MRight"
+    },
+    {
+        "id": "22 ",
+        "ext1": "ˇ",
+        "name": "Hearthstone",
+        "type": "線上",
+        "caption": "◎[爐石] 新資料片&新模式!!",
+        "hot": "",
+        "manager": "新資料片&新模式!!"
+    },
+    {
+        "id": "23 ",
+        "ext1": "ˇ",
+        "name": "Hiyo",
+        "type": "線上",
+        "caption": "◎跑online 衝天跑",
+        "hot": "",
+        "manager": "Amihusband"
+    },
+    {
+        "id": "24 ",
+        "ext1": "ˇ",
+        "name": "Ikariam",
+        "type": "線上",
+        "caption": "◎[Ikariam]遠古文明",
+        "hot": "",
+        "manager": "eminthwu/Ast"
+    },
+    {
+        "id": "25 ",
+        "ext1": "ˇ",
+        "name": "kartrider",
+        "type": "線上",
+        "caption": "◎跑跑卡丁車:Drift CBT2 開測           ilove1530    ",
+        "hot": "",
+        "manager": "ilove1530"
+    },
+    {
+        "id": "26 ",
+        "ext1": "ˇ",
+        "name": "KOK",
+        "type": "線上",
+        "caption": "◎萬王之王 2018年重開TEST中            intelb06385  ",
+        "hot": "",
+        "manager": "intelb06385"
+    },
+    {
+        "id": "27",
+        "ext1": "",
+        "name": "Lineage",
+        "type": "線上",
+        "caption": "◎[天堂]月免服再戰?年M狂戰來襲      ",
+        "hot": "",
+        "manager": "◎[天堂]月免服再戰?年M狂戰來襲"
+    },
+    {
+        "id": "28 ",
+        "ext1": "ˇ",
+        "name": "LineageII",
+        "type": "線上",
+        "caption": "◎天堂II  手遊可以下載啦~~           1 Fandihaha    ",
+        "hot": "1",
+        "manager": "Fandihaha"
+    },
+    {
+        "id": "29 ",
+        "ext1": "ˇ",
+        "name": "Mabinogi",
+        "type": "線上",
+        "caption": "◎[瑪奇] 寵物當家                    2 ropkcat/sile ",
+        "hot": "2",
+        "manager": "ropkcat/sile"
+    },
+    {
+        "id": "30 ",
+        "ext1": "ˇ",
+        "name": "MabinogiHero",
+        "type": "線上",
+        "caption": "◎[瑪英] 回歸原廠 領箱子囉             kululabo     ",
+        "hot": "",
+        "manager": "kululabo"
+    },
+    {
+        "id": "31 ",
+        "ext1": "ˇ",
+        "name": "MapleStory",
+        "type": "線上",
+        "caption": "◎頂級培羅德發威，今天你翻車了嗎~   ",
+        "hot": "",
+        "manager": "◎頂級培羅德發威，今天你翻車了嗎~"
+    },
+    {
+        "id": "32 ",
+        "ext1": "ˇ",
+        "name": "mud",
+        "type": "線上",
+        "caption": "◎網路地下城 Multi-User Dungeon      1 Tsetsethatha ",
+        "hot": "1",
+        "manager": "Tsetsethatha"
+    },
+    {
+        "id": "33 ",
+        "ext1": "ˇ",
+        "name": "mud_doom",
+        "type": "線上",
+        "caption": "◎失落的國度 - 重新開站了              PiGFAcE      ",
+        "hot": "",
+        "manager": "PiGFAcE"
+    },
+    {
+        "id": "34 ",
+        "ext1": "ˇ",
+        "name": "mud_jy",
+        "type": "線上",
+        "caption": "◎金庸修真路 jy.mud.com.tw:6666      1 tawi         ",
+        "hot": "1",
+        "manager": "tawi"
+    },
+    {
+        "id": "35 ",
+        "ext1": "ˇ",
+        "name": "mud_mars",
+        "type": "線上",
+        "caption": "◎瑪爾斯群英傳                         Fnd          ",
+        "hot": "",
+        "manager": "Fnd"
+    },
+    {
+        "id": "36 ",
+        "ext1": "ˇ",
+        "name": "mud_sanc",
+        "type": "線上",
+        "caption": "◎Sanctuary - 聖殿英雄傳說 mud 板      laechan      ",
+        "hot": "",
+        "manager": "laechan"
+    },
+    {
+        "id": "37 ",
+        "ext1": "ˇ",
+        "name": "NobuOnline",
+        "type": "線上",
+        "caption": "◎[信ON] ~天樓之章~ 第六天魔王         chinaeatshit ",
+        "hot": "",
+        "manager": "chinaeatshit"
+    },
+    {
+        "id": "38 ",
+        "ext1": "ˇ",
+        "name": "OverWatch",
+        "type": "線上",
+        "caption": "◎[鬥陣] Overwatch                   7 swattw/cody8 ",
+        "hot": "7",
+        "manager": "swattw/cody8"
+    },
+    {
+        "id": "39 ",
+        "ext1": "ˇ",
+        "name": "PathofExile",
+        "type": "線上",
+        "caption": "◎[PoE] 開心農場^^                  ",
+        "hot": "",
+        "manager": "開心農場^^"
+    },
+    {
+        "id": "40 ",
+        "ext1": "ˇ",
+        "name": "RO",
+        "type": "線上",
+        "caption": "◎[仙境] 萬聖節活動開始             ",
+        "hot": "",
+        "manager": "萬聖節活動開始"
+    },
+    {
+        "id": "41",
+        "ext1": "",
+        "name": "RS",
+        "type": "線上",
+        "caption": "◎     ×☆RockingSoccer☆ ×          bolam/csit58 ",
+        "hot": "",
+        "manager": "bolam/csit58"
+    },
+    {
+        "id": "42 ",
+        "ext1": "ˇ",
+        "name": "Shadowverse",
+        "type": "線上",
+        "caption": "◎[闇影詩章] 新卡包-勒比盧的旋風    ",
+        "hot": "",
+        "manager": "新卡包-勒比盧的旋風"
+    },
+    {
+        "id": "43 ",
+        "ext1": "ˇ",
+        "name": "SpecialForce",
+        "type": "線上",
+        "caption": "◎[SF] 暑假槍戰開打囉！                johlmike     ",
+        "hot": "",
+        "manager": "johlmike"
+    },
+    {
+        "id": "44 ",
+        "ext1": "ˇ",
+        "name": "StoneAge",
+        "type": "線上",
+        "caption": "◎[石器] 大地女神~血尿中             1 grantskip/sa ",
+        "hot": "1",
+        "manager": "grantskip/sa"
+    },
+    {
+        "id": "45 ",
+        "ext1": "ˇ",
+        "name": "TalesWeaver",
+        "type": "線上",
+        "caption": "◎[天翼] 韓版瑞秋即將實裝              Jin134       ",
+        "hot": "",
+        "manager": "Jin134"
+    },
+    {
+        "id": "46 ",
+        "ext1": "ˇ",
+        "name": "travian",
+        "type": "線上",
+        "caption": "◎[車羊] 肥羊遇豬年小心豬羊變色~       FDDFDFDA/Ora ",
+        "hot": "",
+        "manager": "FDDFDFDA/Ora"
+    },
+    {
+        "id": "47 ",
+        "ext1": "ˇ",
+        "name": "TreeofSavior",
+        "type": "線上",
+        "caption": "◎[救世者之樹]                         longkiss0618 ",
+        "hot": "",
+        "manager": "longkiss0618"
+    },
+    {
+        "id": "49 ",
+        "ext1": "ˇ",
+        "name": "Unlight",
+        "type": "線上",
+        "caption": "◎[UL] 十月更新                        nahsnib/jack ",
+        "hot": "",
+        "manager": "nahsnib/jack"
+    },
+    {
+        "id": "50 ",
+        "ext1": "ˇ",
+        "name": "VALORANT",
+        "type": "線上",
+        "caption": "◎[VALORANT] 瓦羅蘭 特 戰英豪          zhtw/rainnaw ",
+        "hot": "",
+        "manager": "zhtw/rainnaw"
+    },
+    {
+        "id": "51 ",
+        "ext1": "ˇ",
+        "name": "War_Thunder",
+        "type": "線上",
+        "caption": "◎戰爭雷霆                             Reventon     ",
+        "hot": "",
+        "manager": "Reventon"
+    },
+    {
+        "id": "52 ",
+        "ext1": "ˇ",
+        "name": "Wargaming",
+        "type": "線上",
+        "caption": "◎[ＷＧ] Happy New Year!             5 r790528      ",
+        "hot": "5",
+        "manager": "r790528"
+    },
+    {
+        "id": "53 ",
+        "ext1": "ˇ",
+        "name": "WOW",
+        "type": "線上",
+        "caption": "◎[WoW] 台服三群組 10/15是前夕      ",
+        "hot": "",
+        "manager": "10/15是前夕"
+    },
+    {
+        "id": "54 ",
+        "ext1": "ˇ",
+        "name": "X-Legend",
+        "type": "線上",
+        "caption": "◎[傳奇] 神子.星界.天團.幻想.聖境      godbest      ",
+        "hot": "",
+        "manager": "godbest"
+    },
+    {
+        "id": "55 ",
+        "ext1": " ",
+        "name": "Truth",
+        "type": "線上",
+        "caption": "◎I see you                            徵求中       ",
+        "hot": "",
+        "manager": "徵求中"
+    },
+    {
+        "id": "56 ",
+        "ext1": "ˇ",
+        "name": "CGI-Game",
+        "type": "觀封",
+        "caption": "◎[CGI-Game]                           j02850       ",
+        "hot": "",
+        "manager": "j02850"
+    },
+    {
+        "id": "57 ",
+        "ext1": "ˇ",
+        "name": "Garena",
+        "type": "觀封",
+        "caption": "◎GARENA版 誠徵新板主ing~              徵求中       ",
+        "hot": "",
+        "manager": "徵求中"
+    },
+    {
+        "id": "58 ",
+        "ext1": "ˇ",
+        "name": "ONLINE",
+        "type": "觀封",
+        "caption": "◎線上遊戲綜合板 贈送虛寶請洽置底                   ",
+        "hot": "",
+        "manager": "贈送虛寶請洽置底"
+    }
+]

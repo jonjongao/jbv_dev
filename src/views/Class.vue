@@ -23,6 +23,7 @@ export default {
   created() {},
   mounted() {
     this.onChange();
+    this.$bus.$emit('resize',true);
   },
   beforeDestroy() {},
   watch: {

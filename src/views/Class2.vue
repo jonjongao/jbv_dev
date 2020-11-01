@@ -26,6 +26,7 @@ export default {
   mounted() {
     this.onChange();
     console.log("mounted");
+    this.$bus.$emit('resize',true);
   },
   beforeDestroy() {
     console.log("destroy");

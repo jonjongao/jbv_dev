@@ -1,13 +1,19 @@
 <template>
-  <PCC3P2 v-if="page == 1" />
-  <PCC3P3 v-else-if="page == 2" />
-  <PCC3P1 v-else />
+<div v-if="this.$store.state.isMobile">
+    <MClass3 />
+  </div>
+  <div v-else>
+    <PCC3P2 v-if="page == 1" />
+    <PCC3P3 v-else-if="page == 2" />
+    <PCC3P1 v-else />
+  </div>
 </template>
 
 <script>
 import PCC3P1 from "@/components/pc_class3_page1.vue";
 import PCC3P2 from "@/components/pc_class3_page2.vue";
 import PCC3P3 from "@/components/pc_class3_page3.vue";
+import MClass3 from "@/components/m_class3.vue";
 export default {
   name: "Class3",
   props: ["bbsrow"],
@@ -15,6 +21,7 @@ export default {
     PCC3P1,
     PCC3P2,
     PCC3P3,
+    MClass3
   },
   data: function () {
     return {
@@ -28,6 +35,7 @@ export default {
     this.onChange();
     this.$bus.$on("on-keyup", this.onKeyup);
     console.log("mounted");
+    this.$bus.$emit('resize',true);
   },
   beforeDestroy() {
     this.$bus.$off("on-keyup", this.onKeyup);

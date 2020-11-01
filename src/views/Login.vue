@@ -17,6 +17,9 @@ export default {
     PCLogin,
     MLogin,
   },
+  mounted: function(){
+    this.$bus.$emit('resize',true);
+  },
   data: function () {
     return {
       phAccount: "",

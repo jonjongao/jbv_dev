@@ -32,6 +32,11 @@ new Vue({
      */
     window.addEventListener('keydown', this.onKeyup); // ! 監聽鍵盤事件
     window.addEventListener('resize', this.onResize); // ! 監聽視窗縮放事件
+
+    this.$bus.$on('resize', this.onResize);
+  },
+  beforeDestroy() {
+    this.$bus.$off('resize', this.onResize);
   },
   watch: {
     '$route'(to, from) {

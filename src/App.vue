@@ -1,8 +1,14 @@
 <template>
   <div id="app" class="container h-100 min-vw-100 p-0 m-0">
-    <div class="row min-vh-100 m-0 justify-content-center align-items-center">
+    <div
+      :class="
+        this.$store.state.isMobile
+          ? 'row min-vh-100 m-0'
+          : 'row min-vh-100 m-0 justify-content-center align-items-center'
+      "
+    >
       <div
-        class="col-12"
+        class="col-12 p-0"
         v-bind:style="this.$store.state.isMobile ? ';' : 'max-width:970px;'"
       >
         <div
@@ -40,7 +46,9 @@
               class="new_popup row d-flex justify-content-center"
               v-if="hasMail"
             >
-              <span class="q15 b1 text-center" v-if="blink">{{ popupMessage }}</span>
+              <span class="q15 b1 text-center" v-if="blink">{{
+                popupMessage
+              }}</span>
             </div>
             <router-view></router-view>
           </div>
@@ -64,13 +72,14 @@ export default {
   db3: ziqi_mails,
   db4: secret_mails,
   db5: forum_posts,
+  computed: {},
   data: function () {
     return {
       nav_tab: false,
       blink: false,
       hasMail: false,
       timeBlinks: 0,
-      popupMessage: '',
+      popupMessage: "",
     };
   },
   created: function () {
@@ -79,7 +88,7 @@ export default {
       this.$options.db2,
       this.$options.db3,
       this.$options.db4,
-      this.$options.db5
+      this.$options.db5,
     ]);
 
     window.addEventListener("keyup", this.onKeyup); // ! 監聽鍵盤事件
@@ -123,10 +132,10 @@ export default {
       this.hasMail = val;
       this.$store.commit("setSecret", true);
     },
-    onWarningPopup:function(val){
+    onWarningPopup: function (val) {
       this.popupMessage = "壞孩子會被趕出去";
       this.hasMail = val;
-    }
+    },
   },
 };
 

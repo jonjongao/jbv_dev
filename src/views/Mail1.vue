@@ -1,14 +1,21 @@
 <template>
-  <PCMail />
+  <div v-if="this.$store.state.isMobile">
+    <MMail />
+  </div>
+  <div v-else>
+    <PCMail />
+  </div>
 </template>
 
 <script>
 import PCMail from "@/components/pc_mail1.vue";
+import MMail from "@/components/m_mail1.vue";
 export default {
   name: "Mail1",
   props: ["bbsrow"],
   components: {
     PCMail,
+    MMail,
   },
   data: function () {
     return {};

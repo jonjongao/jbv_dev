@@ -1,11 +1,17 @@
 <template>
   <div id="mobileContainer" class="container" v-if="this.$store.state.isMobile">
-    <div class="row">
-      <div class="col-12 q15 b4">
-        <span>【主功能表】</span><span>批踢踢實業坊</span>
+    <Header />
+    <div class="row my-5"></div>
+    <div class="row text-center my-5">
+      <div class="col-12">
+        <img
+          src="../assets/mobile/mobile_gwh-logo_x2.png"
+          class="img-fluid"
+          alt="Logo"
+        />
       </div>
     </div>
-    <ul class="nav flex-column bg-dark">
+    <ul class="nav nav-pills flex-column bg-dark">
       <li class="nav-item">
         <a class="nav-link text-left" href="#">Announce 【 精華公佈欄 】</a>
       </li>
@@ -34,19 +40,19 @@
         <a class="nav-link text-left" href="#">Namelist 【 編特別名單 】</a>
       </li>
     </ul>
-    <div class="row">
-      <div class="col-12 q8 b7">
-        <span>{{ this.$store.state.dateLabel }}</span
-        ><span>[牡羊時]</span><span>線上</span><span>89879</span
-        ><span>人, 我是</span><span>{{ this.$store.state.accountLabel }}</span>
-      </div>
-    </div>
+    <Footer />
   </div>
 </template>
 
 <script>
+import Header from "@/components/m_header.vue";
+import Footer from "@/components/m_footer.vue";
 export default {
   name: "MMenu",
+  components: {
+    Header,
+    Footer,
+  },
   computed: {},
   data: function () {
     return {};

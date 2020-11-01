@@ -19,6 +19,7 @@ export default {
   },
   mounted() {
     this.onChange();
+    this.$bus.$emit('resize',true);
   },
   watch: {
     $route: "onChange",
