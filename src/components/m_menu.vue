@@ -12,36 +12,56 @@
       </div>
     </div>
 
-    <div class="col-12 py-3 px-4 rounded menu">
+    <div class="col-12 py-3 px-0 rounded bg-dark">
       <div>
-        <a href="javascript:void(0)">Announce 【 精華公佈欄 】</a>
+        <a class="nav-link line" href="javascript:void(0)"
+          >Announce 【 精華公佈欄 】</a
+        >
       </div>
       <div>
-        <router-link to="/favorite">Favorite 【 我 的 最愛 】</router-link>
+        <router-link class="nav-link line" to="/favorite"
+          >Favorite 【 我 的 最愛 】</router-link
+        >
       </div>
       <div>
-        <router-link to="/class">Class 【 分組討論區 】</router-link>
+        <router-link class="nav-link line" to="/class"
+          >Class 【 分組討論區 】</router-link
+        >
       </div>
       <div>
-        <router-link to="/mail1">Mail 【 私人信件區 】</router-link>
+        <router-link class="nav-link line" to="/mail1"
+          >Mail 【 私人信件區 】</router-link
+        >
       </div>
       <div>
-        <a href="javascript:void(0)">Talk 【 休閒聊天區 】</a>
+        <a class="nav-link line" href="javascript:void(0)"
+          >Talk 【 休閒聊天區 】</a
+        >
       </div>
       <div>
-        <a href="javascript:void(0)">User 【 個人設定區 】</a>
+        <a class="nav-link line" href="javascript:void(0)"
+          >User 【 個人設定區 】</a
+        >
       </div>
       <div>
-        <a href="javascript:void(0)">Xyz 【 系統資訊區 】</a>
+        <a class="nav-link line" href="javascript:void(0)"
+          >Xyz 【 系統資訊區 】</a
+        >
       </div>
       <div>
-        <a href="javascript:void(0)">Play 【 娛樂與休閒 】</a>
+        <a class="nav-link line" href="javascript:void(0)"
+          >Play 【 娛樂與休閒 】</a
+        >
       </div>
       <div>
-        <a href="javascript:void(0)">Namelist 【 編特別名單 】</a>
+        <a class="nav-link line" href="javascript:void(0)"
+          >Namelist 【 編特別名單 】</a
+        >
       </div>
       <div>
-        <router-link to="/goodbye">Goodbye 【 離開，再見… 】</router-link>
+        <router-link class="nav-link line" to="/goodbye"
+          >Goodbye 【 離開，再見… 】</router-link
+        >
       </div>
     </div>
     -->

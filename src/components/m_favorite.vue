@@ -8,7 +8,7 @@
           <a
             v-for="p in getMETA"
             :key="p.id"
-            class="my-1 nav-link line"
+            class="my-1 nav-link line bg-dark"
             href="#"
             ><span class="q9 b0 trend">{{ p.trend }}</span
             ><span class="q14 b0 name">{{ p.name }}</span

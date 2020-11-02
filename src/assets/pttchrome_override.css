@@ -244,10 +244,6 @@ span {
   margin-right: 34px;
 }
 
-#mobileContainer .menu{
-  background-color: #333;
-}
-
 #mobileContainer .footer{
   /* background-color: #222; */
 }
@@ -256,6 +252,13 @@ span {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  background-color:#222;
   width: 100%;
 } 
+
+.bg-dark {
+  background-color: #222 !important;
+}
+
+.bg-dark-3{
+  background-color: #333 !important;
+}

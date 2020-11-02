@@ -1,60 +1,55 @@
 <template>
   <div id="mobileContainer" class="container">
-    <div class="col-sm-12">
+    <div class="col-sm-12 my-5">
       <img
         src="../assets/mobile/mobile_gwh-logo_x2.png"
         class="img-fluid"
         alt="Logo"
       />
     </div>
-    <div class="row h-100">
-      <div class="col-sm-12 my-auto">
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">
+    
+        <ul class="col-12 my-auto bg-dark rounded">
+          <li class="nav-link text-white text-center">
             <h1>登入翠華BBS</h1>
           </li>
-          <li class="list-group-item">
-            <div class="col-sm-10 field-head">帳號</div>
-            <div class="col-sm-10">
+          <li class="nav-link text-white">
+            <div class="col-12 field-head px-0">帳號</div>
+            
               <input
-                class="col-sm-10"
+                class="col-12"
                 type="text"
                 ref="acfield"
                 v-on:keyup.enter="onAccountField(inAccount)"
                 v-model="inAccount"
                 :placeholder="phAccount"
               />
-            </div>
+            
           </li>
-          <li class="list-group-item">
-            <div
-              class="col-sm-10"
-              v-if="!isError"
+          <li class="nav-link text-white">
+            
+              <input v-if="!isError"
               v-bind:style="
                 isGuest ? 'visibility:hidden' : 'visibility:visible'
               "
-            >
-              <input
-                class="col-sm-10"
+                class="col-12"
                 type="password"
                 ref="pwfield"
                 v-on:keyup.enter="onPasswordField(inPassword)"
                 v-model="inPassword"
                 :placeholder="phPassword"
               />
-            </div>
+            
             <div v-else>
-              <div class="col-10">{{ errorText }}</div>
+              <div class="col-12 px-0">{{ errorText }}</div>
             </div>
           </li>
-          <li class="list-group-item">
+          <li class="nav-link text-white text-center">
             <button class="btn btn-dark" v-on:click="onPasswordField">
               登入
             </button>
           </li>
         </ul>
-      </div>
-    </div>
+    
   </div>
 </template>
 
