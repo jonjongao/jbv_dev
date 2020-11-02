@@ -243,3 +243,19 @@ span {
   width: 100%;
   margin-right: 34px;
 }
+
+#mobileContainer .menu{
+  background-color: #333;
+}
+
+#mobileContainer .footer{
+  /* background-color: #222; */
+}
+
+#mobileContainer a.line{
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  background-color:#222;
+  width: 100%;
+} 

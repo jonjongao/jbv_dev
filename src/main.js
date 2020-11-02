@@ -1,45 +1,42 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-import Vue from 'vue'
-import App from './App'
-import router from './router'
-import {
-  BootstrapVue,
-  IconsPlugin
-} from 'bootstrap-vue'
-import './bus'
-import store from './store'
+import Vue from "vue";
+import App from "./App";
+import router from "./router";
+import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
+import "./bus";
+import store from "./store";
 //import './assets/mobile/pttweb.css'
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap-vue/dist/bootstrap-vue.css";
 
-Vue.config.productionTip = false
-Vue.use(BootstrapVue)
-Vue.use(IconsPlugin)
+Vue.config.productionTip = false;
+Vue.use(BootstrapVue);
+Vue.use(IconsPlugin);
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
+  el: "#app",
   router,
   store,
   components: {
     App
   },
   computed: {},
-  created: function () {
+  created: function() {
     /**
      * * Vue初始化時觸發
      */
-    window.addEventListener('keydown', this.onKeyup); // ! 監聽鍵盤事件
-    window.addEventListener('resize', this.onResize); // ! 監聽視窗縮放事件
+    window.addEventListener("keydown", this.onKeyup); // ! 監聽鍵盤事件
+    window.addEventListener("resize", this.onResize); // ! 監聽視窗縮放事件
 
-    this.$bus.$on('resize', this.onResize);
+    this.$bus.$on("resize", this.onResize);
   },
   beforeDestroy() {
-    this.$bus.$off('resize', this.onResize);
+    this.$bus.$off("resize", this.onResize);
   },
   watch: {
-    '$route'(to, from) {
+    $route(to, from) {
       /**
        * * router view變更時觸發
        */
@@ -47,11 +44,10 @@ new Vue({
       // this.$store.commit('setDate', this.getTimeLabel); // ! 更新日期Label
     }
   },
-  template: '<App/>',
+  template: "<App/>",
   data: {},
   methods: {
-    onKeyup: function (e) {
-
+    onKeyup: function(e) {
       var now = this.$store.state.rowIndex;
       var length = this.$store.state.rowCount;
       //console.log(now+" -> "+length);
@@ -77,16 +73,24 @@ new Vue({
           return;
       }
       if (this.$store.state.isFreeze == false) {
-        this.$store.commit('setRowIndex', now);
+        this.$store.commit("setRowIndex", now);
       }
       // ! 轉發鍵盤事件
-      this.$bus.$emit('on-keyup', e);
+      this.$bus.$emit("on-keyup", e);
       e.preventDefault();
     },
-    onResize: function (e) {
+    onResize: function(e) {
       var w = window.innerWidth;
       var h = window.innerHeight;
-      this.$store.commit('setWindowSize', [w, h]);
+      var m = false;
+      if (w < 1024) m = true;
+      if (this.$store.state.isMobile != m) {
+        console.log("Force restart");
+        if (this.$route.name != "Login") {
+          this.$router.push({ name: "Login" });
+        }
+      }
+      this.$store.commit("setWindowSize", [w, h, m]);
     }
   }
-})
+});

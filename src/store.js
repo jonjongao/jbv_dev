@@ -71,8 +71,7 @@ const store = new Vuex.Store({
     setWindowSize(state, size) {
       state.width = size[0];
       state.height = size[1];
-      if (state.width < 1024) state.isMobile = true;
-      else state.isMobile = false;
+      state.isMobile = size[2];
     }
   }
 });

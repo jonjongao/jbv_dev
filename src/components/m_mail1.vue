@@ -1,10 +1,6 @@
 <template>
   <div id="mobileContainer" class="container" v-if="this.$store.state.isMobile">
-    <div class="row">
-      <div class="col-12 q15 b4">
-        <span>【主功能表】</span><span>批踢踢實業坊</span>
-      </div>
-    </div>
+    <Header />
     <ul class="nav flex-column bg-dark">
         <li class="nav-item">
             <a class="nav-link text-left" href="#">(R)ead 我的信箱</a>
@@ -28,20 +24,20 @@
             <a class="nav-link text-left" href="#">(C)ontact AM 寄信給帳號站長</a>
         </li>
     </ul>
-    <div class="row">
-      <div class="col-12 q8 b7">
-        <span>{{ this.$store.state.dateLabel }}</span
-        ><span>[牡羊時]</span><span>線上</span><span>89879</span
-        ><span>人, 我是</span><span>{{ this.$store.state.accountLabel }}</span>
-      </div>
-    </div>
+    <Footer />
   </div>
 </template>
 
 <script>
+import Header from "@/components/m_header.vue";
+import Footer from "@/components/m_footer.vue";
 import post from "../assets/class3.json";
 export default {
   name: "MMail",
+    components: {
+    Header,
+    Footer,
+  },
   computed: {
       getMETA:function(){
           return post;

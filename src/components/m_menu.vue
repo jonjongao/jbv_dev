@@ -11,35 +11,40 @@
         />
       </div>
     </div>
-    <ul class="nav nav-pills flex-column bg-dark">
-      <li class="nav-item">
-        <a class="nav-link text-left" href="#">Announce 【 精華公佈欄 】</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-left" href="#">Favorite 【 我 的 最愛 】</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-left" href="#">Class 【 分組討論區 】</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-left" href="#">Mail 【 私人信件區 】</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-left" href="#">Talk 【 休閒聊天區 】</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-left" href="#">User 【 個人設定區 】</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-left" href="#">Xyz 【 系統資訊區 】</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-left" href="#">Play 【 娛樂與休閒 】</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-left" href="#">Namelist 【 編特別名單 】</a>
-      </li>
-    </ul>
+
+    <div class="col-12 py-3 px-4 rounded menu">
+      <div>
+        <a href="javascript:void(0)">Announce 【 精華公佈欄 】</a>
+      </div>
+      <div>
+        <router-link to="/favorite">Favorite 【 我 的 最愛 】</router-link>
+      </div>
+      <div>
+        <router-link to="/class">Class 【 分組討論區 】</router-link>
+      </div>
+      <div>
+        <router-link to="/mail1">Mail 【 私人信件區 】</router-link>
+      </div>
+      <div>
+        <a href="javascript:void(0)">Talk 【 休閒聊天區 】</a>
+      </div>
+      <div>
+        <a href="javascript:void(0)">User 【 個人設定區 】</a>
+      </div>
+      <div>
+        <a href="javascript:void(0)">Xyz 【 系統資訊區 】</a>
+      </div>
+      <div>
+        <a href="javascript:void(0)">Play 【 娛樂與休閒 】</a>
+      </div>
+      <div>
+        <a href="javascript:void(0)">Namelist 【 編特別名單 】</a>
+      </div>
+      <div>
+        <router-link to="/goodbye">Goodbye 【 離開，再見… 】</router-link>
+      </div>
+    </div>
+    -->
     <Footer />
   </div>
 </template>
