@@ -62,7 +62,7 @@ export default {
       errorText: "密碼不對或無此帳號。請檢查大小寫及有無輸入錯誤。",
       inAccount: "",
       inPassword: "",
-      isGuest: false,
+      isGuest: true,
       isError: false,
     };
   },
@@ -84,13 +84,17 @@ export default {
       }
     },
     onAccountReturn() {
-      this.$nextTick(function () {
-        this.$refs.pwfield.focus();
-      });
+      if (this.isGuest) {
+        this.onPasswordReturn();
+      } else {
+        this.$nextTick(function () {
+          this.$refs.pwfield.focus();
+        });
+      }
     },
     onPasswordReturn() {
       if (
-        this.isGuest ||
+        this.inAccount.toLowerCase() == "guest" ||
         (this.inAccount == "Chi" && this.inPassword == "wakeupsoon")
       ) {
         this.$store.commit("setUser", [this.inAccount, this.inPassword]);

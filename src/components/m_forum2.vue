@@ -5,16 +5,16 @@
     <div class="row">
       <div class="col-12">
         <div class="nav flex-column nav-pills">
-          <a
+          <router-link
             v-for="(p, index) in getMETA"
             :key="index"
             class="my-1 nav-link line bg-dark"
-            :href="getURL(index)"
+            :to="getURL(index)"
             ><span>{{ p.ext1 }}</span
             ><span>{{ getExt2[index] }}</span
             ><span>{{ p.date }}</span
             ><span>{{ p.author }}</span
-            ><span>{{ p.caption }}</span></a
+            ><span>{{ p.caption }}</span></router-link
           >
         </div>
       </div>
@@ -310,13 +310,13 @@ export default {
     getURL: function (index) {
       var to = this.getMETA[index].to;
       if (to == null || to == "") {
-        return "javascript:void(0)";
+        return "/f/"+this.id;
       } else {
-        return "/p/" + this.id + "/" + to;
-        // return {
-        //   name: "Post",
-        //   params: { type: "post", id: to },
-        // };
+        // return "/p/" + this.id + "/" + to;
+        return {
+          name: "Post",
+          params: { type: "post", id: to },
+        };
       }
     },
   },
