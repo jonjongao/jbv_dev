@@ -4,46 +4,46 @@
     <div class="row my-5"></div>
     <ul class="nav flex-column bg-dark">
       <li class="nav-item">
-        <a class="nav-link text-left" href="#">市民廣場     報告站長 PTT咬我</a>
+        <a class="nav-link text-left" href="javascript:void(0)">市民廣場     報告站長 PTT咬我</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-left" href="#">臺灣大學     臺大, 臺大, 臺大            [paullai/s75</a>
+        <a class="nav-link text-left" href="javascript:void(0)">臺灣大學     臺大, 臺大, 臺大            [paullai/s75</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-left" href="#">政治大學     政大, 政大, 政大            [steve1121/s</a>
+        <a class="nav-link text-left" href="javascript:void(0)">政治大學     政大, 政大, 政大            [steve1121/s</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-left" href="#">青蘋果樹     校園, 班板, 社團            [dreamwave/f</a>
+        <a class="nav-link text-left" href="javascript:void(0)">青蘋果樹     校園, 班板, 社團            [dreamwave/f</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-left" href="#">活動中心     社團, 聚會, 團體            [dreamwave/s</a>
+        <a class="nav-link text-left" href="javascript:void(0)">活動中心     社團, 聚會, 團體            [dreamwave/s</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-left" href="#">視聽劇場     偶像, 音樂, 廣電            [skydreaming</a>
+        <a class="nav-link text-left" href="javascript:void(0)">視聽劇場     偶像, 音樂, 廣電            [skydreaming</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-left" href="#">戰略高手     遊戲, 數位, 程設            [a3225737]</a>
+        <router-link class="nav-link text-left" to="/class2">戰略高手     遊戲, 數位, 程設            [a3225737]</router-link>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-left" href="#">卡漫夢工廠   卡通, 漫畫, 動畫            [sitos]</a>
+        <a class="nav-link text-left" href="javascript:void(0)">卡漫夢工廠   卡通, 漫畫, 動畫            [sitos]</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-left" href="#">生活娛樂館   生活, 娛樂, 心情            [GeminiMan]</a>
+        <a class="nav-link text-left" href="javascript:void(0)">生活娛樂館   生活, 娛樂, 心情            [GeminiMan]</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-left" href="#">國家研究院   政治, 文學, 學術            [JosephChen/</a>
+        <a class="nav-link text-left" href="javascript:void(0)">國家研究院   政治, 文學, 學術            [JosephChen/</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-left" href="#">國家體育場   汗水, 鬥志, 膽識            [RJJ]</a>
+        <a class="nav-link text-left" href="javascript:void(0)">國家體育場   汗水, 鬥志, 膽識            [RJJ]</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-left" href="#">第三十二屆小天使招生10/05~10/12          chuo/</a>
+        <a class="nav-link text-left" href="javascript:void(0)">第三十二屆小天使招生10/05~10/12          chuo/</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-left" href="#">[武漢肺炎] 八大場所戴口罩                swattw/flyin</a>
+        <a class="nav-link text-left" href="javascript:void(0)">[武漢肺炎] 八大場所戴口罩                swattw/flyin</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-left" href="#">--&gt; 即時熱門看板 &lt;--</a>
+        <a class="nav-link text-left" href="javascript:void(0)">--&gt; 即時熱門看板 &lt;--</a>
       </li>
     </ul>
     <Footer />
