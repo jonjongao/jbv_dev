@@ -1,24 +1,39 @@
 <template>
-<div id="mobileContainer" class="container" v-if="this.$store.state.isMobile">
-    <div class="row">
-      <div class="col-12 q15 b4">
-        <span>【主功能表】</span><span>批踢踢實業坊</span>
+  <div id="mobileContainer" class="container">
+    <Header />
+    <div class="row my-5"></div>
+
+    <div class="col-12">
+      <div class="row">
+        <span class="col-2 q4 b7">作者</span
+        ><span class="col-10 q7 b4 p_field">{{ getMETA.author }}</span>
+      </div>
+      <div class="row">
+        <span class="col-2 q4 b7">標題</span
+        ><span class="col-10 q7 b4 p_field">{{ getMETA.caption }}</span>
+      </div>
+      <div class="row">
+        <span class="col-2 q4 b7">時間</span
+        ><span class="col-10 q7 b4 p_field">{{ getMETA.time }}</span>
       </div>
     </div>
-    <p class="q7 b0 text_field" v-html="getText">{{ getText }}</p>
+    
+    <p class="q7 b0 text_field mt-3" v-html="getText">{{ getText }}</p>
+
+    <div class="row">
+      <span class="col-12 q7 b0">--</span>
+    </div>
+    <div class="row">
+      <div class="col-12 q2 b0">
+        ※ 發信站: 批踢踢實業坊(ptt.cc), 來自: 114.136.173.9 (臺灣)
+      </div>
+    </div>
     <ul class="nav flex-column bg-dark">
-        <li class="nav-item" v-for="(r, index) in getReply" :key="index">
-            <a class="nav-link text-left" href="#">{{ r.author }} {{ r.text }}</a>
-        </li>
-      
+      <li class="nav-item" v-for="(r, index) in getReply" :key="index">
+        <a class="nav-link text-left" href="#">{{ r.author }} {{ r.text }}</a>
+      </li>
     </ul>
-    <div class="row">
-      <div class="col-12 q8 b7">
-        <span>{{ this.$store.state.dateLabel }}</span
-        ><span>[牡羊時]</span><span>線上</span><span>89879</span
-        ><span>人, 我是</span><span>{{ this.$store.state.accountLabel }}</span>
-      </div>
-    </div>
+    <Footer />
   </div>
 </template>
 
@@ -26,8 +41,14 @@
 import u from "../assets/util";
 import post from "../assets/post_pool.json";
 import reply from "../assets/reply_pool.json";
+import Header from "@/components/m_header.vue";
+import Footer from "@/components/m_footer.vue";
 export default {
   name: "MMail3",
+  components: {
+    Header,
+    Footer,
+  },
   props: ["type", "id"],
   mounted: function () {
     this.onChange();

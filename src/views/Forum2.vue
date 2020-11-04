@@ -1,14 +1,21 @@
 <template>
-  <PCForum2 :id="this.id" />
+  <div v-if="this.$store.state.isMobile">
+    <MForum2 :id="this.id" />
+  </div>
+  <div v-else>
+    <PCForum2 :id="this.id" />
+  </div>
 </template>
 
 <script>
 import PCForum2 from "@/components/pc_forum2.vue";
+import MForum2 from "@/components/m_forum2.vue";
 export default {
   name: "Forum2",
   props: ["id"],
   components: {
     PCForum2,
+    MForum2,
   },
   mounted() {
     this.onChange();

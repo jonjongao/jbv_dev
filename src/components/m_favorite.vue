@@ -5,19 +5,17 @@
     <div class="row">
       <div class="col-12">
         <div class="nav flex-column nav-pills">
-          <a
+          <router-link
             v-for="p in getMETA"
             :key="p.id"
             class="my-1 nav-link line bg-dark"
-            href="#"
+            :to="'/f/' + p.id"
             ><span class="q9 b0 trend">{{ p.trend }}</span
             ><span class="q14 b0 name">{{ p.name }}</span
             ><span :class="getColor[p.id - 1]">{{ p.class }}</span
             ><span class="q7 b0 caption">{{ p.caption }}</span
             ><span :class="getPop[p.id - 1]">{{ p.pop }}</span
-            ><span class="q7 b0 manager">{{
-              p.manager
-            }}</span></a
+            ><span class="q7 b0 manager">{{ p.manager }}</span></router-link
           >
         </div>
       </div>

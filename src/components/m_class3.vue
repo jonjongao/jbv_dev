@@ -1,38 +1,49 @@
 <template>
-  <div id="mobileContainer" class="container" v-if="this.$store.state.isMobile">
-    <div class="row">
-      <div class="col-12 q15 b4">
-        <span>【主功能表】</span><span>批踢踢實業坊</span>
-      </div>
-    </div>
+  <div id="mobileContainer" class="container">
+    <Header />
+    <div class="row my-5"></div>
+
     <ul class="nav flex-column bg-dark">
-        <li class="nav-item" v-for="p in getMETA" :key="p.id">
-            <a class="nav-link text-left" href="#">{{ p.name }} {{ p.caption }}</a>
-        </li>
-      
+      <li class="nav-item" v-for="p in getMETA" :key="p.id">
+        <router-link class="nav-link text-left" :to="getURL(p)"
+          >{{ p.name }} {{ p.caption }}</router-link
+        >
+      </li>
     </ul>
-    <div class="row">
-      <div class="col-12 q8 b7">
-        <span>{{ this.$store.state.dateLabel }}</span
-        ><span>[牡羊時]</span><span>線上</span><span>89879</span
-        ><span>人, 我是</span><span>{{ this.$store.state.accountLabel }}</span>
-      </div>
-    </div>
+    <Footer />
   </div>
 </template>
 
 <script>
 import post from "../assets/class3.json";
+import Header from "@/components/m_header.vue";
+import Footer from "@/components/m_footer.vue";
 export default {
   name: "MClass3",
+  components: {
+    Header,
+    Footer,
+  },
   computed: {
-      getMETA:function(){
-          return post;
-      }
+    getMETA: function () {
+      return post;
+    },
   },
   data: function () {
     return {};
   },
-  methods: {},
+  methods: {
+    getURL: function (item) {
+      if (item.id.includes("55"))
+      {
+        return {
+          name: "Forum",
+          params: { id: 0 },
+        };
+      }
+      else
+        return "/class3";
+    },
+  },
 };
 </script>

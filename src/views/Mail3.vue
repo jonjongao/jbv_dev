@@ -1,14 +1,21 @@
 <template>
-  <PCMail3 :type="this.type" :id="this.id" />
+  <div v-if="this.$store.state.isMobile">
+    <MMail3 :type="this.type" :id="this.id" />
+  </div>
+  <div v-else>
+    <PCMail3 :type="this.type" :id="this.id" />
+  </div>
 </template>
 
 <script>
 import PCMail3 from "@/components/pc_mail3.vue";
+import MMail3 from "@/components/m_mail3.vue";
 export default {
   name: "Mail3",
   props: ["type","id"],
   components: {
     PCMail3,
+    MMail3
   },
   data: function () {
     return {

@@ -1,5 +1,5 @@
 <template>
-  <div id="mobileContainer" class="container" v-if="this.$store.state.isMobile">
+  <div id="mobileContainer" class="container">
     <Header />
     <div class="row my-5"></div>
     <div class="row text-center my-5">
