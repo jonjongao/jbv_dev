@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar fixed-top q15 b4">
+  <nav class="row m-0 p-2 fixed-top q15 b4">
     <div>
       <span class="q15 b4">{{ label1 }}</span
       ><span v-if="label3 != ''" class="q15 b4">{{ label3 }}</span

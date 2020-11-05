@@ -263,6 +263,10 @@ span {
   background-color: #333 !important;
 }
 
+.bg-dark-0 {
+  background-color: black !important;
+}
+
 .btn-del {
   padding: 0.25rem 0.5rem;
   font-size: 12px;
@@ -270,4 +274,73 @@ span {
   border-radius: 0.2rem;
   background-color: red;
   color: white;
+}
+
+#mobileContainer .front {
+  height: 60px;
+  padding: 0 0 0 0px;
+  background-size: 40px;
+  background-repeat: no-repeat;
+  background-position: 10px;
+}
+
+#mobileContainer .front .content {
+  position: relative;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+
+#mobileContainer .front .content::after {
+  content: "";
+  pointer-events: none;
+  box-sizing: border-box;
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  left: 0;
+  bottom: 0;
+  background: #999;
+  transform: scaleY(0.5);
+  transform-origin: 0 0;
+}
+
+#mobileContainer .front .content .title {
+  padding: 10px 0 0 0;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+
+#mobileContainer .front .content .description {
+  padding: 10px 0 0 0;
+  font-size: 13px;
+  line-height: 13px;
+  color: #aaa;
+}
+
+#mobileContainer .back {
+  height: 60px;
+  position: relative;
+}
+
+#mobileContainer .back .read {
+  position: absolute;
+  left: 0;
+  width: 60px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 60px;
+  color: #fff;
+  background-color: #ccc;
+}
+
+#mobileContainer .back .delete {
+  position: absolute;
+  right: 0;
+  width: 60px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 60px;
+  color: #fff;
 }

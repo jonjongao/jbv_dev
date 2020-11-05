@@ -8,31 +8,29 @@
           class="row m-0"
           v-for="(p, index) in getMETA"
           :key="index"
-          :right="60"
+          :right="sliderRight"
           :trigger="trigger"
           @touchStartEvent="touchStartEventHandle"
           @clickFrontEvent="clickFrontEventHandle"
           @clickBackEvent="clickBackEventHandle"
         >
-          <div slot="front" class="front bg-dark">
+          <div slot="front" class="front bg-dark-0">
             <div class="content">
               <router-link :to="getURL(index)" class="row m-0">
                 <div class="col-2 p-0 pl-2">
                   <div class="col-12 p-0">
-                    <span class="badge badge-danger">{{ p.ext1 }}</span
-                    ><span class="badge badge-danger">{{
-                      getExt2[index]
-                    }}</span>
+                    <span class="q8 b0 mr-1">{{ p.ext1 }}</span
+                    ><span :class="getPop[index]">{{ getExt2[index] }}</span>
                   </div>
                   <div class="col-12 p-0">
                     <span class="badge badge-dark">{{ p.date }}</span>
                   </div>
                 </div>
                 <div class="col-10 p-0 pr-2">
-                  <div class="col-12 p-0 line">
+                  <div class="col-12 p-0 q15 line">
                     <span>{{ p.caption }}</span>
                   </div>
-                  <div class="col-12 p-0">
+                  <div class="col-12 p-0 q8">
                     <span>{{ p.author }}</span>
                   </div>
                 </div>
@@ -44,15 +42,8 @@
           </div>
         </better-slider>
       </div>
-      <Footer />
-
-      <!-- <div class="del_popup" v-if="deletingStep == 2">
-      <span class="empty"></span>
-      <pre><span class="q7 b0">正在刪除文章: {{ getMETA[this.$store.state.rowIndex].caption }}</span></pre>
-      <pre><span class="q7 b0">您的文章減為 {{ newLength-1 }} 篇，支付清潔費 28 Ptt幣</span></pre>
-      <span class="q14 b4 col-12 text-center">請按任意鍵繼續</span>
-    </div> -->
     </div>
+    <Footer />
   </div>
 </template>
 
@@ -113,11 +104,11 @@ export default {
       var p = [];
       for (var i = 0; i < this.getMETA.length; i++) {
         var num = parseInt(this.getMETA[i].ext2);
-        var val = "reply2";
-        if (num > 0) val = "q10 b0 reply2";
-        if (num > 9) val = "q11 b0 reply2";
-        if (num > 99 || this.getMETA[i].ext2 == "爆") val = "q9 b0 reply2";
-        if (num < -99 || this.getMETA[i].ext2 == "XX") val = "q8 b0 reply2";
+        var val = "mr-1";
+        if (num > 0) val = "q10 b0 mr-1";
+        if (num > 9) val = "q11 b0 mr-1";
+        if (num > 99 || this.getMETA[i].ext2 == "爆") val = "q9 b0 mr-1";
+        if (num < -99 || this.getMETA[i].ext2 == "XX") val = "q8 b0 mr-1";
         p.push(val);
       }
       return p;
@@ -162,6 +153,10 @@ export default {
     isChi: function () {
       if (this.$store.state.account == "Chi") return true;
       else return false;
+    },
+    sliderRight: function () {
+      if (this.isChi) return 60;
+      else return 0;
     },
   },
   data: function () {
@@ -214,66 +209,66 @@ export default {
 };
 </script>
 
-<style lang="scss">
-.front {
-  height: 60px;
-  padding: 0 0 0 0px;
-  // background-image: url('../static/logo.png');
-  background-size: 40px;
-  background-repeat: no-repeat;
-  background-position: 10px;
-  // background-color: #fff;
-  .content {
-    position: relative;
-    box-sizing: border-box;
-    height: 100%;
-    &:after {
-      content: "";
-      pointer-events: none;
-      box-sizing: border-box;
-      position: absolute;
-      width: 100%;
-      height: 1px;
-      left: 0;
-      bottom: 0;
-      background: #999;
-      transform: scaleY(0.5);
-      transform-origin: 0 0;
-    }
-    .title {
-      padding: 10px 0 0 0;
-      font-size: 16px;
-      line-height: 16px;
-    }
-    .description {
-      padding: 10px 0 0 0;
-      font-size: 13px;
-      line-height: 13px;
-      color: #aaa;
-    }
-  }
-}
-.back {
-  height: 60px;
-  position: relative;
-  .read {
-    position: absolute;
-    left: 0;
-    width: 60px;
-    text-align: center;
-    font-size: 16px;
-    line-height: 60px;
-    color: #fff;
-    background-color: #ccc;
-  }
-  .delete {
-    position: absolute;
-    right: 0;
-    width: 60px;
-    text-align: center;
-    font-size: 16px;
-    line-height: 60px;
-    color: #fff;
-  }
-}
+<style lang="scss" scoped>
+// .front {
+//   height: 60px;
+//   padding: 0 0 0 0px;
+//   // background-image: url('../static/logo.png');
+//   background-size: 40px;
+//   background-repeat: no-repeat;
+//   background-position: 10px;
+//   // background-color: #fff;
+//   .content {
+//     position: relative;
+//     box-sizing: border-box;
+//     height: 100%;
+//     &:after {
+//       content: "";
+//       pointer-events: none;
+//       box-sizing: border-box;
+//       position: absolute;
+//       width: 100%;
+//       height: 1px;
+//       left: 0;
+//       bottom: 0;
+//       background: #999;
+//       transform: scaleY(0.5);
+//       transform-origin: 0 0;
+//     }
+//     .title {
+//       padding: 10px 0 0 0;
+//       font-size: 16px;
+//       line-height: 16px;
+//     }
+//     .description {
+//       padding: 10px 0 0 0;
+//       font-size: 13px;
+//       line-height: 13px;
+//       color: #aaa;
+//     }
+//   }
+// }
+// .back {
+//   height: 60px;
+//   position: relative;
+//   .read {
+//     position: absolute;
+//     left: 0;
+//     width: 60px;
+//     text-align: center;
+//     font-size: 16px;
+//     line-height: 60px;
+//     color: #fff;
+//     background-color: #ccc;
+//   }
+//   .delete {
+//     position: absolute;
+//     right: 0;
+//     width: 60px;
+//     text-align: center;
+//     font-size: 16px;
+//     line-height: 60px;
+//     color: #fff;
+//   }
+// }
 </style>
