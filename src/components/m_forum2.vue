@@ -4,29 +4,54 @@
     <div class="row my-5"></div>
     <div class="row">
       <div class="col-12 p-0">
-        <!-- <div class="nav flex-column nav-pills"> -->
-        <div class="row m-0" v-for="(p, index) in getMETA" :key="index">
-          <div :class="isChi ? 'col-10' : 'col-12'">
-            <router-link class="my-1 nav-link line bg-dark" :to="getURL(index)"
-              ><span>{{ p.ext1 }}</span
-              ><span>{{ getExt2[index] }}</span
-              ><span>{{ p.date }}</span
-              ><span>{{ p.author }}</span
-              ><span>{{ p.caption }}</span></router-link
-            >
+        <better-slider
+          class="row m-0"
+          v-for="(p, index) in getMETA"
+          :key="index"
+          :right="60"
+          :trigger="trigger"
+          @touchStartEvent="touchStartEventHandle"
+          @clickFrontEvent="clickFrontEventHandle"
+          @clickBackEvent="clickBackEventHandle"
+        >
+          <div slot="front" class="front bg-dark">
+            <div class="content">
+              <router-link :to="getURL(index)" class="row m-0">
+                <div class="col-2 p-0 pl-2">
+                  <div class="col-12 p-0">
+                    <span class="badge badge-danger">{{ p.ext1 }}</span
+                    ><span class="badge badge-danger">{{
+                      getExt2[index]
+                    }}</span>
+                  </div>
+                  <div class="col-12 p-0">
+                    <span class="badge badge-dark">{{ p.date }}</span>
+                  </div>
+                </div>
+                <div class="col-10 p-0 pr-2">
+                  <div class="col-12 p-0 line">
+                    <span>{{ p.caption }}</span>
+                  </div>
+                  <div class="col-12 p-0">
+                    <span>{{ p.author }}</span>
+                  </div>
+                </div>
+              </router-link>
+            </div>
           </div>
-          <button v-if="isChi" type="button" class="my-2 btn btn-del">刪除</button>
-        </div>
-        <!-- </div> -->
+          <div slot="back" class="back">
+            <div class="delete">刪除</div>
+          </div>
+        </better-slider>
       </div>
-    </div>
-    <Footer />
+      <Footer />
 
-    <div class="del_popup" v-if="deletingStep == 2">
+      <!-- <div class="del_popup" v-if="deletingStep == 2">
       <span class="empty"></span>
       <pre><span class="q7 b0">正在刪除文章: {{ getMETA[this.$store.state.rowIndex].caption }}</span></pre>
       <pre><span class="q7 b0">您的文章減為 {{ newLength-1 }} 篇，支付清潔費 28 Ptt幣</span></pre>
       <span class="q14 b4 col-12 text-center">請按任意鍵繼續</span>
+    </div> -->
     </div>
   </div>
 </template>
@@ -145,6 +170,7 @@ export default {
       inDelete: "",
       isDeleting: false,
       deletingStep: 0,
+      trigger: false,
     };
   },
   created() {},
@@ -175,6 +201,79 @@ export default {
         };
       }
     },
+    touchStartEventHandle() {
+      this.trigger = !this.trigger;
+    },
+    clickFrontEventHandle({ event, component }) {},
+    clickBackEventHandle({ event, component }) {
+      if (event.target.className.indexOf("delete") > -1) {
+        component.close();
+      }
+    },
   },
 };
 </script>
+
+<style lang="scss">
+.front {
+  height: 60px;
+  padding: 0 0 0 0px;
+  // background-image: url('../static/logo.png');
+  background-size: 40px;
+  background-repeat: no-repeat;
+  background-position: 10px;
+  // background-color: #fff;
+  .content {
+    position: relative;
+    box-sizing: border-box;
+    height: 100%;
+    &:after {
+      content: "";
+      pointer-events: none;
+      box-sizing: border-box;
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      left: 0;
+      bottom: 0;
+      background: #999;
+      transform: scaleY(0.5);
+      transform-origin: 0 0;
+    }
+    .title {
+      padding: 10px 0 0 0;
+      font-size: 16px;
+      line-height: 16px;
+    }
+    .description {
+      padding: 10px 0 0 0;
+      font-size: 13px;
+      line-height: 13px;
+      color: #aaa;
+    }
+  }
+}
+.back {
+  height: 60px;
+  position: relative;
+  .read {
+    position: absolute;
+    left: 0;
+    width: 60px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 60px;
+    color: #fff;
+    background-color: #ccc;
+  }
+  .delete {
+    position: absolute;
+    right: 0;
+    width: 60px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 60px;
+    color: #fff;
+  }
+}
+</style>

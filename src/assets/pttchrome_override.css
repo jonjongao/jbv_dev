@@ -252,7 +252,7 @@ span {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  width: 100%;
+  /* width: 100%; */
 }
 
 .bg-dark {

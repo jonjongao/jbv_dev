@@ -9,10 +9,12 @@ import store from "./store";
 //import './assets/mobile/pttweb.css'
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
+import SlidingButton from 'vue-sliding-button'
 
 Vue.config.productionTip = false;
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
+Vue.use(SlidingButton)
 
 /* eslint-disable no-new */
 new Vue({
