@@ -65,6 +65,15 @@ import guest_mails from "./assets/guest_mails.json";
 import ziqi_mails from "./assets/ziqi_mails.json";
 import secret_mails from "./assets/secret_mails.json";
 import forum_posts from "./assets/forum.json";
+/**
+ * ? 討論板資料表
+ */
+import forum_head from "./assets/forum_head.json";
+import forum from "./assets/forum.json";
+import tsueihua from "./assets/tsuei-hua.json";
+import eil_guest from "./assets/eil_guest.json";
+import eil_ziqi from "./assets/eil_ziqi.json";
+
 export default {
   name: "App",
   db1: list_favorite,
@@ -72,6 +81,11 @@ export default {
   db3: ziqi_mails,
   db4: secret_mails,
   db5: forum_posts,
+  fdb1: forum_head,
+  fdb2: forum,
+  fdb3: tsueihua,
+  fdb4: eil_guest,
+  fdb5: eil_ziqi,
   computed: {},
   data: function () {
     return {
@@ -89,6 +103,14 @@ export default {
       this.$options.db3,
       this.$options.db4,
       this.$options.db5,
+    ]);
+
+    this.$store.commit("setForumDBs",[
+      this.$options.fdb1,
+      this.$options.fdb2,
+      this.$options.fdb3,
+      this.$options.fdb4,
+      this.$options.fdb5
     ]);
 
     window.addEventListener("keyup", this.onKeyup); // ! 監聽鍵盤事件

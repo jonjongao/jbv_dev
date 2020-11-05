@@ -22,6 +22,13 @@ const store = new Vuex.Store({
     ziqiMails: [],
     forumPosts: {},
     secretMails: [],
+
+    forumHeader: {}, // ! 各討論區標頭文案
+    truthForumList: [], // ! Truth版(預設)討論區清單
+    tsueihuaForumList: [], // ! 翠華板討論區清單
+    eilGuestVerForumList: [], // ! 艾爾板訪客視點清單
+    eilZiqiVerForumList: [], // ! 艾爾板子琪視點清單
+
     isUnlockedSecret: false
   },
   mutations: {
@@ -50,6 +57,13 @@ const store = new Vuex.Store({
       state.ziqiMails = dbs[2];
       state.secretMails = dbs[3];
       state.forumPosts = dbs[4];
+    },
+    setForumDBs(state, dbs) {
+      state.forumHeader = dbs[0];
+      state.truthForumList = dbs[1];
+      state.tsueihuaForumList = dbs[2];
+      state.eilGuestVerForumList = dbs[3];
+      state.eilZiqiVerForumList = dbs[4];
     },
     setRowIndex(state, index) {
       state.rowIndex = index;
