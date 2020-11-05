@@ -11,6 +11,7 @@
     <ul class="col-12 my-auto bg-dark rounded">
       <li class="nav-link text-white text-center">
         <h1>登入翠華BBS</h1>
+        <div>請輸入代號，或以 guest 參觀</div>
       </li>
       <li class="nav-link text-white">
         <div class="col-12 field-head px-0">帳號</div>
