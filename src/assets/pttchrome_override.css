@@ -32,7 +32,7 @@
   /* z-index: -1 !important; */
 }
 
-#BBSWindow pre{
+#BBSWindow pre {
   border: 0px;
   font-family: MingLiu, SymMingLiu, monospace !important;
   height: 24px;
@@ -53,53 +53,53 @@ span {
   display: flex;
 }
 
-#mainContainer pre .pointer{
+#mainContainer pre .pointer {
   display: inline-block;
   width: 24px;
   text-align: left;
 }
 
-#mainContainer pre .index{
+#mainContainer pre .index {
   display: inline-block;
   width: 60px;
   text-align: right;
 }
 
-#mainContainer pre .trend{
+#mainContainer pre .trend {
   display: inline-block;
   width: 36px;
   text-align: right;
 }
 
-#mainContainer pre .name{
+#mainContainer pre .name {
   display: inline-block;
   width: 156px;
 }
 
-#mainContainer pre .class{
+#mainContainer pre .class {
   display: inline-block;
   width: 60px;
 }
 
-#mainContainer pre .caption{
+#mainContainer pre .caption {
   display: inline-block;
   width: 420px;
 }
 
-#mainContainer pre .pop{
+#mainContainer pre .pop {
   display: inline-block;
   width: 36px;
   text-align: right;
 }
 
-#mainContainer pre .manager{
+#mainContainer pre .manager {
   display: inline-block;
   /* width: 144px; */
   width: 168px;
   margin-left: 12px;
 }
 
-#mainContainer .empty{
+#mainContainer .empty {
   display: inline-block;
   width: 970px;
   line-height: 24px;
@@ -157,14 +157,14 @@ span {
   width: 156px;
 }
 
-#mainContainer > pre > span.p_field  {
+#mainContainer>pre>span.p_field {
   display: inline-block;
   width: 864px;
   padding-left: 12px;
   height: 24px;
 }
 
-#mainContainer > div > p.text_field  {
+#mainContainer>div>p.text_field {
   display: inline-block;
   width: 936px;
   overflow-wrap: break-word;
@@ -172,7 +172,7 @@ span {
   hyphens: auto;
 }
 
-#mainContainer > span.p_foot {
+#mainContainer>span.p_foot {
   bottom: 10px;
   position: absolute;
 }
@@ -188,35 +188,35 @@ span {
   line-height: 35px;
 } */
 
-#mainContainer span.h_manager{
+#mainContainer span.h_manager {
   display: inline-block;
   width: 350px;
 }
 
-#mainContainer span.h_pin{
+#mainContainer span.h_pin {
   display: inline-block;
 }
 
-#mainContainer span.h_name{
+#mainContainer span.h_name {
   display: inline-block;
   text-align: right;
   width: 350px;
   margin-right: 22px;
 }
 
-#mainContainer span.h_pop{
+#mainContainer span.h_pop {
   display: inline-block;
   min-width: 84px;
 }
 
-#mainContainer input{
+#mainContainer input {
   line-height: 24px;
   height: 24px;
   border: 0px;
   padding: 0px;
 }
 
-#mainContainer .del_popup{
+#mainContainer .del_popup {
   position: absolute;
   width: 100%;
   height: 264px;
@@ -225,40 +225,49 @@ span {
   background-color: black;
 }
 
-#mainContainer .del_popup .col-12{
+#mainContainer .del_popup .col-12 {
   position: absolute;
   display: inline-block;
   max-width: 948px;
   bottom: 0px;
 }
 
-#BBSWindow .new_popup span{
+#BBSWindow .new_popup span {
   position: absolute;
   display: inline-block;
   width: 324px;
   top: 0px;
 }
 
-#mainContainer span.time{
+#mainContainer span.time {
   width: 100%;
   margin-right: 34px;
 }
 
-#mobileContainer .footer{
+#mobileContainer .footer {
   /* background-color: #222; */
 }
 
-#mobileContainer .line{
+#mobileContainer .line {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
   width: 100%;
-} 
+}
 
 .bg-dark {
   background-color: #222 !important;
 }
 
-.bg-dark-3{
+.bg-dark-3 {
   background-color: #333 !important;
+}
+
+.btn-del {
+  padding: 0.25rem 0.5rem;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 0.2rem;
+  background-color: red;
+  color: white;
 }
