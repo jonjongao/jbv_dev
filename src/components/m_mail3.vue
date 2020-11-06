@@ -28,11 +28,11 @@
         ※ 發信站: 批踢踢實業坊(ptt.cc), 來自: 114.136.173.9 (臺灣)
       </div>
     </div>
-    <ul class="nav flex-column bg-dark">
-      <li class="nav-item" v-for="(r, index) in getReply" :key="index">
-        <a class="nav-link text-left" href="#">{{ r.author }} {{ r.text }}</a>
-      </li>
-    </ul>
+    <div class="col-12 p-0">
+      <div class="row mx-0 my-1 p-1 bg-dark rounded" v-for="(r, index) in getReply" :key="index">
+        <span :class="getExt1[index]">{{ r.ext1 }} </span><span class="q11 b0">{{ r.author }}: </span><span class="q3 b0 line">{{ r.text }}</span>
+      </div>
+    </div>
     <Footer />
   </div>
 </template>
