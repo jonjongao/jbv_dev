@@ -38,7 +38,7 @@
             </div>
           </div>
           <div slot="back" class="back">
-            <div class="delete">刪除</div>
+            <div class="delete" :id="index">刪除</div>
           </div>
         </better-slider>
       </div>
@@ -203,6 +203,21 @@ export default {
     clickBackEventHandle({ event, component }) {
       if (event.target.className.indexOf("delete") > -1) {
         component.close();
+        // ! 當點擊刪除
+        if (this.isChi == false) {
+          return;
+        }
+
+        var i = event.target.getAttribute("id");
+        if (i == 61) {
+          this.$bus.$emit("on-mail-popup", true);
+          console.log(i);
+        } else {
+          this.$bus.$emit("on-warning-popup", true);
+          this.$router.push({
+            name: "Goodbye",
+          });
+        }
       }
     },
   },

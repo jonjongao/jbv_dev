@@ -1,5 +1,5 @@
 <template>
-  <nav class="row m-0 p-2 fixed-top q15 b4">
+  <nav class="row m-0 p-2 fixed-top q15 b4" ref="header">
     <div>
       <span class="q15 b4">{{ label1 }}</span
       ><span v-if="label3 != ''" class="q15 b4">{{ label3 }}</span
@@ -14,6 +14,9 @@ export default {
   props: ["p1", "p2", "p3"],
   created: function () {
     console.log(this.p1 + " _ " + this.p2 + " _ " + this.p3);
+  },
+  mounted:function(){
+    this.$store.commit("setMobileHeaderHeight",this.$refs.header.clientHeight);
   },
   computed: {
     label1: function () {

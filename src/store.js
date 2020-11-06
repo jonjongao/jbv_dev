@@ -29,7 +29,9 @@ const store = new Vuex.Store({
     eilGuestVerForumList: [], // ! 艾爾板訪客視點清單
     eilZiqiVerForumList: [], // ! 艾爾板子琪視點清單
 
-    isUnlockedSecret: false
+    isUnlockedSecret: false,
+
+    mobileHeaderHeight: 0
   },
   mutations: {
     setFreeze(state, val) {
@@ -86,6 +88,10 @@ const store = new Vuex.Store({
       state.width = size[0];
       state.height = size[1];
       state.isMobile = size[2];
+    },
+    setMobileHeaderHeight(state,val){
+      state.mobileHeaderHeight = val;
+      console.log("submit height="+val);
     }
   }
 });

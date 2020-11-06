@@ -38,6 +38,9 @@
           <router-link to="/goodbye">Goodbye</router-link>
         </div>
         <div id="MobileWindow" v-if="this.$store.state.isMobile">
+          <div class="row fixed-top q15 b1 justify-content-center" :style="'z-index:1080;'+'height:'+this.$store.state.mobileHeaderHeight+'px;'" v-if="hasMail">
+            <span class="q15 my-auto text-center" v-if="blink">{{ popupMessage }}</span>
+          </div>
           <router-view></router-view>
         </div>
         <div id="BBSWindow" v-else>
@@ -105,12 +108,12 @@ export default {
       this.$options.db5,
     ]);
 
-    this.$store.commit("setForumDBs",[
+    this.$store.commit("setForumDBs", [
       this.$options.fdb1,
       this.$options.fdb2,
       this.$options.fdb3,
       this.$options.fdb4,
-      this.$options.fdb5
+      this.$options.fdb5,
     ]);
 
     window.addEventListener("keyup", this.onKeyup); // ! 監聽鍵盤事件
