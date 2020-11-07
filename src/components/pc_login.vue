@@ -61,7 +61,7 @@
     <span type="bbsrow" srow="19"><div><span class="" data-type="bbsline" data-row="19"><span><span class="q7 b0">                                                                                </span></span></span><div></div></div></span>
 </pre>
     <pre>
-    <span class="q7 b0">請輸入代號，或以 guest 參觀，或以 new 註冊: </span><input type="text" ref="acfield" v-on:keyup.enter="onAccountField(inAccount)" v-model="inAccount" :placeholder="phAccount">
+    <span class="q7 b0">請輸入代號，或以 guest 參觀: </span><input type="text" ref="acfield" v-on:keyup.enter="onAccountField(inAccount)" v-model="inAccount" :placeholder="phAccount">
 </pre>
     <pre
       v-if="!isError"
