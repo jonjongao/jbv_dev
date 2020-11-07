@@ -31,7 +31,12 @@ export default {
     getColor: function () {
       var cl = [];
       for (var x = 0; x < this.getMETA.length; x++) {
-        cl.push(this.randomColor() + " class");
+        switch(x)
+        {
+          case 0:cl.push("q12 b0 class");
+          case 1:cl.push("q9 b0 class");
+          default:cl.push("q7 b0 class");
+        }
       }
       return cl;
     },
@@ -50,12 +55,6 @@ export default {
     isSelect: function (index) {
       if (index == this.$store.state.rowIndex) return "●";
       else return "";
-    },
-    randomColor: function () {
-      var max = 15;
-      var min = 3;
-      var i = Math.floor(Math.random() * (max - min + 1) + min);
-      return "q" + i + " b0";
     },
     onKeyup(e) {
       switch (e.which) {

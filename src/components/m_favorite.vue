@@ -58,11 +58,13 @@ export default {
     },
     getColor: function () {
       var cl = [];
-      // for (var x = 0; x < this.getMETA.length; x++) {
-      //   cl.push(this.randomColor() + " class");
-      // }
       for (var x = 0; x < this.getMETA.length; x++) {
-        cl.push(this.randomColor());
+        switch(x)
+        {
+          case 0:cl.push("q12 b0");
+          case 1:cl.push("q9 b0");
+          default:cl.push("q7 b0");
+        }
       }
       return cl;
     },
@@ -83,12 +85,6 @@ export default {
     };
   },
   methods: {
-    randomColor: function () {
-      var max = this.style.length;
-      var min = 0;
-      var i = Math.floor(Math.random() * (max - min + 1) + min);
-      return this.style[i];
-    },
   },
 };
 </script>
