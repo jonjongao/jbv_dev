@@ -58,7 +58,9 @@ new Vue({
           break;
         case 38: // * 按下up
           now--;
-          if (now < 0) now = length - 1;
+          // ! 如果指針到頂，是否跳轉到尾
+          // if (now < 0) now = length - 1;
+          if (now < 0) now = 0;
           break;
         case 39: // * 按下right
           break;
