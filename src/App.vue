@@ -43,7 +43,7 @@
           </div>
           <router-view></router-view>
         </div>
-        <div id="BBSWindow" v-else>
+        <div id="BBSWindow" style="padding-left:0px;padding-right:0px;" v-else>
           <div class="main">
             <div
               class="new_popup row d-flex justify-content-center"
