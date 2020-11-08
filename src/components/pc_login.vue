@@ -55,7 +55,7 @@
     <span type="bbsrow" srow="17"><div><span class="" data-type="bbsline" data-row="17"><span><span class="q3 b1">|片|片|片|片|片|片|片|片|片|片|片|片|片|片|片|片|片|片|片|片|片|片|片|片|片|片</span><span class="q7 b0">  </span></span></span><div></div></div></span>
 </pre>
     <pre>
-    <span type="bbsrow" srow="18"><div><span class="" data-type="bbsline" data-row="18"><span><span class="q7 b0">          </span><span class="q3 b1">    目前有【</span><span class="q11 b1"> 95517 </span><span class="q3 b1"> 】位訪客在 批踢踢實業坊    </span><span class="q7 b0">                       </span></span></span><div></div></div></span>
+    <span type="bbsrow" srow="18"><div><span class="" data-type="bbsline" data-row="18"><span><span class="q7 b0">          </span><span class="q3 b1">    目前有【</span><span class="q11 b1"> 95517 </span><span class="q3 b1"> 】位訪客在 金鸞BBS佈告欄    </span><span class="q7 b0">                       </span></span></span><div></div></div></span>
 </pre>
     <pre>
     <span type="bbsrow" srow="19"><div><span class="" data-type="bbsline" data-row="19"><span><span class="q7 b0">                                                                                </span></span></span><div></div></div></span>

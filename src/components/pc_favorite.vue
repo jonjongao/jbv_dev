@@ -1,6 +1,6 @@
 <template>
   <div id="mainContainer">
-    <pre><span type="bbsrow" srow="0"><div><span class="" data-type="bbsline" data-row="0"><span><span class="q15 b4">【看板列表】                     </span><span class="q11 b4">批踢踢實業坊</span><span class="q15 b4">                                  </span><span class="q7 b0"> </span></span></span><div></div></div></span></pre>
+    <pre><span type="bbsrow" srow="0"><div><span class="" data-type="bbsline" data-row="0"><span><span class="q15 b4">【看板列表】                    </span><span class="q11 b4">金鸞BBS佈告欄</span><span class="q15 b4">                                  </span><span class="q7 b0"> </span></span></span><div></div></div></span></pre>
     <pre><span type="bbsrow" srow="1"><div><span class="" data-type="bbsline" data-row="1"><span><span class="q7 b0">[←][q]回上層 [→][r]閱讀 [↑↓]選擇 [PgUp][PgDn]翻頁 [c]新文章 [/]搜尋 [h]求助 </span></span></span><div></div></div></span></pre>
     <pre><span type="bbsrow" srow="2"><div><span class="" data-type="bbsline" data-row="2"><span><span class="q0 b7">   編號   看  板       類別   中   文   敘   述               人氣 板   主     </span><span class="q7 b0"> </span></span></span><div></div></div></span></pre>
 

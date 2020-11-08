@@ -25,7 +25,7 @@
     </div>
     <div class="row">
       <div class="col-12 q2 b0">
-        ※ 發信站: 批踢踢實業坊(ptt.cc), 來自: 114.136.173.9 (臺灣)
+        ※ 發信站: 金鸞BBS佈告欄
       </div>
     </div>
     <div class="col-12 p-0">

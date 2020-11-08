@@ -16,7 +16,7 @@
       </div>
       <pre><span type="bbsrow" srow="6"><div><span class="" data-type="bbsline" data-row="6"><span><span class="q7 b0">                                                                                </span></span></span><div></div></div></span></pre>
       <pre><span type="bbsrow" srow="7"><div><span class="" data-type="bbsline" data-row="7"><span><span class="q7 b0">--                                                                              </span></span></span><div></div></div></span></pre>
-      <pre><span type="bbsrow" srow="8"><div><span class="" data-type="bbsline" data-row="8"><span><span class="q2 b0">※ 發信站: 批踢踢實業坊(ptt.cc), 來自: 114.136.173.9 (臺灣)</span><span class="q7 b0">                     </span></span></span><div></div></div></span></pre>
+      <pre><span type="bbsrow" srow="8"><div><span class="" data-type="bbsline" data-row="8"><span><span class="q2 b0">※ 發信站: 金鸞BBS佈告欄</span><span class="q7 b0">                     </span></span></span><div></div></div></span></pre>
       <pre v-for="(r, index) in getReply" :key="index">
       <span :class="getExt1[index]">{{ r.ext1 }} </span><span class="q11 b0">{{ r.author }}: </span><span class="q3 b0">{{ r.text }}</span><span class="q7 b0 time text-right">{{ r.time }}</span>
     </pre>

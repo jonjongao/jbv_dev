@@ -1,6 +1,6 @@
 <template>
   <div id="mainContainer">
-    <pre><span type="bbsrow" srow="0"><div><span class="" data-type="bbsline" data-row="0"><span><span class="q15 b4">【郵件選單】                     </span><span class="q11 b4">批踢踢實業坊</span><span class="q15 b4">                                  </span><span class="q7 b0"> </span></span></span><div></div></div></span></pre>
+    <pre><span type="bbsrow" srow="0"><div><span class="" data-type="bbsline" data-row="0"><span><span class="q15 b4">【郵件選單】                    </span><span class="q11 b4">金鸞BBS佈告欄</span><span class="q15 b4">                                  </span><span class="q7 b0"> </span></span></span><div></div></div></span></pre>
     <pre><span type="bbsrow" srow="1"><div><span class="" data-type="bbsline" data-row="1"><span><span class="q7 b0">[←]離開[↑↓]選擇[→]閱讀信件 [O]站外信:開 [h]求助 [~]資源回收筒               </span></span></span><div></div></div></span></pre>
     <pre><span type="bbsrow" srow="2"><div><span class="" data-type="bbsline" data-row="2"><span><span class="q0 b7">  編號   日 期 作 者          信  件  標  題                 </span><span class="q2 b7">{{ getCapacity }}</span><span class="q7 b0"> </span></span></span><div></div></div></span></pre>
     <pre v-for="p in 20" :key="p">

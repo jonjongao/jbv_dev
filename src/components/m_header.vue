@@ -24,7 +24,7 @@ export default {
       else return this.p1;
     },
     label2: function () {
-      if (this.p2 == null) return "批踢踢實業坊";
+      if (this.p2 == null) return "金鸞BBS佈告欄";
       else return this.p2;
     },
     label3: function () {
