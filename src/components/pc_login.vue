@@ -127,8 +127,7 @@ export default {
           break;
         case 13: // ! enter
           if (this.isGuest == false) {
-            // ! Chi->ihc wakeupsoon->noospuekaw
-            if (this.inAccount == "ihc" && this.inPassword == "noospuekaw") {
+            if (this.inAccount == "wakeupsoon" && this.inPassword == "chi") {
               this.$store.commit("setUser", [this.inAccount, this.inPassword]);
               this.$router.push({ name: "MainMenu" });
             } else {

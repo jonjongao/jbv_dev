@@ -96,7 +96,7 @@ export default {
     onPasswordReturn() {
       if (
         this.inAccount.toLowerCase() == "guest" ||
-        (this.inAccount == "ihc" && this.inPassword == "noospuekaw")
+        (this.inAccount == "wakeupsoon" && this.inPassword == "chi")
       ) {
         this.$store.commit("setUser", [this.inAccount, this.inPassword]);
         this.$router.push({ name: "MainMenu" });
