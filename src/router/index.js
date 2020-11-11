@@ -20,7 +20,8 @@ Vue.use(Router)
 const routes = [{
     path: '/',
     name: 'Login',
-    component: Login
+    component: Login,
+    meta: { trackedTitle: "登入" }
   },
   {
     path: '/mainmenu',
@@ -28,12 +29,14 @@ const routes = [{
     component: MainMenu,
     props: {
       bbsrow: 10
-    }
+    },
+    meta: { trackedTitle: "主選單" }
   },
   {
     path: '/favorite',
     name: 'Favorite',
     component: Favorite,
+    meta: { trackedTitle: "最愛區" }
   },
   {
     path: '/class',
@@ -41,7 +44,8 @@ const routes = [{
     component: Class,
     props: {
       bbsrow: 14
-    }
+    },
+    meta: { trackedTitle: "分類看板" }
   },
   {
     path: '/class2',
@@ -49,7 +53,8 @@ const routes = [{
     component: Class2,
     props: {
       bbsrow: 15
-    }
+    },
+    meta: { trackedTitle: "戰略高手" }
   },
   {
     path: '/class3',
@@ -57,13 +62,15 @@ const routes = [{
     component: Class3,
     props: {
       bbsrow: 58
-    }
+    },
+    meta: { trackedTitle: "GOnline" }
   },
   {
     path: '/f/:id',
     name: 'Forum',
     component: Forum2,
-    props: true
+    props: true,
+    meta: { trackedTitle: "討論板" }
   },
   {
     path: '/mail1',
@@ -71,7 +78,8 @@ const routes = [{
     component: Mail1,
     props: {
       bbsrow: 7
-    }
+    },
+    meta: { trackedTitle: "私信區" }
   },
   {
     path: '/mail2',
@@ -79,19 +87,15 @@ const routes = [{
     component: Mail2,
     props: {
       bbsrow: 4
-    }
-  },
-  {
-    path: '/p/:type/:id',
-    name: 'Mail3',
-    component: Mail3,
-    props: true
+    },
+    meta: { trackedTitle: "信箱" }
   },
   {
     path: '/p/:type/:id',
     name: 'Post',
     component: Mail3,
-    props: true
+    props: true,
+    meta: { trackedTitle: "貼文" }
   },
   {
     path: '/goodbye',
@@ -99,7 +103,8 @@ const routes = [{
     component: Goodbye,
     props: {
       bbsrow: 4
-    }
+    },
+    meta: { trackedTitle: "離開" }
   }
 ];
 

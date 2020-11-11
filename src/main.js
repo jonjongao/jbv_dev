@@ -3,7 +3,11 @@
 import Vue from "vue";
 import App from "./App";
 import router from "./router";
-import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
+import VueGtag from "vue-gtag";
+import {
+  BootstrapVue,
+  IconsPlugin
+} from "bootstrap-vue";
 import "./bus";
 import store from "./store";
 //import './assets/mobile/pttweb.css'
@@ -12,6 +16,41 @@ import "bootstrap-vue/dist/bootstrap-vue.css";
 import SlidingButton from 'vue-sliding-button'
 
 Vue.config.productionTip = false;
+Vue.use(
+  VueGtag, {
+    config: {
+      id: "GTM-PHWQL6T"
+    },
+    pageTrackerTemplate(to) {
+      switch (to.name) {
+        case "Forum":
+          console.log(to["meta"].trackedTitle + "_" + to["params"].id);
+          return {
+            page_title: to["meta"].trackedTitle + "_" + to["params"].id,
+              page_path: to.path,
+              page_location: window.location.href
+          };
+          break;
+        case "Post":
+          console.log(to["meta"].trackedTitle + "_" + to["params"].type + "_" + to["params"].id);
+          return {
+            page_title: to["meta"].trackedTitle + "_" + to["params"].type + "_" + to["params"].id,
+              page_path: to.path,
+              page_location: window.location.href
+          };
+          break;
+        default:
+          return {
+            page_title: to["meta"].trackedTitle,
+              page_path: to.path,
+              page_location: window.location.href
+          };
+          break;
+      }
+    }
+  },
+  router
+);
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 Vue.use(SlidingButton)
@@ -25,7 +64,7 @@ new Vue({
     App
   },
   computed: {},
-  created: function() {
+  created: function () {
     /**
      * * Vue初始化時觸發
      */
@@ -49,7 +88,7 @@ new Vue({
   template: "<App/>",
   data: {},
   methods: {
-    onKeyup: function(e) {
+    onKeyup: function (e) {
       var now = this.$store.state.rowIndex;
       var length = this.$store.state.rowCount;
       //console.log(now+" -> "+length);
@@ -83,7 +122,7 @@ new Vue({
       this.$bus.$emit("on-keyup", e);
       e.preventDefault();
     },
-    onResize: function(e) {
+    onResize: function (e) {
       var w = window.innerWidth;
       var h = window.innerHeight;
       var m = false;
@@ -91,7 +130,9 @@ new Vue({
       if (this.$store.state.isMobile != m) {
         console.log("Force restart");
         if (this.$route.name != "Login") {
-          this.$router.push({ name: "Login" });
+          this.$router.push({
+            name: "Login"
+          });
         }
       }
       this.$store.commit("setWindowSize", [w, h, m]);
