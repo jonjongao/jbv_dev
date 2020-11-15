@@ -56,7 +56,7 @@ export default {
         case 1:
           return tsueihua;
         case 2:
-          if (this.$store.state.account == "Chi") return eil_ziqi;
+          if (this.$store.state.account == "wakeupsoon") return eil_ziqi;
           else return eil_guest;
         default:
           return [];
@@ -244,7 +244,7 @@ export default {
           break;
         case 68: // ! d
           var name = this.$store.state.account;
-          if (name != "Chi") {
+          if (name != "wakeupsoon") {
             console.log("not authorized");
             return;
           }

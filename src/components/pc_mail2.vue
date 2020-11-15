@@ -27,7 +27,7 @@ export default {
       return ("(容量:" + this.getGuestMETA.length + "/1500篇) ").padStart(15);
     },
     getMETA: function () {
-      if (this.$store.state.account == "Chi") return this.getZiqiMETA;
+      if (this.$store.state.account == "wakeupsoon") return this.getZiqiMETA;
       else return this.getGuestMETA;
     },
     getGuestMETA: function () {

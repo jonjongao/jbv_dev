@@ -81,7 +81,7 @@ export default {
       var meta = {};
       if (this.type == "mail") {
         console.log("this is mail");
-        if (this.$store.state.account == "Chi") meta = this.getZiqiMETA;
+        if (this.$store.state.account == "wakeupsoon") meta = this.getZiqiMETA;
         else meta = this.getGuestMETA;
       } else {
         console.log("this is post");

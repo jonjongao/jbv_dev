@@ -82,7 +82,7 @@ export default {
         case 1:
           return this.$store.state.tsueihuaForumList;
         case 2:
-          if (this.$store.state.account == "Chi")
+          if (this.$store.state.account == "wakeupsoon")
             return this.$store.state.eilZiqiVerForumList;
           else return this.$store.state.eilGuestVerForumList;
         default:
@@ -151,7 +151,7 @@ export default {
       return posts;
     },
     isChi: function () {
-      if (this.$store.state.account == "Chi") return true;
+      if (this.$store.state.account == "wakeupsoon") return true;
       else return false;
     },
     sliderRight: function () {
