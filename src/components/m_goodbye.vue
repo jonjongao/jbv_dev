@@ -29,7 +29,7 @@ export default {
   name: "MGoodbye",
   methods:{
       onClick(){
-          window.location.href = '/jbv_dev';
+          window.location.href = '';
       }
   }
 };

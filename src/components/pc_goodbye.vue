@@ -23,7 +23,7 @@ export default {
   methods: {
     onKeyup: function (e) {
       //this.$router.push({ name: "Login" });
-      window.location.href = '/jbv_dev';
+      window.location.href = '';
     }
   }
 }
