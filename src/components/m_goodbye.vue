@@ -29,7 +29,7 @@ export default {
   name: "MGoodbye",
   methods:{
       onClick(){
-          window.location.href = 'https://clbbs.space/';
+          window.location.href = 'https://www.clbbs.space/';
       }
   }
 };
