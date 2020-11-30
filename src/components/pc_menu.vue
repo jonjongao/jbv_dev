@@ -1,6 +1,6 @@
 <template>
 <div id="mainContainer"><span type="bbsrow" srow="0"><div><span class="" data-type="bbsline" data-row="0"><span><span class="q15 b4">【主功能表】                    </span><span class="q11 b4">金鸞BBS佈告欄</span><span class="q15 b4">                                  </span><span class="q7 b0"> </span></span></span><div></div></div></span>
-<div class="row text-center my-5">
+<div class="row text-center">
       <div class="col-12">
         <img
           src="../assets/banner.jpg"

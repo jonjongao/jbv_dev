@@ -1,6 +1,6 @@
 <template>
   <div id="mainContainer">
-    <div class="row text-center my-5">
+    <div class="row text-center my-4">
       <div class="col-12">
         <img
           src="../assets/intro.jpg"
