@@ -58,7 +58,7 @@ export default {
       var m = (n.match(new RegExp("<br/>", "g")) || []).length;
       m += 5;
       // ! 一頁18行
-      console.log("text got num of " + (m + this.getReply.length) + " <br/>");
+      // console.log("text got num of " + (m + this.getReply.length) + " <br/>");
       this.lineInTotal = m + this.getReply.length;
       // console.log("line in total="+this.lineInTotal);
 
@@ -81,11 +81,11 @@ export default {
     getMETA: function () {
       var meta = {};
       if (this.type == "mail") {
-        console.log("this is mail");
+        // console.log("this is mail");
         if (this.$store.state.account == "wakeupsoon") meta = this.getZiqiMETA;
         else meta = this.getGuestMETA;
       } else {
-        console.log("this is post");
+        // console.log("this is post");
         var db = post;
         for (var i = 0; i < db.length; i++)
           if (db[i].id == this.id) meta = db[i];

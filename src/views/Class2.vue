@@ -21,15 +21,15 @@ export default {
     return {}
   },
   created() {
-    console.log("create");
+    // console.log("create");
   },
   mounted() {
     this.onChange();
-    console.log("mounted");
+    // console.log("mounted");
     this.$bus.$emit('resize',true);
   },
   beforeDestroy() {
-    console.log("destroy");
+    // console.log("destroy");
   },
   watch: {
     // call again the method if the route changes

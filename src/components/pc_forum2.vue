@@ -140,18 +140,18 @@ export default {
     };
   },
   created() {
-    console.log("create");
+    // console.log("create");
     this.newLength = this.getMETA.length;
-    console.log(this.newLength);
+    // console.log(this.newLength);
   },
   mounted() {
     this.onChange();
     this.$bus.$on("on-keyup", this.onKeyup);
-    console.log("mounted");
+    // console.log("mounted");
   },
   beforeDestroy() {
     this.$bus.$off("on-keyup", this.onKeyup);
-    console.log("destroy");
+    // console.log("destroy");
     this.$store.commit("setFreeze", false);
   },
   watch: {
@@ -162,10 +162,10 @@ export default {
     onDeleteField(value) {
       if (value == null || value == "") return;
       if (value.toLowerCase() == "y") {
-        console.log("yes");
+        // console.log("yes");
         this.deletingStep = 2;
       } else if (value.toLowerCase() == "n") {
-        console.log("no");
+        // console.log("no");
         this.deletingStep = 0;
         this.$store.commit("setFreeze", false);
       }
@@ -176,13 +176,13 @@ export default {
       else return "";
     },
     onChange() {
-      console.log("reset rowIndex=0");
+      // console.log("reset rowIndex=0");
       this.updatePage();
       this.$store.commit("setRowCount", this.getMETA.length);
     },
     onKeyup(e) {
       if (this.deletingStep == 2) {
-        console.log("confirm at step 2");
+        // console.log("confirm at step 2");
         var name = this.$store.state.account;
         this.getMETA[this.$store.state.rowIndex].caption =
           "□ (本文已被刪除) [" + name + "]";
@@ -237,7 +237,7 @@ export default {
         case 39: // ! right
           var to = this.getMETA[this.$store.state.rowIndex].to;
           if (to == null || to == "") {
-            console.log("can't find target");
+            // console.log("can't find target");
           } else {
             // ! 嘗試進入文章
             this.$router.push({
@@ -249,11 +249,11 @@ export default {
         case 68: // ! d
           var name = this.$store.state.account;
           if (name != "wakeupsoon") {
-            console.log("not authorized");
+            // console.log("not authorized");
             return;
           }
           // var to = this.getMETA[this.$store.state.rowIndex].to;
-          console.log("try delete:" + this.$store.state.rowIndex);
+          // console.log("try delete:" + this.$store.state.rowIndex);
           this.deletingStep = 1;
           this.$nextTick(function () {
             this.$refs.del.focus();
@@ -281,7 +281,7 @@ export default {
       // // ! 指標在頭和尾之間
       // else{
       var p = Math.ceil((this.$store.state.rowIndex + 1) / 20);
-      console.log("you're at page" + p);
+      // console.log("you're at page" + p);
 
       this.startIndex = (p - 1) * 20;
       // }

@@ -28,7 +28,7 @@ export default {
       }
       i++;
     }
-    console.log("Space of " + str + " = " + space);
+    // console.log("Space of " + str + " = " + space);
     return space;
   }
 }

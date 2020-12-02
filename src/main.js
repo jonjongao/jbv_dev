@@ -27,7 +27,7 @@ Vue.use(
     pageTrackerTemplate(to) {
       switch (to.name) {
         case "Forum":
-          console.log("gtag=" + to["meta"].trackedTitle + "_" + to["params"].id);
+          // console.log("gtag=" + to["meta"].trackedTitle + "_" + to["params"].id);
           return {
             page_title: to["meta"].trackedTitle + "_" + to["params"].id,
               page_path: to.path,
@@ -35,7 +35,7 @@ Vue.use(
           };
           break;
         case "Post":
-          console.log("gtag=" + to["meta"].trackedTitle + "_" + to["params"].type + "_" + to["params"].id);
+          // console.log("gtag=" + to["meta"].trackedTitle + "_" + to["params"].type + "_" + to["params"].id);
           return {
             page_title: to["meta"].trackedTitle + "_" + to["params"].type + "_" + to["params"].id,
               page_path: to.path,
@@ -43,7 +43,7 @@ Vue.use(
           };
           break;
         default:
-          console.log("gtag=" + to["meta"].trackedTitle);
+          // console.log("gtag=" + to["meta"].trackedTitle);
           return {
             page_title: to["meta"].trackedTitle,
               page_path: to.path,
@@ -132,7 +132,7 @@ new Vue({
       var m = false;
       if (w < 1024) m = true;
       if (this.$store.state.isMobile != m) {
-        console.log("Force restart");
+        // console.log("Force restart");
         if (this.$route.name != "Login") {
           this.$router.push({
             name: "Login"

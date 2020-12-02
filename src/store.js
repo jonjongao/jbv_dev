@@ -44,12 +44,12 @@ const store = new Vuex.Store({
         for (var i = 0; i < this.state.secretMails.length; i++) {
           this.state.ziqiMails.push(this.state.secretMails[i]);
         }
-        console.log("add secret mail to ziqi's mail list");
+        // console.log("add secret mail to ziqi's mail list");
       } else {
       }
     },
     setUser(state, data) {
-      console.log("set user=" + data[0] + "/" + data[1]);
+      // console.log("set user=" + data[0] + "/" + data[1]);
       state.account = data[0];
       state.password = data[1];
     },
@@ -69,11 +69,11 @@ const store = new Vuex.Store({
     },
     setRowIndex(state, index) {
       state.rowIndex = index;
-      console.log("set row index=" + index);
+      // console.log("set row index=" + index);
     },
     setRowCount(state, index) {
       state.rowCount = index;
-      console.log("set row count=" + index);
+      // console.log("set row count=" + index);
     },
     increment(state) {
       state.count++;
@@ -91,7 +91,7 @@ const store = new Vuex.Store({
     },
     setMobileHeaderHeight(state,val){
       state.mobileHeaderHeight = val;
-      console.log("submit height="+val);
+      // console.log("submit height="+val);
     }
   }
 });

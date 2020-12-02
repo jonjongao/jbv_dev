@@ -50,16 +50,13 @@ export default {
     return {};
   },
   created() {
-    console.log("create");
     this.$store.commit("setAccount", this.getAccountLabel);
     this.$store.commit("setDate", this.getTimeLabel);
   },
   mounted() {
     this.onChange();
-    console.log("mounted");
   },
   beforeDestroy() {
-    console.log("destroy");
   },
   watch: {
     // call again the method if the route changes

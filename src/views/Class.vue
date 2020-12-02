@@ -32,7 +32,7 @@ export default {
   },
   methods: {
     onChange() {
-      console.log("reset rowIndex=0");
+      // console.log("reset rowIndex=0");
       this.$store.commit("setRowIndex", 0);
       this.$store.commit("setRowCount", this.bbsrow);
     },

@@ -12,16 +12,16 @@ export default {
     }
   },
   created() {
-    console.log("create");
+    // console.log("create");
   },
   mounted() {
     this.onChange();
     this.$bus.$on('on-keyup', this.onKeyup);
-    console.log("mounted");
+    // console.log("mounted");
   },
   beforeDestroy() {
     this.$bus.$off('on-keyup', this.onKeyup);
-    console.log("destroy");
+    // console.log("destroy");
   },
   watch: {
     // call again the method if the route changes
@@ -29,7 +29,7 @@ export default {
   },
   methods: {
     onChange() {
-      console.log("reset rowIndex=0");
+      // console.log("reset rowIndex=0");
       this.rowIndex = 0;
     },
     onKeyup: function (e) {
@@ -43,11 +43,11 @@ export default {
           if (this.rowIndex > this.bbsrow - 1) this.rowIndex = 0;
           break;
         case 13:
-          console.log("enter index:" + this.rowIndex);
-          console.log(this.$route.name);
+          // console.log("enter index:" + this.rowIndex);
+          // console.log(this.$route.name);
           break;
       }
-      console.log("rowIndex=" + this.rowIndex);
+      // console.log("rowIndex=" + this.rowIndex);
     }
   }
 };

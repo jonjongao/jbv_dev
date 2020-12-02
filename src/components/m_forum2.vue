@@ -211,7 +211,7 @@ export default {
         var i = event.target.getAttribute("id");
         if (i == 61) {
           this.$bus.$emit("on-mail-popup", true);
-          console.log(i);
+          // console.log(i);
         } else {
           this.$bus.$emit("on-warning-popup", true);
           this.$router.push({

@@ -13,7 +13,7 @@ export default {
   name: "MHeader",
   props: ["p1", "p2", "p3"],
   created: function () {
-    console.log(this.p1 + " _ " + this.p2 + " _ " + this.p3);
+    // console.log(this.p1 + " _ " + this.p2 + " _ " + this.p3);
   },
   mounted:function(){
     this.$store.commit("setMobileHeaderHeight",this.$refs.header.clientHeight);

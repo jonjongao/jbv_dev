@@ -29,17 +29,17 @@ export default {
     };
   },
   created() {
-    console.log("create");
+    // console.log("create");
   },
   mounted() {
     this.onChange();
     this.$bus.$on("on-keyup", this.onKeyup);
-    console.log("mounted");
+    // console.log("mounted");
     this.$bus.$emit('resize',true);
   },
   beforeDestroy() {
     this.$bus.$off("on-keyup", this.onKeyup);
-    console.log("destroy");
+    // console.log("destroy");
   },
   watch: {
     // call again the method if the route changes

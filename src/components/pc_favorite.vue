@@ -70,7 +70,7 @@ export default {
         case 39: // ! right
           var to = this.getMETA[this.$store.state.rowIndex].id;
           if (to == null || to == "") {
-            console.log("can't find target");
+            // console.log("can't find target");
             return;
           }
           to = parseInt(to);
