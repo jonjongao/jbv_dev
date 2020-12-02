@@ -182,6 +182,12 @@ export default {
     },
     onKeyup(e) {
       if (this.deletingStep == 2) {
+        this.$gtag.event("remove_from_cart", {
+          event_category: "刪除文章",
+          event_label: this.getMETA[this.$store.state.rowIndex].id,
+          value: 0,
+        });
+
         // console.log("confirm at step 2");
         var name = this.$store.state.account;
         this.getMETA[this.$store.state.rowIndex].caption =
@@ -234,6 +240,7 @@ export default {
           this.updatePage();
           break;
         case 13: // ! enter
+          break;
         case 39: // ! right
           var to = this.getMETA[this.$store.state.rowIndex].to;
           if (to == null || to == "") {

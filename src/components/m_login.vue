@@ -100,6 +100,19 @@ export default {
         this.inAccount.toLowerCase() == "guest" ||
         (this.inAccount == "wakeupsoon" && this.inPassword == "chi")
       ) {
+        if (this.isGuest) {
+          this.$gtag.event("login", {
+            event_category: "玩家登入",
+            event_label: "guest",
+            value: 0,
+          });
+        } else {
+          this.$gtag.event("login", {
+            event_category: "玩家登入",
+            event_label: "wakeupsoon",
+            value: 0,
+          });
+        }
         this.$store.commit("setUser", [this.inAccount, this.inPassword]);
         this.$router.push({ name: "MainMenu" });
       } else {

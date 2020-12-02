@@ -2,11 +2,7 @@
   <div id="mainContainer">
     <div class="row text-center my-4">
       <div class="col-12">
-        <img
-          src="../assets/intro.gif"
-          class="img-fluid"
-          alt="Logo"
-        />
+        <img src="../assets/intro.gif" class="img-fluid" alt="Logo" />
       </div>
     </div>
     <pre>
@@ -58,6 +54,12 @@ export default {
     onAccountField(value) {
       if (value == null || value == "") return;
       if (value.toLowerCase() == "guest") {
+        this.$gtag.event("login", {
+          event_category: "玩家登入",
+          event_label: "guest",
+          value: 0,
+        });
+
         this.$store.commit("setUser", [this.inAccount, this.inPassword]);
         this.$router.push({ name: "MainMenu" });
       } else {
@@ -77,6 +79,12 @@ export default {
         case 13: // ! enter
           if (this.isGuest == false) {
             if (this.inAccount == "wakeupsoon" && this.inPassword == "chi") {
+              this.$gtag.event("login", {
+                event_category: "玩家登入",
+                event_label: "wakeupsoon",
+                value: 0,
+              });
+
               this.$store.commit("setUser", [this.inAccount, this.inPassword]);
               this.$router.push({ name: "MainMenu" });
             } else {

@@ -201,14 +201,19 @@ export default {
     },
     clickFrontEventHandle({ event, component }) {},
     clickBackEventHandle({ event, component }) {
+      var i = event.target.getAttribute("id");
       if (event.target.className.indexOf("delete") > -1) {
+        this.$gtag.event("remove_from_cart", {
+          event_category: "刪除文章",
+          event_label: this.getMETA[i].id,
+          value: 0,
+        });
         component.close();
         // ! 當點擊刪除
         if (this.isChi == false) {
           return;
         }
 
-        var i = event.target.getAttribute("id");
         if (i == 61) {
           this.$bus.$emit("on-mail-popup", true);
           // console.log(i);

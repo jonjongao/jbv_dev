@@ -153,11 +153,24 @@ export default {
       }
     },
     onMailPopup: function (val) {
+      // console.log("學姊信");
+      this.$gtag.event("view_promotion", {
+        event_category: "文章操作",
+        event_label: "得到學姐站內信",
+        value: 0,
+      });
+          
       this.popupMessage = "你有新信件";
       this.hasMail = val;
       this.$store.commit("setSecret", true);
     },
     onWarningPopup: function (val) {
+      this.$gtag.event("view_promotion", {
+        event_category: "文章操作",
+        event_label: "刪錯文章",
+        value: 0,
+      });
+
       this.popupMessage = "壞孩子會被趕出去";
       this.hasMail = val;
     },
