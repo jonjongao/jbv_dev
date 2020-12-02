@@ -21,10 +21,12 @@ Vue.use(
     config: {
       id: "GTM-PHWQL6T"
     },
+    appName: '金鸞BBS佈告欄',
+    pageTrackerScreenviewEnabled: true,
     pageTrackerTemplate(to) {
       switch (to.name) {
         case "Forum":
-          console.log(to["meta"].trackedTitle + "_" + to["params"].id);
+          console.log("gtag=" + to["meta"].trackedTitle + "_" + to["params"].id);
           return {
             page_title: to["meta"].trackedTitle + "_" + to["params"].id,
               page_path: to.path,
@@ -32,7 +34,7 @@ Vue.use(
           };
           break;
         case "Post":
-          console.log(to["meta"].trackedTitle + "_" + to["params"].type + "_" + to["params"].id);
+          console.log("gtag=" + to["meta"].trackedTitle + "_" + to["params"].type + "_" + to["params"].id);
           return {
             page_title: to["meta"].trackedTitle + "_" + to["params"].type + "_" + to["params"].id,
               page_path: to.path,
@@ -40,6 +42,7 @@ Vue.use(
           };
           break;
         default:
+          console.log("gtag=" + to["meta"].trackedTitle);
           return {
             page_title: to["meta"].trackedTitle,
               page_path: to.path,

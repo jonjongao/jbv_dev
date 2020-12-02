@@ -118,10 +118,10 @@ const router = new VueRouter({
   }
 });
 
-// router.beforeEach((to, from, next) => {
-//   // Fired before load route template
-//   // Must execute next() so it'll do rendering
-//   next();
-// })
+router.beforeEach((to, from, next) => {
+  // Fired before load route template
+  // Must execute next() so it'll do rendering
+  next();
+})
 
 export default router;

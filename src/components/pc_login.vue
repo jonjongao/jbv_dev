@@ -22,7 +22,7 @@
   <span class="q7 b0 pw">{{ errorText }}</span>
 </pre>
     <pre>
-    <span type="bbsrow" srow="22"><div><span class="" data-type="bbsline" data-row="22"><span><span class="q7 b0"> </span><span class="q15 b0">※本站目前僅開放 ***@ntu.edu.tw 註冊帳號。</span><span class="q7 b0">                                     </span></span></span><div></div></div></span>
+    <span type="bbsrow" srow="22"><div><span class="" data-type="bbsline" data-row="22"><span><span class="q7 b0"> </span><span class="q15 b0">※本站目前僅開放 ***@greenwood.edu.tw 註冊帳號。</span><span class="q7 b0">                                     </span></span></span><div></div></div></span>
 </pre>
     <pre>
     <span type="bbsrow" srow="23"><div><span class="" data-type="bbsline" data-row="23"><span><span class="q7 b0">                                                                                </span></span></span><div></div></div></span>
