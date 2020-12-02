@@ -19,10 +19,11 @@ Vue.config.productionTip = false;
 Vue.use(
   VueGtag, {
     config: {
-      id: "GTM-PHWQL6T"
+      id: "GTM-PHWQL6T",
+      params: {
+        send_page_view: true
+      }
     },
-    appName: '金鸞BBS佈告欄',
-    pageTrackerScreenviewEnabled: true,
     pageTrackerTemplate(to) {
       switch (to.name) {
         case "Forum":
