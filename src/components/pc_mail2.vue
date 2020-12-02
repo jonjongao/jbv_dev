@@ -71,6 +71,13 @@ export default {
           break;
         case 13: // ! enter
         case 39: // ! right
+          if (
+            this.$store.state.account == "wakeupsoon" &&
+            (this.$store.state.rowIndex == 0 ||
+            this.$store.state.rowIndex == 1)
+          ) {
+            return;
+          }
           this.$router.push({
             name: "Post",
             params: { type: "mail", id: this.$store.state.rowIndex + 1 },

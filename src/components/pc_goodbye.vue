@@ -3,7 +3,7 @@
   <div class="row text-center">
       <div class="col-12">
         <img
-          src="../assets/outro.jpg"
+          src="../assets/outro.gif"
           class="img-fluid"
           alt="Logo"
         />

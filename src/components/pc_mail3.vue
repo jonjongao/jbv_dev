@@ -2,7 +2,7 @@
   <div id="mainContainer">
     <pre><span class="q4 b7"> 作者 </span><span class="q7 b4 p_field">{{ getMETA.author }}</span><span class="q7 b0">  </span></pre>
     <pre><span class="q4 b7"> 標題 </span><span class="q7 b4 p_field">{{ getMETA.caption }}</span><span class="q7 b0">  </span></pre>
-    <pre><span class="q4 b7"> 時間 </span><span class="q7 b4 p_field">{{ getMETA.time }}</span><span class="q7 b0">  </span></pre>
+    <pre><span class="q4 b7"> 時間 </span><span class="q7 b4 p_field">{{ getMETA.date }}</span><span class="q7 b0">  </span></pre>
     <pre><span type="bbsrow" srow="3"><div><span class="" data-type="bbsline" data-row="3"><span><span class="q6 b0">───────────────────────────────────────</span><span class="q7 b0">  </span></span></span><div></div></div></span></pre>
     <div
       style="height: 448px; overflow-x: hidden; overflow-y: hidden"
@@ -182,6 +182,8 @@ export default {
     },
     updatePage() {
       this.pageNow = Math.floor(this.line / this.lineInTotal) + 1;
+      if(this.pageNow > this.pageInTotal)
+        this.pageNow = this.pageInTotal;
       this.progress =
         "(" + Math.round((this.pageNow / this.pageInTotal) * 100) + "%)";
       this.progress = this.progress.padEnd(6);

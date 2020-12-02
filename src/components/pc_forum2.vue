@@ -190,6 +190,10 @@ export default {
         this.$store.commit("setFreeze", false);
         this.newLength--;
 
+        /**
+         * ! 刪除文章
+         * ! 得到學姐站內信
+         */
         if (this.$store.state.rowIndex == 61) {
           this.$bus.$emit("on-mail-popup", true);
         }

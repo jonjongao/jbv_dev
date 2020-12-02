@@ -3,7 +3,7 @@
     <div class="row text-center my-4">
       <div class="col-12">
         <img
-          src="../assets/intro.jpg"
+          src="../assets/intro.gif"
           class="img-fluid"
           alt="Logo"
         />
