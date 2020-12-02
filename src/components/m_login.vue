@@ -3,7 +3,7 @@
     <div class="row text-center my-5">
       <div class="col-12">
         <img
-          src="../assets/mobile/mobile_gwh-logo_x2.png"
+          src="../assets/mobile/mobile_gwh-logo_x2.gif"
           class="img-fluid"
           alt="Logo"
         />

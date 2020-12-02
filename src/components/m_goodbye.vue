@@ -1,11 +1,13 @@
 <template>
   <div id="mobileContainer" class="container">
-    <div class="col-sm-12 my-5">
-      <img
-        src="../assets/mobile/mobile_gwh-logo_x2.png"
-        class="img-fluid"
-        alt="Logo"
-      />
+    <div class="row text-center my-5">
+      <div class="col-12">
+        <img
+          src="../assets/mobile/mobile_gwh-logo_x2.gif"
+          class="img-fluid"
+          alt="Logo"
+        />
+      </div>
     </div>
     <ul class="col-12 my-3 bg-dark rounded">
       <li class="nav-link text-white text-center">

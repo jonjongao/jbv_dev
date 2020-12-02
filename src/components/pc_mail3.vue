@@ -59,8 +59,9 @@ export default {
       m += 5;
       // ! 一頁18行
       console.log("text got num of " + (m + this.getReply.length) + " <br/>");
-
       this.lineInTotal = m + this.getReply.length;
+      // console.log("line in total="+this.lineInTotal);
+
       this.pageInTotal = Math.ceil(this.lineInTotal / 18);
 
       // this.updatePage();
@@ -172,6 +173,7 @@ export default {
               this.$refs.box.scrollTop += 24;
             });
             this.line++;
+            // console.log("current line="+this.line);
             this.updatePage();
           }
           break;
@@ -181,7 +183,7 @@ export default {
       }
     },
     updatePage() {
-      this.pageNow = Math.floor(this.line / this.lineInTotal) + 1;
+      this.pageNow = Math.ceil(this.line / 18);
       if(this.pageNow > this.pageInTotal)
         this.pageNow = this.pageInTotal;
       this.progress =

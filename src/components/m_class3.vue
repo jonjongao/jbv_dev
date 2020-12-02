@@ -24,10 +24,10 @@
                   <div class="col-10 p-0 pr-2">
                     <div class="col-12 p-0 q15 line">
                       <span class="q14 b0 name">{{ p.name }}</span>
-                      <span class="q7 b0 caption">{{ p.caption }}</span>
+                      <!-- <span class="q7 b0 caption">{{ p.caption }}</span> -->
                     </div>
                     <div class="col-12 p-0 q8">
-                      <span class="q7 b0 manager">{{ p.manager }}</span>
+                      <span class="q7 b0 manager">{{ p.caption }}</span>
                     </div>
                   </div>
                 </router-link>

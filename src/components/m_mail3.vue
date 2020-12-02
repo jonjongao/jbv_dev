@@ -198,7 +198,9 @@ export default {
       }
     },
     updatePage() {
-      this.pageNow = Math.floor(this.line / this.lineInTotal) + 1;
+      this.pageNow = Math.ceil(this.line / 18);
+      if(this.pageNow > this.pageInTotal)
+        this.pageNow = this.pageInTotal;
       this.progress =
         "(" + Math.round((this.pageNow / this.pageInTotal) * 100) + "%)";
       this.progress = this.progress.padEnd(6);
